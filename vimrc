@@ -1,5 +1,7 @@
 "                      The file is seted for the edit programme!                               "
-
+"											       "
+"                                                                            Version:   1.00   "
+"											       "
 
 
 "set the backcolor type
@@ -86,15 +88,20 @@ let curdir = substitute(getcwd(), '/home/kevin/', "~/", "g")
 return curdir
 endfunction
 
+"highlight statusline color setting
 set ls=2
 set statusline=
-set statusline+=\ type:%Y\ 
-set statusline+=\ time:\ 
+set statusline+=%1*\ type:%Y\ 
+set statusline+=%2*\ format:%{&ff}:%{&fenc!=''?&fenc:&enc}\ 
+set statusline+=%3*\ time:\ 
 set statusline+=%{strftime(\"%Y-%m-%d\ %H:%M\")}\ 
-set statusline+=\ %03l,%03c/%L(%p%%)\ 
-set statusline+=\ format:%{&ff}:%{&fenc!=''?&fenc:&enc}\ 
-set statusline+=\ %n%r%h%w\ %F%M\ 
-highlight statusline term=bold ctermfg=Blue ctermbg=White
+set statusline+=%4*\ %03l,%03c\ +\ %L(%p%%)\ 
+set statusline+=%5*\ %n%r%h%w\ %F%M\ 
+hi User1 term=bold ctermfg=Black ctermbg=Yellow
+hi User2 term=bold ctermfg=Yellow ctermbg=Black
+hi User3 term=bold ctermfg=Black ctermbg=Yellow
+hi User4 term=bold ctermfg=Yellow ctermbg=black
+hi User5 term=bold ctermfg=Black ctermbg=Yellow
 
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
@@ -102,7 +109,7 @@ map to :TlistToggle<CR>
 map time :!date<CR>
 
 "Hot key define by me 
-let mapleader="'"
+let mapleader=","
 nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
 
@@ -113,9 +120,12 @@ nmap <leader>g :edit ~/.gvimrc <cr>
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
 
 "open help documentaion
-nmap <leader>he :tab help<cr>
+nmap <leader>help :tab help<cr>
 
-"tab operation
+"show the version information
+nmap <leader>ver :version<cr>
+
+" Tab operation
 nmap <leader>tn :tabnew<cr>
 nmap <leader>tm :tabmove<cr>
 nmap <leader>tc :tabclose<cr>
@@ -124,7 +134,7 @@ nmap <leader>te :tabedit
 map <F4> :!ctags -R .<cr>
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
 
-"Favorite filetype
+" Favorite filetype
 set ffs=unix,dos,mac
 nmap <leader>fd :se ff=dos<cr>
 nmap <leader>fu :se ff=unix<cr>
@@ -144,23 +154,23 @@ nmap <leader>cl :ccl<cr>
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 
-" bufExplorer
+" BufExplorer
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSplitUp = 1
 let g:bufExplorerVertical = 1
 let g:bufExplorerSplitVertSize = 30 
 let g:bufExplorerShowTabBuffer=1
-"let g:bufExplorerSplitBelow=1
+" Let g:bufExplorerSplitBelow=1
 nmap <leader>o :BufExplorer<cr>
 
-" minibufferExplore
+" MinibufferExplore
 nmap <leader>b :b
 
-" shell bash plugin
+" Shell bash plugin
 nmap <leader>sh :ConqueTermSplit bash<cr>
 
-" save/load session function
+" Save/load session function
 let g:session_autoload = 1
 let g:session_autosave = 1
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,buffers,help,folds
