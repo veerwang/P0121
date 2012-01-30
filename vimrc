@@ -173,5 +173,5 @@ nmap <leader>sh :ConqueTermSplit bash<cr>
 " Save/load session function
 let g:session_autoload = 1
 let g:session_autosave = 1
-set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,buffers,help,folds
+set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,buffers,help,folds,resize
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
