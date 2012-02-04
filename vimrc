@@ -3,10 +3,14 @@
 "                                                                            Version:   1.00   "
 "											       "
 
+set t_Co=256
 
 "set the backcolor type
 set background=dark
-colo ron
+"colo ron
+"colo darkburn 
+colo wargrey
+
 
 "set the line number 
 set nu
