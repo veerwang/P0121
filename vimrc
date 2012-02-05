@@ -3,6 +3,7 @@
 "                                                                            Version:   1.00   "
 "											       "
 
+" Enable color script
 set t_Co=256
 
 "set the backcolor type
@@ -109,13 +110,13 @@ hi User5 term=bold ctermfg=Black ctermbg=Yellow
 
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
-map to :TlistToggle<CR>
-map time :!date<CR>
+map to :TlistToggle<cr>
+map time :!date<cr>
 
 "Hot key define by me 
 let mapleader=","
-nmap <leader>study :edit ~/study/study.txt <CR>
-nmap <leader>w :w!<CR>
+nmap <leader>study :edit ~/study/study.txt <cr>
+nmap <leader>w :w!<cr>
 
 "Edit my confirature file
 nmap <leader>v :edit ~/.vimrc <cr>
@@ -133,7 +134,7 @@ nmap <leader>ver :version<cr>
 nmap <leader>tn :tabnew<cr>
 nmap <leader>tm :tabmove<cr>
 nmap <leader>tc :tabclose<cr>
-nmap <leader>te :tabedit
+nmap <leader>te :tabedit<cr>
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
