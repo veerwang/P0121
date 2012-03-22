@@ -3,7 +3,6 @@
 "                                                                            Version:   1.00   "
 "											       "
 
-" Enable color script
 set t_Co=256
 
 "set the backcolor type
@@ -11,7 +10,6 @@ set background=dark
 "colo ron
 "colo darkburn 
 colo wargrey
-
 
 "set the line number 
 set nu
@@ -110,13 +108,13 @@ hi User5 term=bold ctermfg=Black ctermbg=Yellow
 
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
-map to :TlistToggle<cr>
-map time :!date<cr>
+map to :TlistToggle<CR>
+map time :!date<CR>
 
 "Hot key define by me 
 let mapleader=","
-nmap <leader>study :edit ~/study/study.txt <cr>
-nmap <leader>w :w!<cr>
+nmap <leader>study :edit ~/study/study.txt <CR>
+nmap <leader>w :w!<CR>
 
 "Edit my confirature file
 nmap <leader>v :edit ~/.vimrc <cr>
@@ -173,7 +171,7 @@ nmap <leader>o :BufExplorer<cr>
 nmap <leader>b :b
 
 " Shell bash plugin
-nmap <leader>sh :ConqueTermSplit bash<cr>
+nmap <leader>sh :ConqueTermTab bash<cr>
 
 " Save/load session function
 let g:session_autoload = 1
