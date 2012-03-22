@@ -117,7 +117,7 @@ nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
 
 "Edit my confirature file
-nmap <leader>v :edit ~/.vimrc <cr>
+nmap <leader>c :edit ~/.vimrc <cr>
 autocmd! bufwritepost .vimrc source ~/.vimrc
 nmap <leader>g :edit ~/.gvimrc <cr>
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
