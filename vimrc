@@ -3,14 +3,14 @@
 "                                                                            Version:   1.00   "
 "											       "
 
-" Enable color script
 set t_Co=256
 
 "set the backcolor type
 set background=dark
 "colo ron
 "colo darkburn 
-colo wargrey
+"colo wargrey
+colo simple-dark
 
 
 "set the line number 
@@ -110,16 +110,16 @@ hi User5 term=bold ctermfg=Black ctermbg=Yellow
 
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
-map to :TlistToggle<cr>
-map time :!date<cr>
+map to :TlistToggle<CR>
+map time :!date<CR>
 
 "Hot key define by me 
 let mapleader=","
-nmap <leader>study :edit ~/study/study.txt <cr>
-nmap <leader>w :w!<cr>
+nmap <leader>study :edit ~/study/study.txt <CR>
+nmap <leader>w :w!<CR>
 
 "Edit my confirature file
-nmap <leader>v :edit ~/.vimrc <cr>
+nmap <leader>c :edit ~/.vimrc <cr>
 autocmd! bufwritepost .vimrc source ~/.vimrc
 nmap <leader>g :edit ~/.gvimrc <cr>
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
@@ -134,7 +134,7 @@ nmap <leader>ver :version<cr>
 nmap <leader>tn :tabnew<cr>
 nmap <leader>tm :tabmove<cr>
 nmap <leader>tc :tabclose<cr>
-nmap <leader>te :tabedit<cr>
+nmap <leader>te :tabedit
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
@@ -155,7 +155,7 @@ let g:treeExplIndent=2
 
 " Quickfix window
 nmap <leader>co :cope<cr>
-nmap <leader>cl :ccl<cr>
+nmap <leader>cc :ccl<cr>
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 
@@ -169,11 +169,12 @@ let g:bufExplorerShowTabBuffer=1
 " Let g:bufExplorerSplitBelow=1
 nmap <leader>o :BufExplorer<cr>
 
-" MinibufferExplore
-nmap <leader>b :b
+" binary file edit 
+nmap <leader>eb :%!xxd<cr>
+nmap <leader>rb :%!xxd -r<cr>
 
 " Shell bash plugin
-nmap <leader>sh :ConqueTermSplit bash<cr>
+nmap <leader>sh :ConqueTermTab bash<cr>
 
 " Save/load session function
 let g:session_autoload = 1
