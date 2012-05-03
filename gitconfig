@@ -1,0 +1,27 @@
+[user]
+	name   = kevin
+	email  = veerwang@gmail.com
+
+[merge]
+	tool   = gvimdiff
+
+[diff] 
+	tool   = vimdiff
+
+[difftool] 
+	tool   = vimdiff
+	prompt = No
+
+[color]
+	status = auto
+	branch = auto
+	ui     = true
+
+[alias]
+	co     = commit
+	st     = status
+	br     = branch
+	lg     = log --graph --stat --oneline --decorate
+
+[core]
+	editor = vim

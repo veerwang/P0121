@@ -10,7 +10,12 @@ set background=dark
 "colo ron
 "colo darkburn 
 "colo wargrey
+<<<<<<< HEAD
 colo simple-dark
+
+=======
+colo aldmeris
+>>>>>>> fe46b326b1e2fdc1eb8436713d2ce7fa3fa54191
 
 "set the line number 
 set nu
@@ -154,7 +159,11 @@ let g:treeExplIndent=2
 
 " Quickfix window
 nmap <leader>co :cope<cr>
+<<<<<<< HEAD
+nmap <leader>cc :ccl<cr>
+=======
 nmap <leader>clo :ccl<cr>
+>>>>>>> fe46b326b1e2fdc1eb8436713d2ce7fa3fa54191
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 
