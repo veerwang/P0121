@@ -9,7 +9,8 @@ set t_Co=256
 set background=dark
 "colo ron
 "colo darkburn 
-colo wargrey
+"colo wargrey
+colo aldmeris
 
 "set the line number 
 set nu
@@ -153,7 +154,7 @@ let g:treeExplIndent=2
 
 " Quickfix window
 nmap <leader>co :cope<cr>
-nmap <leader>cl :ccl<cr>
+nmap <leader>clo :ccl<cr>
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 
