@@ -7,6 +7,7 @@ set t_Co=256
 
 "set the backcolor type
 set background=dark
+
 "colo ron
 "colo darkburn 
 "colo wargrey
@@ -188,14 +189,14 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
-Bundle 'c.vim.git'
-Bundle 'SeeTab.git'
-Bundle 'a.vim.git'
-Bundle 'gtags.vim.git'
-Bundle 'session.vim.git'
-Bundle 'taglist.vim.git'
-Bundle 'matrix.vim.git'
-Bundle 'calendar.vim.git'
+Bundle 'vim-scripts/c.vim.git'
+Bundle 'vim-scripts/SeeTab.git'
+Bundle 'vim-scripts/a.vim.git'
+Bundle 'vim-scripts/gtags.vim.git'
+Bundle 'vim-scripts/session.vim.git'
+Bundle 'vim-scripts/taglist.vim.git'
+Bundle 'vim-scripts/matrix.vim.git'
+Bundle 'vim-scripts/calendar.vim.git'
 Bundle 'aldmeris'
 Bundle 'rygwdn/vim-conque.git'
 Bundle 'echofunc.vim'
