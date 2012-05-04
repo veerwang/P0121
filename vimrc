@@ -187,10 +187,18 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
-Bundle 'vim-scripts/c.vim.git'
-Bundle 'vim-scripts/a.vim.git'
-Bundle 'vim-scripts/taglist.vim.git'
-Bundle 'vim-scripts/matrix.vim.git'
+Bundle 'c.vim.git'
+Bundle 'SeeTab.git'
+Bundle 'a.vim.git'
+Bundle 'gtags.vim.git'
+Bundle 'session.vim.git'
+Bundle 'taglist.vim.git'
+Bundle 'matrix.vim.git'
+Bundle 'calendar.vim.git'
+Bundle 'aldmeris'
+Bundle 'rygwdn/vim-conque.git'
+Bundle 'echofunc.vim'
+Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -209,7 +217,6 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not
 " allowed..
-
 
 " Save/load session function
 let g:session_autoload = 1
