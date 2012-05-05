@@ -195,18 +195,24 @@ Bundle 'vim-scripts/a.vim.git'
 Bundle 'vim-scripts/gtags.vim.git'
 Bundle 'vim-scripts/session.vim.git'
 Bundle 'vim-scripts/taglist.vim.git'
-Bundle 'vim-scripts/matrix.vim.git'
-Bundle 'vim-scripts/calendar.vim.git'
 Bundle 'aldmeris'
 Bundle 'rygwdn/vim-conque.git'
 Bundle 'echofunc.vim'
 Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
+"color
+Bundle 'simple-dark'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
 filetype plugin indent on     " required!
+
+nmap <leader>pll :BundleList <cr>
+nmap <leader>pls :BundleSearch <cr>
+nmap <leader>pli :BundleInstall <cr>
+nmap <leader>plu :BundleInstall! <cr>
+
 "
 "  Brief help
 " :BundleList          - list configured bundles
