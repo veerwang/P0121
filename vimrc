@@ -201,10 +201,15 @@ Bundle 'rygwdn/vim-conque.git'
 Bundle 'echofunc.vim'
 Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
+Bundle 'esukram/autocomplpop.vim.git'
+
 "color
 Bundle 'simple-dark'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'git://gist.github.com/422503.git'
+
+
 
 " ...
 
