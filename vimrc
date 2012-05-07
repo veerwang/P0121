@@ -193,8 +193,9 @@ Bundle 'vim-scripts/c.vim.git'
 Bundle 'vim-scripts/SeeTab.git'
 Bundle 'vim-scripts/a.vim.git'
 Bundle 'vim-scripts/gtags.vim.git'
-Bundle 'vim-scripts/session.vim.git'
+Bundle 'xolox/vim-session.git'
 Bundle 'vim-scripts/taglist.vim.git'
+Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'aldmeris'
 Bundle 'rygwdn/vim-conque.git'
 Bundle 'echofunc.vim'
@@ -204,6 +205,7 @@ Bundle 'vim-scripts/bash-support.vim.git'
 Bundle 'simple-dark'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
+
 " ...
 
 filetype plugin indent on     " required!
@@ -212,6 +214,7 @@ nmap <leader>pll :BundleList <cr>
 nmap <leader>pls :BundleSearch <cr>
 nmap <leader>pli :BundleInstall <cr>
 nmap <leader>plu :BundleInstall! <cr>
+nmap <leader>plr :BundleClean <cr>
 
 "
 "  Brief help
