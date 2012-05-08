@@ -12,6 +12,7 @@ set background=dark
 "colo darkburn 
 "colo wargrey
 colo simple-dark
+"colo vividchalk 
 
 "set the line number 
 set nu
@@ -159,6 +160,9 @@ nmap <leader>clo :ccl<cr>
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 
+" fugitive key map
+nmap <leader>gs :Gstatus<cr>
+
 " BufExplorer
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
@@ -205,12 +209,12 @@ Bundle 'esukram/autocomplpop.vim.git'
 
 "color
 Bundle 'simple-dark'
+Bundle 'tpope/vim-vividchalk.git'
+"
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://gist.github.com/422503.git'
-
-
-
+"
 " ...
 
 filetype plugin indent on     " required!
