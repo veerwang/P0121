@@ -206,6 +206,7 @@ Bundle 'echofunc.vim'
 Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
 Bundle 'esukram/autocomplpop.vim.git'
+Bundle 'calendar.vim--Matsumoto'
 
 "color
 Bundle 'simple-dark'
