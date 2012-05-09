@@ -237,6 +237,9 @@ nmap <leader>plr :BundleClean <cr>
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not
 " allowed..
+"
+
+nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
 
 " Save/load session function
 let g:session_autoload = 1
