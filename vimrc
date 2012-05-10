@@ -3,7 +3,7 @@
 "                                                                            Version:   1.00   "
 "											       "
 
-set t_Co=256
+set t_Co=32
 
 "set the backcolor type
 set background=dark
@@ -207,7 +207,7 @@ Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
 Bundle 'esukram/autocomplpop.vim.git'
 Bundle 'calendar.vim--Matsumoto'
-
+Bundle 'OmniCppComplete'
 "color
 Bundle 'simple-dark'
 Bundle 'tpope/vim-vividchalk.git'
