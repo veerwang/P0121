@@ -3,7 +3,7 @@
 "                                                                            Version:   1.00   "
 "											       "
 
-set t_Co=32
+set t_Co=256
 
 "set the backcolor type
 set background=dark
@@ -11,8 +11,10 @@ set background=dark
 "colo ron
 "colo darkburn 
 "colo wargrey
-colo simple-dark
+"colo simple-dark
 "colo vividchalk 
+"colo inkpot 
+colo summerfruit256
 
 "set the line number 
 set nu
@@ -114,7 +116,7 @@ let Tlist_File_Fold_Auto_Close=1
 map to :TlistToggle<CR>
 map time :!date<CR>
 
-"Hot key define by me 
+"Hot key define by me
 let mapleader=","
 nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
@@ -131,7 +133,7 @@ nmap <leader>help :tab help<cr>
 "show the version information
 nmap <leader>ver :version<cr>
 
-" Tab operation
+"Tab operation
 nmap <leader>tn :tabnew<cr>
 nmap <leader>tm :tabmove<cr>
 nmap <leader>tc :tabclose<cr>
@@ -208,9 +210,13 @@ Bundle 'vim-scripts/bash-support.vim.git'
 Bundle 'esukram/autocomplpop.vim.git'
 Bundle 'calendar.vim--Matsumoto'
 Bundle 'OmniCppComplete'
+Bundle 'Align'
+
 "color
 Bundle 'simple-dark'
 Bundle 'tpope/vim-vividchalk.git'
+Bundle 'summerfruit256.vim'
+Bundle 'inkpot'
 "
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
@@ -225,6 +231,10 @@ nmap <leader>pls :BundleSearch <cr>
 nmap <leader>pli :BundleInstall <cr>
 nmap <leader>plu :BundleInstall! <cr>
 nmap <leader>plr :BundleClean <cr>
+
+
+let g:BASH_MapLeader  = ','
+
 
 "
 "  Brief help
@@ -241,6 +251,8 @@ nmap <leader>plr :BundleClean <cr>
 "
 
 nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
+
+let $MYEMAIL="kevin.wang2004@hotmail.com"
 
 " Save/load session function
 let g:session_autoload = 1
