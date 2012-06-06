@@ -211,6 +211,7 @@ Bundle 'esukram/autocomplpop.vim.git'
 Bundle 'calendar.vim--Matsumoto'
 Bundle 'OmniCppComplete'
 Bundle 'Align'
+Bundle 'renamer.vim'
 
 "color
 Bundle 'simple-dark'
@@ -233,8 +234,12 @@ nmap <leader>plu :BundleInstall! <cr>
 nmap <leader>plr :BundleClean <cr>
 
 
+" for Align plugin
 let g:BASH_MapLeader  = ','
 
+"For auto rename plugin
+nmap <leader>ren :Renamer <cr>
+nmap <leader>ree :Ren <cr>
 
 "
 "  Brief help
