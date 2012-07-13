@@ -220,8 +220,8 @@ Bundle 'summerfruit256.vim'
 Bundle 'inkpot'
 "
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://gist.github.com/422503.git'
+Bundle 'git://git.wincent.com/command-t.git'
 "
 " ...
 
@@ -233,13 +233,6 @@ nmap <leader>pli :BundleInstall <cr>
 nmap <leader>plu :BundleInstall! <cr>
 nmap <leader>plr :BundleClean <cr>
 
-
-" for Align plugin
-let g:BASH_MapLeader  = ','
-
-"For auto rename plugin
-nmap <leader>ren :Renamer <cr>
-nmap <leader>ree :Ren <cr>
 
 "
 "  Brief help
@@ -255,7 +248,19 @@ nmap <leader>ree :Ren <cr>
 " allowed..
 "
 
+" for Align plugin
+let g:BASH_MapLeader  = ','
+
+"For auto rename plugin
+nmap <leader>ren :Renamer <cr>
+nmap <leader>ree :Ren <cr>
+
+"visit the vim websize
 nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
+
+" for ACP plugin
+nmap <leader>acpe :AcpEnable <cr>
+nmap <leader>acpd :AcpDisable <cr>
 
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
