@@ -233,7 +233,6 @@ nmap <leader>pli :BundleInstall <cr>
 nmap <leader>plu :BundleInstall! <cr>
 nmap <leader>plr :BundleClean <cr>
 
-
 "
 "  Brief help
 " :BundleList          - list configured bundles
@@ -257,6 +256,9 @@ nmap <leader>ree :Ren <cr>
 
 "visit the vim websize
 nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
+
+let g:netrw_winsize = 30
+nmap <silent> <leader>fe :Sexplore!<cr>
 
 " for ACP plugin
 nmap <leader>acpe :AcpEnable <cr>
