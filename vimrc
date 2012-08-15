@@ -301,6 +301,9 @@ nmap <leader>acpd :AcpDisable <cr>
 
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
+autocmd BufEnter bash* :AcpDisable
+autocmd BufLeave bash* :AcpEnable
+
 " Save/load session function
 let g:session_autoload = 1
 let g:session_autosave = 1
