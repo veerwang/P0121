@@ -11,10 +11,10 @@ set background=dark
 "colo ron
 "colo darkburn 
 "colo wargrey
-"colo simple-dark
+colo simple-dark
 "colo vividchalk 
 "colo inkpot 
-colo summerfruit256
+"colo summerfruit256
 
 "set the line number 
 set nu
@@ -295,12 +295,17 @@ function! MyTabLabel(n)
   return bufname( buflist[winnr - 1])
 endfunction
 
+" Alt-w write the file
+" Ctrl-v Alt-w: to input ^[w charactor
+nmap w :w <cr>
+
 " for ACP plugin
 nmap <leader>acpe :AcpEnable <cr>
 nmap <leader>acpd :AcpDisable <cr>
 
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
+" when enter the bash buf disable the acp function
 autocmd BufEnter bash* :AcpDisable
 autocmd BufLeave bash* :AcpEnable
 
