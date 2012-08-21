@@ -276,7 +276,7 @@ function! MyTabLine()
     let s .= '%' . (i + 1) . 'T'
 
     " the label is made by MyTabLabel()
-    let s .= (i + 1) . ' %{MyTabLabel(' . (i + 1) . ')} '
+    let s .= (i + 1) . ' %{MyTabLabel(' . (i + 1) . ')} ' . '%M' . ' '
   endfor
 
   " after the last tab fill with TabLineFill and reset tab page nr
