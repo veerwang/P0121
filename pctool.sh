@@ -115,7 +115,7 @@ CRESUBMAKEFILE()
 		echo 'ifeq ($(DEBUG),yes)'
 		echo 'COMPILE_FLAG = -g2'
 		echo 'else'
-		echo 'COMPILE_FLAG ='
+		echo 'COMPILE_FLAG = -O2 -std=gnu++0x'
 		echo 'endif'
 		echo 'all: $(DEPS) $(EXEC) '
 		echo '$(DEPS_DIR)%.cpp.dep: %.cpp'
