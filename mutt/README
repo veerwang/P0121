@@ -35,3 +35,5 @@ alt-3:
 
 4.配置文件.fetchmailrc文件的内容
 set daemon 60                                     注意系统启动的时候要在后台运行fetchmail &
+
+5.注意gmail的密码，现在要采用两步法生成的密码了
