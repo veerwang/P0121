@@ -1,0 +1,7 @@
+MAILDIR="/home/kevin/.mail/"
+LOGFILE=$HOME/.procmaillog
+LOGABSTRACT=no
+
+:0
+* .*
+kevin/new

@@ -1,0 +1,51 @@
+set mbox_type=Maildir
+set folder=$HOME/.mail/
+set header_cache=~/.mail/.hcache
+
+set spoolfile=~/.mail/kevin
+
+mailboxes = kevin
+
+set sendmail="/usr/local/bin/msmtp"
+set editor="vim"
+set send_charset="us-ascii:iso-8859-1:utf-8"
+set pager_index_lines=6
+set abort_unmodified=no
+set include
+macro index G "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
+set fast_reply=yes
+
+set move = no 
+set record=~/.mail/sent
+set postpone=yes
+set postponed=~/.mail/draft
+set 
+
+source ~/.mail/.alias
+set alias_file = "$HOME/.mail/.alias"
+
+set sort=date
+
+ignore *
+unignore From:
+unignore To:
+unignore CC:
+unignore Subject:
+unignore Date:
+
+set use_from=yes
+set envelope_from=yes
+set from="王威<kevin.wang2004@tom.com>"
+
+macro generic "<esc>1" ":set from='王威<kevin.wang2004@tom.com>'"
+macro generic "<esc>2" ":set from='王威<71875002@qq.com>'"
+macro generic "<esc>3" ":set from='王威<wangwei200431004@126.com>'"
+
+set realname="王威"
+
+#set wait_key=yes
+#set sendmail=/home/nico/Mail/msmtp-enqueue.sh #让msmtp 来发邮件
+#alternates 邮件地址1|邮件地址2|邮件地址3 # 跟下面的 reverse_name 配合用的
+#set use_from
+#set reverse_name=yes #哪个邮箱收的就以那个邮箱的名字填 From 字段
+#hdr_order date from subject to cc #邮件头的显示顺序

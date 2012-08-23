@@ -1,0 +1,37 @@
+有意义的网站,配置脚本
+http://storysky.blog.51cto.com/628458/293005
+
+非常好的mutt配置文件
+http://www.360doc.com/content/11/0605/16/419911_121851182.shtml
+
+mutt中文脚本
+http://book.selboo.com.cn/book/Mutt.html#handling-folders
+
+1.安装msmtp
+git clone git://msmtp.git.sourceforge.net/gitroot/msmtp/msmtp
+cd msmtp
+autoreconf -i
+./configure; make; make install
+
+
+2.配置.msmtprc的脚本  注意 权限一定要 600
+
+3.配置文件.muttrc                                  
+
+注意 spoolfile目录下一定要有三个目录  tmp new cur
+注意 别名文件的位置 按下tab按键能够显示
+注意 在邮件上按下"a"进行保存
+注意 在邮件上按下"o"进行邮件排序
+注意 在邮件菜单按下"c"进行目录切换
+注意 在邮件菜单下"f"进行邮件转发
+注意 进行群发功能的测试，地址之间采用逗号分割
+注意 在等待发送界面的时候，按下"P"将会保存邮件
+
+
+alt-1:  在菜单功能界面  进行用户切换
+alt-2:
+alt-3:
+
+
+4.配置文件.fetchmailrc文件的内容
+set daemon 60                                     注意系统启动的时候要在后台运行fetchmail &
