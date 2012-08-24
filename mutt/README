@@ -7,6 +7,9 @@ http://www.360doc.com/content/11/0605/16/419911_121851182.shtml
 mutt中文脚本
 http://book.selboo.com.cn/book/Mutt.html#handling-folders
 
+一个实际的mutt的配置文档
+http://home.ustc.edu.cn/~lixuebai/GNU/MuttConfig.html
+
 1.安装msmtp
 git clone git://msmtp.git.sourceforge.net/gitroot/msmtp/msmtp
 cd msmtp
