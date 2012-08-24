@@ -35,6 +35,16 @@ autoreconf -i
      Z 在邮件检索界面 向上翻页
      * 跳到末尾
 
+注意 在index状态输入
+     : set from 可以查询from变量的数值
+
+进行邮件筛选
+注意 在index状态输入
+     l
+
+     ~f ksj  		将ksj的邮件过滤出来
+     ~C @hotmail.com    将发送给hotmail的邮件过滤出来
+
 
 alt-1:  在菜单功能界面  进行用户切换
 alt-2:
