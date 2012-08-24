@@ -12,7 +12,6 @@ set send_charset="us-ascii:iso-8859-1:utf-8"
 set pager_index_lines=6
 set abort_unmodified=no
 set include
-macro index G "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
 set fast_reply=yes
 
 set move = no 
@@ -44,3 +43,11 @@ macro generic "<esc>4" ":set from='王威<kevin.wang2004@hotmail.com>'"
 macro generic "<esc>5" ":set from='王威<kevin.wang2004@gmail.com>'"
 
 set realname="王威"
+
+macro index "GA" "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
+
+macro index "G1" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailtom -m '/usr/bin/procmail -d %T'\r"
+macro index "G2" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailqq -m '/usr/bin/procmail -d %T'\r"
+macro index "G3" "!fetchmail -f ~/.mail/fetchmailrc/fetchmail126 -m '/usr/bin/procmail -d %T'\r"
+macro index "G4" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailhotmail -m '/usr/bin/procmail -d %T'\r"
+macro index "G5" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailgmail -m '/usr/bin/procmail -d %T'\r"

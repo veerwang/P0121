@@ -1,0 +1,9 @@
+
+poll pop.googlemail.com
+proto POP3
+port 995 
+user 'kevin.wang2004@gmail.com'
+password 'ewpq ehcn fakd jdnf'
+options
+keep
+ssl

@@ -1,0 +1,10 @@
+#set daemon 60
+
+poll pop3.live.com
+proto POP3
+port 995 
+user 'kevin.wang2004@hotmail.com'
+password '200431004'
+options
+keep
+ssl
