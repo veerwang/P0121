@@ -45,6 +45,12 @@ autoreconf -i
      ~f ksj  		将ksj的邮件过滤出来
      ~C @hotmail.com    将发送给hotmail的邮件过滤出来
 
+注意 进行筛选之后
+     T                  进行全标定
+     s			进行保存邮件操作
+     选择要保存的目录
+
+
 
 alt-1:  在菜单功能界面  进行用户切换
 alt-2:
