@@ -5,8 +5,13 @@ set header_cache=~/.mail/.hcache
 set spoolfile=~/.mail/kevin
 
 mailboxes = kevin
+mailboxes = qq
+mailboxes = hotmail
+mailboxes = gmail
+mailboxes = tom
+mailboxes = 126
 
-set sendmail="/usr/local/bin/msmtp"
+set sendmail="/usr/bin/msmtp"
 set editor="vim"
 set send_charset="us-ascii:iso-8859-1:utf-8"
 charset-hook ^us-ascii$ gb2312
@@ -58,5 +63,11 @@ macro index "G3" "!fetchmail -f ~/.mail/fetchmailrc/fetchmail126 -m '/usr/bin/pr
 macro index "G4" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailhotmail -m '/usr/bin/procmail -d %T'\r"
 macro index "G5" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailgmail -m '/usr/bin/procmail -d %T'\r"
 
-color status 	yellow black
-color message   red   white
+macro index "Mqq" "c=qq\r"
+macro index "Mtom" "c=tom\r"
+macro index "M126" "c=126\r"
+macro index "Mh" "c=hotmail\r"
+macro index "Mg" "c=gmail\r"
+
+color status 	yellow 	black
+color message   red   	white
