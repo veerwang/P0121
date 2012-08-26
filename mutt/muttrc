@@ -4,12 +4,12 @@ set header_cache=~/.mail/.hcache
 
 set spoolfile=~/.mail/kevin
 
-mailboxes = kevin
-mailboxes = qq
-mailboxes = hotmail
-mailboxes = gmail
-mailboxes = tom
-mailboxes = 126
+mailboxes "kevin"
+mailboxes "+qq"
+mailboxes "+hotmail"
+mailboxes "+gmail"
+mailboxes "+tom"
+mailboxes "+126"
 
 set sendmail="/usr/bin/msmtp"
 set editor="vim"
@@ -27,12 +27,13 @@ set move = no
 set record=~/.mail/sent
 set postpone=yes
 set postponed=~/.mail/draft
-set 
 
 source ~/.mail/.alias
 set alias_file = "$HOME/.mail/.alias"
 
 set sort=date
+
+set quit=ask-yes
 
 ignore *
 unignore From:
@@ -55,19 +56,23 @@ set realname="王威"
 
 set status_format=" %r %b %f %n　　　Del %d　　　Msgs %m %l %> (%P) %s"
 
-macro index "GA" "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
+macro index "gma" "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
 
-macro index "G1" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailtom -m '/usr/bin/procmail -d %T'\r"
-macro index "G2" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailqq -m '/usr/bin/procmail -d %T'\r"
-macro index "G3" "!fetchmail -f ~/.mail/fetchmailrc/fetchmail126 -m '/usr/bin/procmail -d %T'\r"
-macro index "G4" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailhotmail -m '/usr/bin/procmail -d %T'\r"
-macro index "G5" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailgmail -m '/usr/bin/procmail -d %T'\r"
+macro index "gm1" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailtom -m '/usr/bin/procmail -d %T'\r"
+macro index "gm2" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailqq -m '/usr/bin/procmail -d %T'\r"
+macro index "gm3" "!fetchmail -f ~/.mail/fetchmailrc/fetchmail126 -m '/usr/bin/procmail -d %T'\r"
+macro index "gm4" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailhotmail -m '/usr/bin/procmail -d %T'\r"
+macro index "gm5" "!fetchmail -f ~/.mail/fetchmailrc/fetchmailgmail -m '/usr/bin/procmail -d %T'\r"
 
 macro index "Mqq" "c=qq\r"
 macro index "Mtom" "c=tom\r"
 macro index "M126" "c=126\r"
 macro index "Mh" "c=hotmail\r"
 macro index "Mg" "c=gmail\r"
+
+bind index v next-unread-mailbox 
+bind index gg first-entry
+bind index G last-entry
 
 color status 	yellow 	black
 color message   red   	white
