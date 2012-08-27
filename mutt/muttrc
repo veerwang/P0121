@@ -11,7 +11,7 @@ mailboxes "+gmail"
 mailboxes "+tom"
 mailboxes "+126"
 
-set sendmail="/usr/bin/msmtp"
+set sendmail="/usr/local/bin/msmtp"
 set editor="vim"
 set send_charset="us-ascii:iso-8859-1:utf-8"
 charset-hook ^us-ascii$ gb2312
@@ -55,6 +55,8 @@ macro generic "<esc>5" ":set from='王威<kevin.wang2004@gmail.com>'"
 set realname="王威"
 
 set status_format=" %r %b %f %n　　　Del %d　　　Msgs %m %l %> (%P) %s"
+
+auto_view text/html
 
 macro index "gma" "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
 

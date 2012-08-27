@@ -1,0 +1,5 @@
+#text/html; lynx --dump %s; nametemplate=%s.html; copiousoutput
+
+text/html; w3m -o document_charse=%{charset} %s; nametemplate=%s.html
+text/html; w3m -dump -o document_charse=%{charset} %s; nametemplate=%s.html; copiousoutput
+image/*; ~/.mail/w3m-img %s
