@@ -1,8 +1,19 @@
 alias tom 王威 <kevin.wang2004@tom.com>
 alias qq 王威 <71875002@qq.com>
-alias 林玥 林玥 <yue0592@126.com>
-alias 林俊明 林俊明 <lin_0592@126.com>
-alias 林伟华 林伟华 <linwh99@sina.cn>
-alias 柯少钧 柯少钧 <kshaojun@yahoo.cn>
+alias 126 王威 <wangwei200431004@126.com>
+alias hotmail 王威 <kevin.wang2004@hotmail.com>
+alias gmail 王威 <kevin.wang2004@gmail.com>
 
-alias mygroup tom,qq 
+alias mygroup tom,qq,126,hotmail,gmail
+
+alias ly 林玥 <yue0592@126.com>
+alias ljm 林俊明 <lin_0592@126.com>
+alias lwh 林伟华 <linwh99@sina.cn>
+alias ksj 柯少钧 <kshaojun@yahoo.cn>
+
+alias testgroup zsb,xdj,yyz
+
+alias xdj 谢德蛟  <xdj@eddysun.com>
+alias zsb 郑水冰  <zsb@eddysun.com>
+alias yyz 叶音足  <yyz@eddysun.com>
+alias zw 邹蔚  <zw@eddysun.com>

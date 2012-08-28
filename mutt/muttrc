@@ -56,7 +56,7 @@ set realname="王威"
 
 set status_format=" %r %b %f %n　　　Del %d　　　Msgs %m %l %> (%P) %s"
 
-auto_view text/html
+auto_view text/html application/msword
 
 macro index "gma" "!fetchmail -a -m '/usr/bin/procmail -d %T'\r"
 
