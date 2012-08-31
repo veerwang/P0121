@@ -31,7 +31,7 @@ set postponed=~/.mail/draft
 source ~/.mail/.alias
 set alias_file = "$HOME/.mail/.alias"
 
-set sort=date
+set sort=reverse-date
 
 set quit=ask-yes
 
