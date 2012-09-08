@@ -32,7 +32,9 @@ source ~/.mail/.alias
 set alias_file = "$HOME/.mail/.alias"
 set signature = "$HOME/.mail/.signature"
 
-set sort=date
+set sort=reverse-date
+
+set quit=ask-yes
 
 set quit=ask-yes
 
