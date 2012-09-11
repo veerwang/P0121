@@ -3,23 +3,23 @@ LOGFILE=$HOME/.procmaillog
 LOGABSTRACT=no
 
 :0
-* To|Cc:.*(71875002@qq.com)
+* To:.*(71875002@qq.com)
 qq/new
 
 :0
-* To|Cc:.*(wangwei200431004@126.com)
+* To:.*(wangwei200431004@126.com)
 126/new
 
 :0
-* To|Cc:.*(kevin.wang2004@tom.com)
+* To:.*(kevin.wang2004@tom.com)
 tom/new
 
 :0
-* To|Cc:.*(kevin.wang2004@hotmail.com)
+* To:.*(kevin.wang2004@hotmail.com)
 hotmail/new
 
 :0
-* To|Cc:.*(kevin.wang2004@gmail.com)
+* To:.*(kevin.wang2004@gmail.com)
 gmail/new
 
 :0
