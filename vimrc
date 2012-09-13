@@ -9,8 +9,6 @@ set t_Co=256
 set background=dark
 
 "colo ron
-"colo darkburn 
-"colo wargrey
 colo simple-dark
 "colo vividchalk 
 "colo inkpot 
@@ -97,6 +95,7 @@ return curdir
 endfunction
 
 "highlight statusline color setting
+function! StatusFun()
 set ls=2
 set statusline=
 set statusline+=%1*\ type:%Y\ 
@@ -110,6 +109,9 @@ hi User2 term=bold ctermfg=Yellow ctermbg=Black
 hi User3 term=bold ctermfg=Black ctermbg=Yellow
 hi User4 term=bold ctermfg=Yellow ctermbg=black
 hi User5 term=bold ctermfg=Black ctermbg=Yellow
+endfunction
+
+call StatusFun()
 
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
@@ -306,8 +308,20 @@ nmap <leader>acpd :AcpDisable <cr>
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
 " when enter the bash buf disable the acp function
-autocmd BufEnter bash* :AcpDisable
-autocmd BufLeave bash* :AcpEnable
+autocmd BufEnter bash* :call Fun1()
+autocmd BufLeave bash* :call Fun2()
+
+function! Fun1()
+AcpDisable
+colo summerfruit256
+call StatusFun()
+endfunction
+
+function! Fun2()
+AcpEnable
+colo simple-dark
+call StatusFun()
+endfunction
 
 " Save/load session function
 let g:session_autoload = 1
