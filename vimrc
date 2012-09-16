@@ -141,6 +141,7 @@ nmap <leader>te :tabedit
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
+map <F6> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
 
 " Favorite filetype
 set ffs=unix,dos,mac
@@ -212,6 +213,8 @@ Bundle 'calendar.vim--Matsumoto'
 Bundle 'OmniCppComplete'
 Bundle 'Align'
 Bundle 'renamer.vim'
+Bundle 'cscope_macros.vim'
+"Bundle 'autoload_cscope.vim'
 
 "color
 Bundle 'simple-dark'
