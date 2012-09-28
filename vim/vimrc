@@ -9,10 +9,12 @@ set t_Co=256
 set background=dark
 
 "colo ron
-colo simple-dark
+"colo simple-dark
 "colo vividchalk 
 "colo inkpot 
 "colo summerfruit256
+"colo gummybears
+colo peaksea
 
 "set the line number 
 set nu
@@ -223,6 +225,9 @@ Bundle 'simple-dark'
 Bundle 'tpope/vim-vividchalk.git'
 Bundle 'summerfruit256.vim'
 Bundle 'inkpot'
+Bundle 'Gummybears'
+Bundle 'peaksea'
+
 "
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
@@ -322,7 +327,7 @@ endfunction
 
 function! Fun2()
 AcpEnable
-colo simple-dark
+colo peaksea
 call StatusFun()
 endfunction
 
