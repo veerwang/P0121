@@ -6,15 +6,16 @@
 set t_Co=256
 
 "set the backcolor type
-set background=dark
+set background=light
 
 "colo ron
-"colo darkburn 
-"colo wargrey
-colo simple-dark
-"colo vividchalk 
-"colo inkpot 
+"colo simple-dark
+"colo vividchalk
+"colo inkpot
 "colo summerfruit256
+colo peaksea
+"colo simpleRGB
+"colo tshell
 
 "set the line number 
 set nu
@@ -97,6 +98,7 @@ return curdir
 endfunction
 
 "highlight statusline color setting
+function! StatusFun()
 set ls=2
 set statusline=
 set statusline+=%1*\ type:%Y\ 
@@ -110,6 +112,9 @@ hi User2 term=bold ctermfg=Yellow ctermbg=Black
 hi User3 term=bold ctermfg=Black ctermbg=Yellow
 hi User4 term=bold ctermfg=Yellow ctermbg=black
 hi User5 term=bold ctermfg=Black ctermbg=Yellow
+endfunction
+
+call StatusFun()
 
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
@@ -141,6 +146,7 @@ nmap <leader>te :tabedit
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
+map <F6> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
 
 " Favorite filetype
 set ffs=unix,dos,mac
@@ -212,12 +218,16 @@ Bundle 'calendar.vim--Matsumoto'
 Bundle 'OmniCppComplete'
 Bundle 'Align'
 Bundle 'renamer.vim'
+Bundle 'cscope_macros.vim'
+"Bundle 'autoload_cscope.vim'
 
 "color
 Bundle 'simple-dark'
 Bundle 'tpope/vim-vividchalk.git'
 Bundle 'summerfruit256.vim'
 Bundle 'inkpot'
+Bundle 'peaksea'
+Bundle 'simpleRGB'
 "
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
@@ -258,7 +268,10 @@ nmap <leader>ree :Ren <cr>
 nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
 
 "browse current directory
-let g:netrw_winsize = 30
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
+
 nmap <silent> <leader>fe :Sexplore!<cr>
 
 set tabline=%!MyTabLine()
@@ -306,8 +319,21 @@ nmap <leader>acpd :AcpDisable <cr>
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
 " when enter the bash buf disable the acp function
-autocmd BufEnter bash* :AcpDisable
-autocmd BufLeave bash* :AcpEnable
+autocmd BufEnter bash* :call Fun1()
+autocmd BufLeave bash* :call Fun2()
+
+function! Fun1()
+AcpDisable
+"colo summerfruit256
+call StatusFun()
+endfunction
+
+function! Fun2()
+AcpEnable
+"colo simple-dark
+"colo leaksea 
+call StatusFun()
+endfunction
 
 " Save/load session function
 let g:session_autoload = 1
