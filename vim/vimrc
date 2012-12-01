@@ -6,7 +6,7 @@
 set t_Co=256
 
 "set the backcolor type
-set background=light
+set background=dark
 
 "colo ron
 "colo simple-dark
@@ -228,6 +228,9 @@ Bundle 'summerfruit256.vim'
 Bundle 'inkpot'
 Bundle 'peaksea'
 Bundle 'simpleRGB'
+Bundle 'Gummybears'
+Bundle 'peaksea'
+
 "
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
@@ -325,6 +328,7 @@ autocmd BufLeave bash* :call Fun2()
 function! Fun1()
 AcpDisable
 "colo summerfruit256
+colo summerfruit256
 call StatusFun()
 endfunction
 
@@ -332,6 +336,7 @@ function! Fun2()
 AcpEnable
 "colo simple-dark
 "colo leaksea 
+colo peaksea
 call StatusFun()
 endfunction
 
