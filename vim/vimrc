@@ -188,6 +188,9 @@ nmap <leader>rb :%!xxd -r<cr>
 " Shell bash plugin
 nmap <leader>sh :ConqueTermTab bash<cr>
 
+" Show undo tree
+nmap <leader>u :GundoShow<CR>
+
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -219,6 +222,7 @@ Bundle 'OmniCppComplete'
 Bundle 'Align'
 Bundle 'renamer.vim'
 Bundle 'cscope_macros.vim'
+Bundle 'sjl/gundo.vim'
 "Bundle 'autoload_cscope.vim'
 
 "color
