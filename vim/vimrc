@@ -230,7 +230,6 @@ Bundle 'netrw.vim'
 Bundle 'browser.vim'
 Bundle 'sjl/gundo.vim'
 "Bundle 'autoload_cscope.vim'
-Bundle 'Command-T'
 
 "color
 Bundle 'simple-dark'
