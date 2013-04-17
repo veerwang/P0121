@@ -10,12 +10,15 @@ set background=dark
 
 "colo ron
 "colo simple-dark
-"colo vividchalk
-"colo inkpot
+"colo vividchalk 
+"colo inkpot 
 "colo summerfruit256
-colo peaksea
-"colo simpleRGB
-"colo tshell
+"colo gummybears
+"colo peaksea
+"colo softbluev2
+"colo lemon256
+colo light2011
+"colo termpot 
 
 "set the line number 
 set nu
@@ -178,6 +181,7 @@ let g:bufExplorerSplitUp = 1
 let g:bufExplorerVertical = 1
 let g:bufExplorerSplitVertSize = 30 
 let g:bufExplorerShowTabBuffer=1
+
 " Let g:bufExplorerSplitBelow=1
 nmap <leader>o :BufExplorer<cr>
 
@@ -222,18 +226,23 @@ Bundle 'OmniCppComplete'
 Bundle 'Align'
 Bundle 'renamer.vim'
 Bundle 'cscope_macros.vim'
+Bundle 'netrw.vim'
+Bundle 'browser.vim'
 Bundle 'sjl/gundo.vim'
 "Bundle 'autoload_cscope.vim'
+Bundle 'Command-T'
 
 "color
 Bundle 'simple-dark'
 Bundle 'tpope/vim-vividchalk.git'
 Bundle 'summerfruit256.vim'
 Bundle 'inkpot'
-Bundle 'peaksea'
-Bundle 'simpleRGB'
 Bundle 'Gummybears'
 Bundle 'peaksea'
+Bundle 'softbluev2'
+Bundle 'lemon256'
+Bundle 'Solarized'
+Bundle 'light2011'
 
 "
 " non github repos
@@ -277,8 +286,7 @@ nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
 "browse current directory
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
-let g:netrw_winsize   = 30
-
+let g:netrw_winsize   = 60
 nmap <silent> <leader>fe :Sexplore!<cr>
 
 set tabline=%!MyTabLine()
@@ -331,16 +339,13 @@ autocmd BufLeave bash* :call Fun2()
 
 function! Fun1()
 AcpDisable
-"colo summerfruit256
 colo summerfruit256
 call StatusFun()
 endfunction
 
 function! Fun2()
 AcpEnable
-"colo simple-dark
-"colo leaksea 
-colo peaksea
+colo light2011
 call StatusFun()
 endfunction
 
