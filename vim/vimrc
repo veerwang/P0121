@@ -136,10 +136,14 @@ nmap <leader>g :edit ~/.gvimrc <cr>
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
 
 "open help documentaion
-nmap <leader>help :tab help<cr>
+nmap <leader>h :tab help<cr>
 
 "show the version information
-nmap <leader>ver :version<cr>
+nmap <leader>v :version<cr>
+
+"close the table
+"Ctrl-v Ctrl-c input the ^C
+nmap  :close<cr>
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
