@@ -144,6 +144,7 @@ nmap <leader>v :version<cr>
 "close the table
 "Ctrl-v Ctrl-c input the ^C
 nmap  :close<cr>
+nmap  :q<cr>
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
@@ -198,6 +199,9 @@ nmap <leader>sh :ConqueTermTab bash<cr>
 
 " Show undo tree
 nmap <leader>u :GundoShow<CR>
+
+" paste the value
+map lp "0p<CR>
 
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -351,6 +355,8 @@ AcpEnable
 colo light2011
 call StatusFun()
 endfunction
+
+let g:wfw = 1
 
 " Save/load session function
 let g:session_autoload = 1
