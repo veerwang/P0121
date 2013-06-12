@@ -201,7 +201,7 @@ nmap <leader>sh :ConqueTermTab bash<cr>
 nmap <leader>u :GundoShow<CR>
 
 " paste the value
-map lp "0p<CR>
+" map P "0p<CR>
 
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -216,11 +216,12 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
-Bundle 'vim-scripts/c.vim.git'
+"Bundle 'vim-scripts/c.vim.git'
 Bundle 'vim-scripts/SeeTab.git'
 Bundle 'vim-scripts/a.vim.git'
 Bundle 'vim-scripts/gtags.vim.git'
 Bundle 'xolox/vim-session.git'
+Bundle 'xolox/vim-misc.git'
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'aldmeris'
@@ -359,7 +360,8 @@ endfunction
 let g:wfw = 1
 
 " Save/load session function
-let g:session_autoload = 1
-let g:session_autosave = 1
+let g:session_directory = '~/.vim/sessions/'
+let g:session_autoload = 'yes'
+let g:session_autosave = 'yes'
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,buffers,help,folds,resize
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
