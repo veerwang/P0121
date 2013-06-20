@@ -144,7 +144,7 @@ nmap <leader>v :version<cr>
 "close the table
 "Ctrl-v Ctrl-c input the ^C
 nmap  :close<cr>
-nmap  :q<cr>
+nmap  :qall<cr>
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
