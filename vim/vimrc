@@ -144,7 +144,7 @@ nmap <leader>v :version<cr>
 "close the table
 "Ctrl-v Ctrl-c input the ^C
 nmap  :close<cr>
-nmap  :q<cr>
+nmap  :qall<cr>
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
@@ -175,6 +175,12 @@ nmap <leader>co :cope<cr>
 nmap <leader>clo :ccl<cr>
 nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
+
+"adjust window width
+nmap <leader><leader>n :vertical res -5 <cr>
+nmap <leader><leader>m :vertical res +5 <cr>
+nmap <leader><leader>p :res -5 <cr>
+nmap <leader><leader>l :res +5 <cr>
 
 " fugitive key map
 nmap <leader>gs :Gstatus<cr>
@@ -216,7 +222,10 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
+
 "Bundle 'vim-scripts/c.vim.git'
+Bundle 'blak3mill3r/c.vim.git'
+
 Bundle 'vim-scripts/SeeTab.git'
 Bundle 'vim-scripts/a.vim.git'
 Bundle 'vim-scripts/gtags.vim.git'
