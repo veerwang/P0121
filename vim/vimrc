@@ -1,8 +1,96 @@
 "                      The file is seted for the edit programme!                               "
 "											       "
-"                                                                            Version:   1.00   "
+"                                                                            Version:   1.01   "
 "											       "
 
+"Hot key define by me
+let mapleader=","
+nmap <leader>study :edit ~/study/study.txt <CR>
+nmap <leader>w :w!<CR>
+
+" plugin manage segment
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+
+"Bundle 'vim-scripts/c.vim.git'
+Bundle 'blak3mill3r/c.vim.git'
+
+Bundle 'vim-scripts/SeeTab.git'
+Bundle 'vim-scripts/a.vim.git'
+Bundle 'vim-scripts/gtags.vim.git'
+Bundle 'xolox/vim-session.git'
+Bundle 'xolox/vim-misc.git'
+Bundle 'vim-scripts/taglist.vim.git'
+Bundle 'vim-scripts/bufexplorer.zip.git'
+Bundle 'aldmeris'
+Bundle 'rygwdn/vim-conque.git'
+Bundle 'echofunc.vim'
+Bundle 'vtreeexplorer'
+Bundle 'vim-scripts/bash-support.vim.git'
+Bundle 'esukram/autocomplpop.vim.git'
+Bundle 'calendar.vim--Matsumoto'
+Bundle 'OmniCppComplete'
+Bundle 'Align'
+Bundle 'renamer.vim'
+Bundle 'cscope_macros.vim'
+Bundle 'netrw.vim'
+Bundle 'browser.vim'
+Bundle 'sjl/gundo.vim'
+"Bundle 'autoload_cscope.vim'
+
+"color
+Bundle 'simple-dark'
+Bundle 'tpope/vim-vividchalk.git'
+Bundle 'summerfruit256.vim'
+Bundle 'inkpot'
+Bundle 'Gummybears'
+Bundle 'peaksea'
+Bundle 'softbluev2'
+Bundle 'lemon256'
+Bundle 'Solarized'
+Bundle 'light2011'
+
+"
+" non github repos
+Bundle 'git://gist.github.com/422503.git'
+Bundle 'git://git.wincent.com/command-t.git'
+"
+" ...
+
+filetype plugin indent on     " required!
+
+nmap <leader>pll :BundleList <cr>
+nmap <leader>pls :BundleSearch <cr>
+nmap <leader>pli :BundleInstall <cr>
+nmap <leader>plu :BundleInstall! <cr>
+nmap <leader>plr :BundleClean <cr>
+
+"
+"  Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache
+" first) for foo
+" :BundleClean(!)      - confirm(or auto-approve)
+" removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not
+" allowed..
+"
+
+" color scheme manage segment
 set t_Co=256
 
 "set the backcolor type
@@ -124,11 +212,6 @@ let Tlist_File_Fold_Auto_Close=1
 map to :TlistToggle<CR>
 map time :!date<CR>
 
-"Hot key define by me
-let mapleader=","
-nmap <leader>study :edit ~/study/study.txt <CR>
-nmap <leader>w :w!<CR>
-
 "Edit my confirature file
 nmap <leader>c :edit ~/.vimrc <cr>
 autocmd! bufwritepost .vimrc source ~/.vimrc
@@ -208,87 +291,6 @@ nmap <leader>u :GundoShow<CR>
 
 " paste the value
 " map P "0p<CR>
-
-filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-
-"Bundle 'vim-scripts/c.vim.git'
-Bundle 'blak3mill3r/c.vim.git'
-
-Bundle 'vim-scripts/SeeTab.git'
-Bundle 'vim-scripts/a.vim.git'
-Bundle 'vim-scripts/gtags.vim.git'
-Bundle 'xolox/vim-session.git'
-Bundle 'xolox/vim-misc.git'
-Bundle 'vim-scripts/taglist.vim.git'
-Bundle 'vim-scripts/bufexplorer.zip.git'
-Bundle 'aldmeris'
-Bundle 'rygwdn/vim-conque.git'
-Bundle 'echofunc.vim'
-Bundle 'vtreeexplorer'
-Bundle 'vim-scripts/bash-support.vim.git'
-Bundle 'esukram/autocomplpop.vim.git'
-Bundle 'calendar.vim--Matsumoto'
-Bundle 'OmniCppComplete'
-Bundle 'Align'
-Bundle 'renamer.vim'
-Bundle 'cscope_macros.vim'
-Bundle 'netrw.vim'
-Bundle 'browser.vim'
-Bundle 'sjl/gundo.vim'
-"Bundle 'autoload_cscope.vim'
-
-"color
-Bundle 'simple-dark'
-Bundle 'tpope/vim-vividchalk.git'
-Bundle 'summerfruit256.vim'
-Bundle 'inkpot'
-Bundle 'Gummybears'
-Bundle 'peaksea'
-Bundle 'softbluev2'
-Bundle 'lemon256'
-Bundle 'Solarized'
-Bundle 'light2011'
-
-"
-" non github repos
-Bundle 'git://gist.github.com/422503.git'
-Bundle 'git://git.wincent.com/command-t.git'
-"
-" ...
-
-filetype plugin indent on     " required!
-
-nmap <leader>pll :BundleList <cr>
-nmap <leader>pls :BundleSearch <cr>
-nmap <leader>pli :BundleInstall <cr>
-nmap <leader>plu :BundleInstall! <cr>
-nmap <leader>plr :BundleClean <cr>
-
-"
-"  Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache
-" first) for foo
-" :BundleClean(!)      - confirm(or auto-approve)
-" removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not
-" allowed..
-"
 
 " for Align plugin
 let g:BASH_MapLeader  = ','
