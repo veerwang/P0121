@@ -3,6 +3,11 @@
 "                                                                            Version:   1.01   "
 "											       "
 
+"Hot key define by me
+let mapleader=","
+nmap <leader>study :edit ~/study/study.txt <CR>
+nmap <leader>w :w!<CR>
+
 " plugin manage segment
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -206,11 +211,6 @@ let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
 map to :TlistToggle<CR>
 map time :!date<CR>
-
-"Hot key define by me
-let mapleader=","
-nmap <leader>study :edit ~/study/study.txt <CR>
-nmap <leader>w :w!<CR>
 
 "Edit my confirature file
 nmap <leader>c :edit ~/.vimrc <cr>
