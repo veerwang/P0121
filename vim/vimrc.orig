@@ -109,8 +109,11 @@ colo simple-dark
 "colo softbluev2
 "colo lemon256
 "colo light2011
-"colo termpot 
+<<<<<<< HEAD
 colo lucius
+=======
+"colo termpot 
+>>>>>>> b9eafe2196f23b04ec9ef132ff92eeb33975644e
 
 "set the line number 
 set nu
