@@ -29,8 +29,10 @@ Bundle 'blak3mill3r/c.vim.git'
 Bundle 'vim-scripts/SeeTab.git'
 Bundle 'vim-scripts/a.vim.git'
 Bundle 'vim-scripts/gtags.vim.git'
+
 Bundle 'xolox/vim-session.git'
 Bundle 'xolox/vim-misc.git'
+
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'aldmeris'
@@ -60,6 +62,7 @@ Bundle 'softbluev2'
 Bundle 'lemon256'
 Bundle 'Solarized'
 Bundle 'light2011'
+Bundle 'Lucius'
 
 "
 " non github repos
@@ -94,7 +97,7 @@ nmap <leader>plr :BundleClean <cr>
 set t_Co=256
 
 "set the backcolor type
-set background=dark
+set background=light
 
 "colo ron
 "colo simple-dark
@@ -105,8 +108,8 @@ set background=dark
 "colo peaksea
 "colo softbluev2
 "colo lemon256
-colo light2011
-"colo termpot 
+"colo light2011
+colo lucius
 
 "set the line number 
 set nu
@@ -245,7 +248,7 @@ nmap <leader>fd :se ff=dos<cr>
 nmap <leader>fu :se ff=unix<cr>
 
 " VSTreeExplore used variables 
-nmap <leader>vsp :VSTreeExplore<cr>
+nmap <leader>ve :VSTreeExplore<cr>
 let g:treeExplDirSort=1
 let g:treeExplWinSize=25
 let g:treeExplVertical=1
@@ -358,13 +361,13 @@ autocmd BufLeave bash* :call Fun2()
 
 function! Fun1()
 AcpDisable
-colo summerfruit256
+colo lucius
 call StatusFun()
 endfunction
 
 function! Fun2()
 AcpEnable
-colo light2011
+colo lucius
 call StatusFun()
 endfunction
 
