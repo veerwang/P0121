@@ -100,7 +100,7 @@ set t_Co=256
 set background=light
 
 "colo ron
-colo simple-dark
+"colo simple-dark
 "colo vividchalk 
 "colo inkpot 
 "colo summerfruit256
@@ -108,9 +108,8 @@ colo simple-dark
 "colo peaksea
 "colo softbluev2
 "colo lemon256
-"colo light2011
-"colo termpot 
-colo lucius
+colo light2011
+"colo lucius
 
 "set the line number 
 set nu
@@ -237,6 +236,7 @@ nmap <leader>v :version<cr>
 "Ctrl-v Ctrl-c input the ^C
 nmap  :close<cr>
 nmap  :qall<cr>
+nmap  /
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
