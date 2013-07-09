@@ -44,11 +44,13 @@ Bundle 'esukram/autocomplpop.vim.git'
 Bundle 'calendar.vim--Matsumoto'
 Bundle 'OmniCppComplete'
 Bundle 'Align'
-Bundle 'renamer.vim'
+"Bundle 'renoamer.vim'
 Bundle 'cscope_macros.vim'
 Bundle 'netrw.vim'
 Bundle 'browser.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'terryma/vim-multiple-cursors'
+
 "Bundle 'autoload_cscope.vim'
 
 "color
@@ -236,7 +238,6 @@ nmap <leader>v :version<cr>
 "Ctrl-v Ctrl-c input the ^C
 nmap  :close<cr>
 nmap  :qall<cr>
-nmap  /
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
@@ -358,6 +359,12 @@ nmap w :w <cr>
 " for ACP plugin
 nmap <leader>acpe :AcpEnable <cr>
 nmap <leader>acpd :AcpDisable <cr>
+
+" Default mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
