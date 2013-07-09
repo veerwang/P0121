@@ -52,6 +52,7 @@ Bundle 'netrw.vim'
 Bundle 'browser.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Shell.vim'
 "Bundle 'autoload_cscope.vim'
 
 "color
@@ -217,8 +218,9 @@ let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
 let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
-let Tlist_Show_Menu=1
+let Tlist_Show_Menu=0
 let Tlist_WinWidth=40
+let Tlist_Auto_Open=1
 
 map to :TlistToggle<CR>
 map time :!date<CR>
@@ -234,6 +236,9 @@ nmap <leader>h :tab help<cr>
 
 "show the version information
 nmap <leader>v :version<cr>
+
+"run shell command and show the result on screen
+nmap <leader>s :r!
 
 "close the table
 "Ctrl-v Ctrl-c input the ^C
@@ -258,10 +263,10 @@ nmap <leader>fu :se ff=unix<cr>
 " VSTreeExplore used variables 
 nmap <leader>ve :VSTreeExplore<cr>
 let g:treeExplDirSort=1
-let g:treeExplWinSize=25
+let g:treeExplWinSize=30
 let g:treeExplVertical=1
 let g:treeExplNoList=1
-let g:treeExplmodifiable=1
+let g:treeExplmodifiable=0
 let g:treeExplIndent=2
 
 " Quickfix window
