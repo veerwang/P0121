@@ -37,6 +37,8 @@ Bundle 'xolox/vim-session.git'
 Bundle 'xolox/vim-misc.git'
 
 Bundle 'vim-scripts/taglist.vim.git'
+"Bundle 'taglist-plus'
+
 Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'aldmeris'
 Bundle 'rygwdn/vim-conque.git'
@@ -221,6 +223,12 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_Show_Menu=0
 let Tlist_WinWidth=40
 let Tlist_Auto_Open=1
+let Tlist_Inc_Winwidth=0
+let Tlist_Compact_Format=1
+let Tlist_Display_Tag_Scope=0
+let Tlist_GainFocus_On_ToggleOpen = 0
+let Tlist_Display_Prototype=0
+let Tlist_Close_On_Select=1
 
 map to :TlistToggle<CR>
 map time :!date<CR>
@@ -236,9 +244,6 @@ nmap <leader>h :tab help<cr>
 
 "show the version information
 nmap <leader>v :version<cr>
-
-"run shell command and show the result on screen
-nmap <leader>s :r!
 
 "close the table
 "Ctrl-v Ctrl-c input the ^C
@@ -301,6 +306,10 @@ nmap <leader>rb :%!xxd -r<cr>
 
 " Shell bash plugin
 nmap <leader>sh :ConqueTermTab bash<cr>
+
+"run shell command and show the result on screen
+nmap <leader>s :r!
+let g:PROMPT="$"
 
 " Show undo tree
 nmap <leader>u :GundoShow<CR>
