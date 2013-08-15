@@ -57,6 +57,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
 Bundle 'Tagbar'
+Bundle 'lookupfile'
+Bundle 'genutils'
 "Bundle 'autoload_cscope.vim'
 
 "color
@@ -237,7 +239,8 @@ map to :TlistToggle<CR>
 map time :!date<CR>
 
 "tagbar
-nmap <Leader>tb :TagbarToggle<CR>
+"nmap <Leader>tb :TagbarToggle<CR>
+map tb :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:tagbar_width=30
 autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
@@ -266,8 +269,8 @@ nmap <leader>tc :tabclose<cr>
 nmap <leader>te :tabedit
 
 map <F4> :!ctags -R .<cr>
-map <F5> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
-map <F6> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
+map <F7> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
+map <F6> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
 
 " Favorite filetype
 set ffs=unix,dos,mac
@@ -282,6 +285,16 @@ let g:treeExplVertical=1
 let g:treeExplNoList=1
 let g:treeExplmodifiable=0
 let g:treeExplIndent=2
+
+" Lookupfile configrature
+let g:LookupFile_MinPatLength = 2               "最少输入2个字符才开始查找
+let g:LookupFile_PreserveLastPattern = 0        "不保存上次查找的字符串
+let g:LookupFile_PreservePatternHistory = 0     "保存查找历史
+let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项目
+let g:LookupFile_AllowNewFiles = 0              "不允许创建不存在的文件
+
+"map LUWalk为,lw
+nmap <silent> <leader>lw :LUWalk<cr>
 
 " Quickfix window
 nmap <leader>co :cope<cr>
