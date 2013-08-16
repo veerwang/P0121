@@ -57,8 +57,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
 Bundle 'Tagbar'
-Bundle 'lookupfile'
-Bundle 'genutils'
+Bundle 'ctrlp.vim'
 "Bundle 'autoload_cscope.vim'
 
 "color
@@ -268,6 +267,16 @@ nmap <leader>tm :tabmove<cr>
 nmap <leader>tc :tabclose<cr>
 nmap <leader>te :tabedit
 
+" Ctrrlp Configrature
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=20
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+let g:ctrlp_map = '<c-p>'
+
 map <F4> :!ctags -R .<cr>
 map <F7> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
 map <F6> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
@@ -285,16 +294,6 @@ let g:treeExplVertical=1
 let g:treeExplNoList=1
 let g:treeExplmodifiable=0
 let g:treeExplIndent=2
-
-" Lookupfile configrature
-let g:LookupFile_MinPatLength = 2               "最少输入2个字符才开始查找
-let g:LookupFile_PreserveLastPattern = 0        "不保存上次查找的字符串
-let g:LookupFile_PreservePatternHistory = 0     "保存查找历史
-let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项目
-let g:LookupFile_AllowNewFiles = 0              "不允许创建不存在的文件
-
-"map LUWalk为,lw
-nmap <silent> <leader>lw :LUWalk<cr>
 
 " Quickfix window
 nmap <leader>co :cope<cr>
@@ -327,6 +326,8 @@ nmap <leader>eb :%!xxd<cr>
 nmap <leader>rb :%!xxd -r<cr>
 
 " Shell bash plugin
+let g:ConqueTerm_CodePage=0
+let g:ConqueTerm_FastMode=0
 nmap <leader>sh :ConqueTermTab bash<cr>
 
 "run shell command and show the result on screen
