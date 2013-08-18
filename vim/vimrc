@@ -60,6 +60,7 @@ Bundle 'Tagbar'
 Bundle 'ctrlp.vim'
 Bundle 'neocomplcache'
 Bundle 'snipMate'
+Bundle 'Syntastic'
 "Bundle 'autoload_cscope.vim'
 
 "color
