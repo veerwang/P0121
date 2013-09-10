@@ -59,7 +59,8 @@ Bundle 'pythoncomplete'
 Bundle 'Tagbar'
 Bundle 'ctrlp.vim'
 Bundle 'neocomplcache'
-Bundle 'snipMate'
+"Bundle 'snipMate'
+Bundle 'xptemplate'
 Bundle 'Syntastic'
 "Bundle 'autoload_cscope.vim'
 
@@ -240,7 +241,11 @@ let Tlist_Close_On_Select=0
 map to :TlistToggle<CR>
 map time :!date<CR>
 
+
 " Enable/Disable SyntasticToggleMode
+let g:syntastic_mode_map = { 'mode': 'passive',
+		       \ 'active_filetypes': [],
+		       \ 'passive_filetypes': [] }
 map syn :SyntasticToggleMode<CR>
 
 "tagbar
