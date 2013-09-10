@@ -62,6 +62,10 @@ Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
 Bundle 'Syntastic'
+
+Bundle 'Lokaltog/vim-powerline'
+
+
 "Bundle 'autoload_cscope.vim'
 
 "color
@@ -419,6 +423,10 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 let $MYEMAIL="kevin.wang2004@hotmail.com"
+
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_stl_path_style = 'full'
+let g:Powerline_dividers_override = ['>>', '>', '<<', '<']
 
 " when enter the bash buf disable the acp function
 autocmd BufEnter bash* :call Fun1()
