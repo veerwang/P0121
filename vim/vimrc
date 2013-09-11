@@ -36,9 +36,6 @@ Bundle 'vim-scripts/gtags.vim.git'
 Bundle 'xolox/vim-session.git'
 Bundle 'xolox/vim-misc.git'
 
-Bundle 'vim-scripts/taglist.vim.git'
-"Bundle 'taglist-plus'
-
 Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'aldmeris'
 Bundle 'rygwdn/vim-conque.git'
@@ -62,9 +59,7 @@ Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
 Bundle 'Syntastic'
-
 Bundle 'Lokaltog/vim-powerline'
-
 
 "Bundle 'autoload_cscope.vim'
 
@@ -84,7 +79,7 @@ Bundle 'Lucius'
 "
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
-Bundle 'git://git.wincent.com/command-t.git'
+
 "
 " ...
 
@@ -227,24 +222,7 @@ endfunction
 
 call StatusFun()
 
-"taglist plugin configrature
-let Tlist_Use_Right_Window=1
-let Tlist_File_Fold_Auto_Close=1
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Show_Menu=0
-let Tlist_WinWidth=40
-let Tlist_Auto_Open=0
-let Tlist_Inc_Winwidth=0
-let Tlist_Compact_Format=1
-let Tlist_Display_Tag_Scope=0
-let Tlist_GainFocus_On_ToggleOpen = 0
-let Tlist_Display_Prototype=0
-let Tlist_Close_On_Select=0
-
-map to :TlistToggle<CR>
 map time :!date<CR>
-
 
 " Enable/Disable SyntasticToggleMode
 let g:syntastic_mode_map = { 'mode': 'passive',
@@ -426,7 +404,6 @@ let $MYEMAIL="kevin.wang2004@hotmail.com"
 
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'full'
-let g:Powerline_dividers_override = ['>>', '>', '<<', '<']
 
 " when enter the bash buf disable the acp function
 autocmd BufEnter bash* :call Fun1()
