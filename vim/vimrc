@@ -26,8 +26,8 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
 
-"Bundle 'vim-scripts/c.vim.git'
-Bundle 'blak3mill3r/c.vim.git'
+Bundle 'vim-scripts/c.vim.git'
+"Bundle 'blak3mill3r/c.vim.git'
 
 Bundle 'vim-scripts/SeeTab.git'
 Bundle 'vim-scripts/a.vim.git'
