@@ -38,7 +38,9 @@ Bundle 'xolox/vim-misc.git'
 
 Bundle 'vim-scripts/bufexplorer.zip.git'
 Bundle 'aldmeris'
-Bundle 'rygwdn/vim-conque.git'
+"Bundle 'rygwdn/vim-conque.git'
+Bundle 'rosenfeld/conque-term'
+
 Bundle 'echofunc.vim'
 Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
