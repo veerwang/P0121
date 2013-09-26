@@ -62,7 +62,9 @@ Bundle 'neocomplcache'
 Bundle 'xptemplate'
 Bundle 'Syntastic'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/nerdtree.git'
+"Bundle 'scrooloose/nerdtree.git'
+Bundle 'The-NERD-tree'
+Bundle 'EasyMotion'
 
 "Bundle 'autoload_cscope.vim'
 
