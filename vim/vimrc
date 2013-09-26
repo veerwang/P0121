@@ -62,6 +62,7 @@ Bundle 'neocomplcache'
 Bundle 'xptemplate'
 Bundle 'Syntastic'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree.git'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -422,6 +423,12 @@ AcpEnable
 "colo lucius
 call StatusFun()
 endfunction
+
+" NERDTree configration
+autocmd VimEnter * NERDTree
+nmap <leader>ne :NERDTreeToggle<cr>
+let NERDTreeWinPos="left"
+let NERDTreeShowBookmarks=1
 
 let g:wfw = 1
 
