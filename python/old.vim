@@ -1,20 +1,36 @@
-"
-" The script used to make my program
-"
-"			V1.00
-"
-"
-"
-if !has("python")
-	echo "Error:Required vim compiled with Python"
-	finish
-endif
 
-function! DoMyJob()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function! Kevin_Python_Title()
 python << EOF
 import vim
-for i in range(1,5):
-	print i
-vim.current.buffer.append(10*'*')
+import time
+
+cw = vim.current.window
+linelen =  len(cw.buffer)
+
+
+cw.buffer[0] = '"""""""""""""""""""""""""""""""""""""""""""""'
+cw.buffer[1] = '"  		       Vim Script Title      '
+cw.buffer[2] = '"  	 	       Author:    Kevin      '
+cw.buffer[3] = '"  		      Version:    V1.0       '
+cw.buffer[4] = '"  		         Date:   ' + time.strftime('%Y-%m-%d',time.localtime(time.time()))
+cw.buffer[5] = '"  		         Time:   ' + time.strftime('%H:%M:%S',time.localtime(time.time()))
+cw.buffer[6] = cw.buffer[0]
+
 EOF
 endfunction
