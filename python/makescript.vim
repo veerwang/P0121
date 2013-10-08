@@ -94,7 +94,6 @@ content = content[:0] + '"        		Author: Kevin                 \n' + content[
 content = content[:0] + '"        Vim Script Create for Test!                 \n' + content[0:] 
 content = content[:0] + '"""""""""""""""""""""""""""""""""""""""""""""""""""""\n' + content[0:] 
 
-
 f = open(vim.eval("s:filename"),'w')
 f.write(content)
 f.close()
@@ -102,8 +101,32 @@ EOF
 execute ":e!"
 endfunction
 
+function! Global_Fun_MakeTar(dir)
+let s:olddir  = getcwd() 
+let s:tardir  = "/home/kevin/armworkcopy/"
+let s:tarfile = dir 
+let s:desfile = s:tarfile . ".tar.bz2"
 
-map test :call Global_Fun_AddTitle()<CR>
+python << EOF
+import tarfile 
+import vim
+import os
+
+os.chdir(vim.eval("s:tardir"))
+
+IsExists = os.path.exists(vim.eval("s:tarfile"))
+if not IsExists:
+	print "error: destination directory not found"
+else:
+	tar = tarfile.open(vim.eval("s:desfile"),'w|bz2')
+	tar.add(vim.eval("s:tarfile"));
+	tar.close()
+	os.chdir(vim.eval("s:olddir"))
+EOF
+endfunction
+
+map tar :call Global_Fun_MakeTar("Ruby")<CR>
+map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
 map gh :call Global_Fun_Change2WorkDir()<CR>
 map <F2> :call Global_Fun_MakeProject()<CR>
