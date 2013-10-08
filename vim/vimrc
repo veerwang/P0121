@@ -248,6 +248,9 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 nmap <leader>g :edit ~/.gvimrc <cr>
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
 
+"Edit my vim script
+nmap <leader>mc :edit ~/workcopy/P0121/python/makescript.vim <cr>
+
 "open help documentaion
 nmap <leader>h :tab help<cr>
 
