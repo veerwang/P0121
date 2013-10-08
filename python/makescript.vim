@@ -3,13 +3,6 @@
 "        		Author: Kevin                 
 "        		V 1.00                        
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" The script used to make my program
-"
-"			V1.00
-"
-"
-"
 
 if !has("python")
 	echo "Error:Required vim compiled with Python"

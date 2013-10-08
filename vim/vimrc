@@ -8,8 +8,6 @@ let mapleader=","
 nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
 
-map gh :call Global_Fun_Change2WorkDir()<CR>
-
 "just show content in single line
 set nowrap
 
@@ -431,7 +429,7 @@ endfunction
 " NERDTree configration
 "autocmd VimEnter * NERDTree
 "nmap <leader>ne :NERDTreeToggle<cr>
-map <F3> :NERDTreeToggle<cr>
+map <F4> :NERDTreeToggle<cr>
 let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
