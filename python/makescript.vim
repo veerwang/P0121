@@ -5,16 +5,16 @@
 "
 "
 "
+
 if !has("python")
 	echo "Error:Required vim compiled with Python"
 	finish
 endif
 
-function! DoMyJob()
+function! Global_Fun_Change2WorkDir()
 python << EOF
-import vim
-for i in range(1,5):
-	print i
-vim.current.buffer.append(10*'*')
+import os
+os.chdir("/home/kevin/armworkcopy/Ruby/")
 EOF
+execute ":edit" . " README" 
 endfunction
