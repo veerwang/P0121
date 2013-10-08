@@ -1,3 +1,8 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+"        Vim Script Create for Test!                 
+"        		Author: Kevin                 
+"        		V 1.00                        
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " The script used to make my program
 "
@@ -58,13 +63,47 @@ if not IsExists:
 	f.close()
 else:
 	f = open(vim.eval("s:ProjectFileName"),'r')
-	print f.readline()
-	print f.readline()
+	content = f.read()
+	f.close()
+
+	content = content[:0] + "hello the world\n" + content[0:] 
+
+	f = open(vim.eval("s:ProjectFileName"),'w')
+	f.write(content)
 	f.close()
 EOF
 endfunction
 
-map test :call Global_Fun_CreateProjectFile()<CR>
+
+function! Global_Fun_AddTitle()
+
+let s:filename = expand('%:p')
+
+python << EOF
+import os
+import vim
+import sys
+
+f = open(vim.eval("s:filename"),'r')
+content = f.read()
+f.close()
+
+content = content[:0] + '"""""""""""""""""""""""""""""""""""""""""""""""""""""\n' + content[0:] 
+content = content[:0] + '"        		 V1.00                        \n' + content[0:] 
+content = content[:0] + '"        		Author: Kevin                 \n' + content[0:] 
+content = content[:0] + '"        Vim Script Create for Test!                 \n' + content[0:] 
+content = content[:0] + '"""""""""""""""""""""""""""""""""""""""""""""""""""""\n' + content[0:] 
+
+
+f = open(vim.eval("s:filename"),'w')
+f.write(content)
+f.close()
+EOF
+execute ":e!"
+endfunction
+
+
+map test :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
 map gh :call Global_Fun_Change2WorkDir()<CR>
 map <F2> :call Global_Fun_MakeProject()<CR>
