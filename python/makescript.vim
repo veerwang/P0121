@@ -15,7 +15,10 @@ let s:ProjectName="/home/kevin/armworkcopy/Ruby/"
 function! Global_Fun_CopyScripts()
 python << EOF
 import os
+import logging
+logging.info("Start Copying!")
 os.system("cp ./makescript.vim /home/kevin/.vim/plugin/")
+logging.info("End Copying!")
 EOF
 endfunction
 
@@ -94,10 +97,10 @@ EOF
 execute ":e!"
 endfunction
 
-function! Global_Fun_MakeTar(dir)
+function! Global_Fun_MakeTar()
 let s:olddir  = getcwd() 
 let s:tardir  = "/home/kevin/armworkcopy/"
-let s:tarfile = dir 
+let s:tarfile = "Ruby"
 let s:desfile = s:tarfile . ".tar.bz2"
 
 python << EOF
@@ -118,7 +121,27 @@ else:
 EOF
 endfunction
 
-map tar :call Global_Fun_MakeTar("Ruby")<CR>
+function! Global_Fun_Test()
+python << EOF
+import vim
+import os
+import time
+
+#print time.strftime('%H:%M:%S',time.localtime(time.time()))
+
+start = time.time()
+print time.strftime('%H:%M:%S',time.localtime(start))
+
+time.sleep(5)
+
+end   = time.time()
+print time.strftime('%H:%M:%S',time.localtime(end))
+
+EOF
+endfunction
+
+map test :call Global_Fun_Test()<CR>
+map tar :call Global_Fun_MakeTar()<CR>
 map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
 map gh :call Global_Fun_Change2WorkDir()<CR>
