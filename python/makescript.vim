@@ -97,10 +97,10 @@ EOF
 execute ":e!"
 endfunction
 
-function! Global_Fun_MakeTar()
+function! Global_Fun_MakeTar(project)
 let s:olddir  = getcwd() 
 let s:tardir  = "/home/kevin/armworkcopy/"
-let s:tarfile = "Ruby"
+let s:tarfile = a:project 
 let s:desfile = s:tarfile . ".tar.bz2"
 
 python << EOF
@@ -163,7 +163,7 @@ map nnd :call Global_Fun_Network("normal","down")<CR>
 map nnu :call Global_Fun_Network("normal","up")<CR>
 
 map test :call Global_Fun_Test()<CR>
-map tar :call Global_Fun_MakeTar()<CR>
+map tar :call Global_Fun_MakeTar("Ruby")<CR>
 map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
 map gh :call Global_Fun_Change2WorkDir()<CR>
