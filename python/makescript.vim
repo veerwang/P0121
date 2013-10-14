@@ -140,24 +140,27 @@ print time.strftime('%H:%M:%S',time.localtime(end))
 EOF
 endfunction
 
-
-function! Global_Fun_Network_Up()
+function! Global_Fun_Network(interface,status)
 python << EOF
 import os
-os.system("sudo ifup /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络");
+import vim
+
+if vim.eval("a:interface")  == "arm":
+	if vim.eval("a:status")  == "up":
+		os.system("sudo ifup /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络")
+	elif vim.eval("a:status")  == "down":
+		os.system("sudo ifdown /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络")
+elif vim.eval("a:interface")  == "normal":
+	if vim.eval("a:status")  == "up":
+		os.system("sudo ifup /etc/sysconfig/network-scripts/ifcfg-eth0")
+	elif vim.eval("a:status")  == "down":
+		os.system("sudo ifdown /etc/sysconfig/network-scripts/ifcfg-eth0")
 EOF
 endfunction
-map anu :call Global_Fun_Network_Up()<CR>
-
-
-function! Global_Fun_Network_Down()
-python << EOF
-import os
-os.system("sudo ifdown /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络");
-EOF
-endfunction
-map and :call Global_Fun_Network_Down()<CR>
-
+map and :call Global_Fun_Network("arm","down")<CR>
+map anu :call Global_Fun_Network("arm","up")<CR>
+map nnd :call Global_Fun_Network("normal","down")<CR>
+map nnu :call Global_Fun_Network("normal","up")<CR>
 
 map test :call Global_Fun_Test()<CR>
 map tar :call Global_Fun_MakeTar()<CR>
