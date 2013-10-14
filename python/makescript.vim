@@ -140,6 +140,25 @@ print time.strftime('%H:%M:%S',time.localtime(end))
 EOF
 endfunction
 
+
+function! Global_Fun_Network_Up()
+python << EOF
+import os
+os.system("sudo ifup /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络");
+EOF
+endfunction
+map anu :call Global_Fun_Network_Up()<CR>
+
+
+function! Global_Fun_Network_Down()
+python << EOF
+import os
+os.system("sudo ifdown /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络");
+EOF
+endfunction
+map and :call Global_Fun_Network_Down()<CR>
+
+
 map test :call Global_Fun_Test()<CR>
 map tar :call Global_Fun_MakeTar()<CR>
 map tt :call Global_Fun_AddTitle()<CR>
