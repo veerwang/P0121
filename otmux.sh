@@ -5,7 +5,7 @@
 # 
 #         USAGE: ./otmux.sh 
 # 
-#   DESCRIPTION: 
+#   DESCRIPTION: I used this script to launtch the tmux as my ways
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
