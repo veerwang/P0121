@@ -22,11 +22,11 @@ logging.info("End Copying!")
 EOF
 endfunction
 
-function! Global_Fun_Change2WorkDir()
+function! Global_Fun_Change2WorkDir(projectpath)
 python << EOF
 import os
 import vim
-os.chdir(vim.eval("s:ProjectName"))
+os.chdir(vim.eval("a:projectpath"))
 EOF
 execute ":edit" . " README" 
 endfunction
@@ -97,10 +97,10 @@ EOF
 execute ":e!"
 endfunction
 
-function! Global_Fun_MakeTar()
+function! Global_Fun_MakeTar(project)
 let s:olddir  = getcwd() 
 let s:tardir  = "/home/kevin/armworkcopy/"
-let s:tarfile = "Ruby"
+let s:tarfile = a:project 
 let s:desfile = s:tarfile . ".tar.bz2"
 
 python << EOF
@@ -157,15 +157,17 @@ elif vim.eval("a:interface")  == "normal":
 		os.system("sudo ifdown /etc/sysconfig/network-scripts/ifcfg-eth0")
 EOF
 endfunction
+
 map and :call Global_Fun_Network("arm","down")<CR>
 map anu :call Global_Fun_Network("arm","up")<CR>
 map nnd :call Global_Fun_Network("normal","down")<CR>
 map nnu :call Global_Fun_Network("normal","up")<CR>
 
 map test :call Global_Fun_Test()<CR>
-map tar :call Global_Fun_MakeTar()<CR>
+map tar :call Global_Fun_MakeTar("Ruby")<CR>
 map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
-map gh :call Global_Fun_Change2WorkDir()<CR>
-map <F2> :call Global_Fun_MakeProject()<CR>
+map mp2 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/Ruby")<CR>
+map mp1 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/git_Smart/Smart/")<CR>
+map <F2> :call Global_Fun_MakeProject(<CR>
 map <F3> :call Global_Fun_MakeCleanProject()<CR>
