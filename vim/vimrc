@@ -225,7 +225,7 @@ hi User4 term=bold ctermfg=Yellow ctermbg=black
 hi User5 term=bold ctermfg=Black ctermbg=Yellow
 endfunction
 
-call StatusFun()
+"call StatusFun()
 
 map time :!date<CR>
 
@@ -412,22 +412,6 @@ let $MYEMAIL="kevin.wang2004@hotmail.com"
 
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_stl_path_style = 'full'
-
-" when enter the bash buf disable the acp function
-autocmd BufEnter bash* :call Fun1()
-autocmd BufLeave bash* :call Fun2()
-
-function! Fun1()
-AcpDisable
-"colo lucius
-call StatusFun()
-endfunction
-
-function! Fun2()
-AcpEnable
-"colo lucius
-call StatusFun()
-endfunction
 
 " NERDTree configration
 "autocmd VimEnter * NERDTree
