@@ -70,7 +70,6 @@ else:
 EOF
 endfunction
 
-
 function! Global_Fun_AddTitle()
 
 let s:filename = expand('%:p')
@@ -107,17 +106,42 @@ python << EOF
 import tarfile 
 import vim
 import os
+import threading
+import time
 
-os.chdir(vim.eval("s:tardir"))
+class AnsyTar(threading.Thread):
+	def __init__(self,olddir,indir,infile,outfile):
+		threading.Thread.__init__(self)
+		self.infile  = infile
+		self.outfile = outfile
+		self.indir   = indir
+		self.olddir  = olddir
+		self.flag    = "f" 
+	def run(self):
+		os.chdir(self.indir)
+		IsExists = os.path.exists(self.infile)
+		if not IsExists:
+			print "error: file need to tar not found"
+		else:
+			tar = tarfile.open(self.outfile,'w|bz2')
+			tar.add(self.infile);
+			tar.close()
+			os.chdir(self.olddir)
+			self.flag = "t"
+			print "tar job finished"
 
-IsExists = os.path.exists(vim.eval("s:tarfile"))
-if not IsExists:
-	print "error: destination directory not found"
-else:
-	tar = tarfile.open(vim.eval("s:desfile"),'w|bz2')
-	tar.add(vim.eval("s:tarfile"));
-	tar.close()
-	os.chdir(vim.eval("s:olddir"))
+	def getflag(self):
+		return self.flag
+
+background = AnsyTar(vim.eval("s:olddir"),
+		     vim.eval("s:tardir"),
+		     vim.eval("s:tarfile"),
+		     vim.eval("s:desfile"))
+background.start()
+
+
+background.join()
+
 EOF
 endfunction
 
@@ -144,7 +168,7 @@ function! Global_Fun_Network(interface,status)
 python << EOF
 import os
 import vim
-
+print __name__
 if vim.eval("a:interface")  == "arm":
 	if vim.eval("a:status")  == "up":
 		os.system("sudo ifup /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络")
