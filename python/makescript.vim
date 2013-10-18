@@ -146,6 +146,9 @@ EOF
 endfunction
 
 function! Global_Fun_Test()
+
+40vsplit README
+
 python << EOF
 import vim
 import os
@@ -156,7 +159,7 @@ import time
 start = time.time()
 print time.strftime('%H:%M:%S',time.localtime(start))
 
-time.sleep(5)
+time.sleep(1)
 
 end   = time.time()
 print time.strftime('%H:%M:%S',time.localtime(end))
