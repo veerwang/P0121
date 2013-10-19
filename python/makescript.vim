@@ -10,19 +10,18 @@ if !has("python")
 endif
 
 
-let s:ProjectName="/home/kevin/armworkcopy/Ruby/"
-
 function! Global_Fun_CopyScripts()
 python << EOF
 import os
 import logging
 logging.info("Start Copying!")
 os.system("cp ./makescript.vim /home/kevin/.vim/plugin/")
+os.system("cp ./kevin-script-lib.vim /home/kevin/.vim/plugin/")
 logging.info("End Copying!")
 EOF
 endfunction
 
-function! Global_Fun_Change2WorkDir(projectpath)
+function! s:Global_Fun_Change2WorkDir(projectpath)
 python << EOF
 import os
 import vim
@@ -31,21 +30,22 @@ EOF
 execute ":edit" . " README" 
 endfunction
 
-function! Global_Fun_MakeProject()
+function! s:Global_Fun_MakeProject()
 python << EOF
 import os
 os.system("./makestatic.sh")
 EOF
 endfunction
 
-function! Global_Fun_MakeCleanProject()
+function! s:Global_Fun_MakeCleanProject()
 python << EOF
 import os
 os.system("./makeclean.sh")
 EOF
 endfunction
 
-function! Global_Fun_CreateProjectFile()
+let s:ProjectName="/home/kevin/armworkcopy/Ruby/"
+function! s:Global_Fun_CreateProjectFile()
 let s:ProjectFileName=s:ProjectName . "Ruby.prj"
 python << EOF
 import os
@@ -96,14 +96,16 @@ EOF
 execute ":e!"
 endfunction
 
-function! Global_Fun_MakeTar(project)
-let s:olddir  = getcwd() 
+function! Global_Fun_MakeTar() abort
+
 let s:tardir  = "/home/kevin/armworkcopy/"
-let s:tarfile = a:project 
+let s:project = input("Enter Project Name:")
+let s:olddir  = getcwd()
+let s:tarfile = s:project
 let s:desfile = s:tarfile . ".tar.bz2"
 
 python << EOF
-import tarfile 
+import tarfile
 import vim
 import os
 import threading
@@ -143,6 +145,9 @@ background.start()
 background.join()
 
 EOF
+
+
+
 endfunction
 
 function! Global_Fun_Test()
@@ -191,7 +196,8 @@ map nnd :call Global_Fun_Network("normal","down")<CR>
 map nnu :call Global_Fun_Network("normal","up")<CR>
 
 map test :call Global_Fun_Test()<CR>
-map tar :call Global_Fun_MakeTar("Ruby")<CR>
+map tar :call Global_Fun_MakeTar()<CR>
+
 map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
 map mp2 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/Ruby")<CR>
