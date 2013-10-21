@@ -1,4 +1,6 @@
-function! s:Library_Function_MakeTar()
+let g:kevin_script_lib_loaded_flag = 1
+
+function! Library_Function_MakeTar()
 
 let s:tardir  = "/home/kevin/armworkcopy/"
 let s:project = input("Enter Project Name:")
@@ -26,6 +28,7 @@ class AnsyTar(threading.Thread):
 		IsExists = os.path.exists(self.infile)
 		if not IsExists:
 			print "error: file need to tar not found"
+			os.chdir(self.olddir)
 		else:
 			tar = tarfile.open(self.outfile,'w|bz2')
 			tar.add(self.infile);

@@ -4,6 +4,10 @@
 "        		V 1.00                        
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if !exists('g:kevin_script_lib_loaded_flag')
+    runtime! plugin/kevin-script-lib.vim
+endif
+
 if !has("python")
 	echo "Error:Required vim compiled with Python"
 	finish
@@ -21,7 +25,7 @@ logging.info("End Copying!")
 EOF
 endfunction
 
-function! s:Global_Fun_Change2WorkDir(projectpath)
+function! Global_Fun_Change2WorkDir(projectpath)
 python << EOF
 import os
 import vim
@@ -30,14 +34,14 @@ EOF
 execute ":edit" . " README" 
 endfunction
 
-function! s:Global_Fun_MakeProject()
+function! Global_Fun_MakeProject()
 python << EOF
 import os
 os.system("./makestatic.sh")
 EOF
 endfunction
 
-function! s:Global_Fun_MakeCleanProject()
+function! Global_Fun_MakeCleanProject()
 python << EOF
 import os
 os.system("./makeclean.sh")
@@ -45,7 +49,7 @@ EOF
 endfunction
 
 let s:ProjectName="/home/kevin/armworkcopy/Ruby/"
-function! s:Global_Fun_CreateProjectFile()
+function! Global_Fun_CreateProjectFile()
 let s:ProjectFileName=s:ProjectName . "Ruby.prj"
 python << EOF
 import os
@@ -96,57 +100,9 @@ EOF
 execute ":e!"
 endfunction
 
-function! Global_Fun_MakeTar() abort
+function! Global_Fun_MakeTar()
 
-let s:tardir  = "/home/kevin/armworkcopy/"
-let s:project = input("Enter Project Name:")
-let s:olddir  = getcwd()
-let s:tarfile = s:project
-let s:desfile = s:tarfile . ".tar.bz2"
-
-python << EOF
-import tarfile
-import vim
-import os
-import threading
-import time
-
-class AnsyTar(threading.Thread):
-	def __init__(self,olddir,indir,infile,outfile):
-		threading.Thread.__init__(self)
-		self.infile  = infile
-		self.outfile = outfile
-		self.indir   = indir
-		self.olddir  = olddir
-		self.flag    = "f" 
-	def run(self):
-		os.chdir(self.indir)
-		IsExists = os.path.exists(self.infile)
-		if not IsExists:
-			print "error: file need to tar not found"
-		else:
-			tar = tarfile.open(self.outfile,'w|bz2')
-			tar.add(self.infile);
-			tar.close()
-			os.chdir(self.olddir)
-			self.flag = "t"
-			print "tar job finished"
-
-	def getflag(self):
-		return self.flag
-
-background = AnsyTar(vim.eval("s:olddir"),
-		     vim.eval("s:tardir"),
-		     vim.eval("s:tarfile"),
-		     vim.eval("s:desfile"))
-background.start()
-
-
-background.join()
-
-EOF
-
-
+call Library_Function_MakeTar()
 
 endfunction
 
@@ -207,5 +163,6 @@ map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
 map mp2 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/Ruby")<CR>
 map mp1 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/git_Smart/Smart/")<CR>
+map mp3 :call Global_Fun_Change2WorkDir("/home/kevin/work_old/P0121/vimscript-python/")<CR>
 map <F2> :call Global_Fun_MakeProject(<CR>
 map <F3> :call Global_Fun_MakeCleanProject()<CR>
