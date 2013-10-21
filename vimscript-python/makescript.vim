@@ -190,6 +190,11 @@ elif vim.eval("a:interface")  == "normal":
 EOF
 endfunction
 
+function! Global_Fun_Resize()
+40vsplit
+endfunction
+
+map rsw :call Global_Fun_Resize()<CR>
 map and :call Global_Fun_Network("arm","down")<CR>
 map anu :call Global_Fun_Network("arm","up")<CR>
 map nnd :call Global_Fun_Network("normal","down")<CR>
