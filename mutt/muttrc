@@ -12,6 +12,8 @@ mailboxes "+tom"
 mailboxes "+126"
 
 set sendmail="/usr/bin/msmtp"
+#set sendmail="/usr/bin/sendmail"
+
 set editor="vim"
 set send_charset="us-ascii:iso-8859-1:utf-8"
 charset-hook ^us-ascii$ gb2312
@@ -92,5 +94,6 @@ bind index v next-unread-mailbox
 bind index gg first-entry
 bind index G last-entry
 
-color status	yellow  black 
+color status	white 	black 
 color message   red   	white
+color error     white   red
