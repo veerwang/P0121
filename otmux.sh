@@ -5,7 +5,7 @@
 # 
 #         USAGE: ./otmux.sh 
 # 
-#   DESCRIPTION: I used this script to launtch the tmux as my ways
+#   DESCRIPTION: 
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -18,7 +18,7 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
-
+cd ~
 cmd=$(which tmux) 			    # tmux path 
 session=basic
 
@@ -36,6 +36,8 @@ if [ $? != 0 ]; then
 	$cmd splitw -v -p 70 "python"
 	$cmd splitw -h -p 50 "top"
 	$cmd neww -n mutt -t $session "mutt"
+	$cmd neww -n cmus -t $session "cmus"
+	$cmd neww -n vifm -t $session "vifm"
 	$cmd selectw -t $session:1
 fi
 
