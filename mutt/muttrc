@@ -11,7 +11,7 @@ mailboxes "+gmail"
 mailboxes "+tom"
 mailboxes "+126"
 
-set sendmail="/usr/bin/msmtp"
+set sendmail="/usr/local/bin/msmtp"
 #set sendmail="/usr/bin/sendmail"
 
 set editor="vim"
