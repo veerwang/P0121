@@ -1,0 +1,8 @@
+1.下载oh-my-zsh到~/.oh-my-zsh
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+2.安装zsh
+
+3.配置.zshrc文件
+
+4.cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
