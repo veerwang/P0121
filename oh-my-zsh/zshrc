@@ -7,9 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 
-#ZSH_THEME="fletcherm"
+ZSH_THEME="fletcherm"
 #ZSH_THEME="fino-time"
-ZSH_THEME="bira"
+#ZSH_THEME="bira"
 #ZSH_THEME="random"
 
 # Example aliases
@@ -45,7 +45,7 @@ ZSH_THEME="bira"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git yum ruby rvm)
+plugins=(git yum ruby rvm autojump)
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
@@ -54,3 +54,8 @@ source $ZSH/oh-my-zsh.sh
 PATH=$PATH:$HOME/bin:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
 
 # Customize to your needs...
+alias gr='cd ~/armworkcopy/Ruby/'
+alias ge='cd ~/armworkcopy/git_ELSeries/ELSeries'
+alias gs='cd ~/armworkcopy/git_Smart/Smart'
+
+hash -d  armgcc='/opt/host/arm-kevin-linux-gnueabi/bin/'
