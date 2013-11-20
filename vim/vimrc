@@ -65,6 +65,7 @@ Bundle 'Lokaltog/vim-powerline'
 "Bundle 'scrooloose/nerdtree.git'
 Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
+Bundle 'CSApprox'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -126,7 +127,9 @@ set background=light
 "colo softbluev2
 "colo lemon256
 colo light2011
+"colo desert 
 "colo lucius
+
 
 "set the line number 
 set nu
@@ -421,6 +424,10 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 let g:wfw = 1
+
+nmap <leader>color :colorscheme koehler<cr>
+"CSApprox configured
+let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 
 " Save/load session function
 let g:session_directory = '~/.vim/sessions/'
