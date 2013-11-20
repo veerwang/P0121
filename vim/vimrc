@@ -81,6 +81,7 @@ Bundle 'lemon256'
 Bundle 'Solarized'
 Bundle 'light2011'
 Bundle 'Lucius'
+Bundle 'jellybeans.vim'
 
 "
 " non github repos
@@ -126,10 +127,12 @@ set background=light
 "colo peaksea
 "colo softbluev2
 "colo lemon256
-colo light2011
+"colo light2011
 "colo desert 
-"colo lucius
+"colo Lucius
+"colo koehler
 
+colorscheme jellybeans
 
 "set the line number 
 set nu
@@ -425,7 +428,6 @@ let NERDTreeShowBookmarks=1
 
 let g:wfw = 1
 
-nmap <leader>color :colorscheme koehler<cr>
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 
