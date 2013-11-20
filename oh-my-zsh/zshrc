@@ -52,6 +52,7 @@ plugins=(git yum ruby rvm autojump)
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/bin:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
+export PATH
 
 # Customize to your needs...
 alias gr='cd ~/armworkcopy/Ruby/'

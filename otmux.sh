@@ -30,7 +30,7 @@ fi
 $cmd -2 has -t $session
 
 if [ $? != 0 ]; then
-	$cmd new -d -n vim -s $session "vim"
+	$cmd new -d -n calcurse -s $session "calcurse"
 	$cmd neww -n telnet -t $session "zsh"
 	$cmd neww -n sdcv -t $session "sdcv"
 	$cmd splitw -v -p 70 "python"
