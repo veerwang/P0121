@@ -66,6 +66,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
 Bundle 'CSApprox'
+Bundle 'viewdoc'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -118,21 +119,9 @@ set t_Co=256
 "set the backcolor type
 set background=light
 
-"colo ron
-"colo simple-dark
-"colo vividchalk 
-"colo inkpot 
-"colo summerfruit256
-"colo gummybears
-"colo peaksea
-"colo softbluev2
-"colo lemon256
-"colo light2011
-"colo desert 
-"colo Lucius
-"colo koehler
-
-colorscheme jellybeans
+" set the current color scheme
+"colorscheme jellybeans
+colorscheme lemon256
 
 "set the line number 
 set nu
@@ -427,6 +416,9 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 let g:wfw = 1
+
+"set the man page display on the top window
+let g:viewdoc_open='topleft new'
 
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
