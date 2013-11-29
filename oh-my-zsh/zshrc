@@ -52,11 +52,27 @@ plugins=(git yum ruby rvm autojump)
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/bin:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
-export PATH
 
 # Customize to your needs...
 alias gr='cd ~/armworkcopy/Ruby/'
 alias ge='cd ~/armworkcopy/git_ELSeries/ELSeries'
 alias gs='cd ~/armworkcopy/git_Smart/Smart'
+alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
+alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
+alias gdft='cd ~/armworkcopy/DFT_Test/'
+
+alias um='umount /media/KINGSTON/'
+
+alias odn='sudo ifup /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络'
+alias cdn='sudo ifdown /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络'
+
+alias onn='sudo ifup /etc/sysconfig/network-scripts/ifcfg-eth0'
+alias cnn='sudo ifdown /etc/sysconfig/network-scripts/ifcfg-eth0'
+
+alias config='vim ~/.zshrc' 
 
 hash -d  armgcc='/opt/host/arm-kevin-linux-gnueabi/bin/'
+
+echo  \ \ \ \ \ \ \ ▂▃▅▆█ Hello, Coding Man █▆▅▃▂
+echo  \ \ \ \ \ Welcome to your personal terminal!!
+echo  \ \ \ \ \ \ \ \ \ \ Have fun with it!
