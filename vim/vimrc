@@ -56,7 +56,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
 Bundle 'Tagbar'
-Bundle 'ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
@@ -83,10 +83,14 @@ Bundle 'Solarized'
 Bundle 'light2011'
 Bundle 'Lucius'
 Bundle 'jellybeans.vim'
+Bundle 'github-theme'
+Bundle 'vylight'
 
 "
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
+Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
+
 
 "
 " ...
@@ -117,11 +121,10 @@ nmap <leader>plr :BundleClean <cr>
 set t_Co=256
 
 "set the backcolor type
-set background=light
+set background=dark
 
 " set the current color scheme
-"colorscheme jellybeans
-colorscheme lemon256
+colorscheme github 
 
 "set the line number 
 set nu
@@ -272,6 +275,10 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_map = '<c-p>'
+
+" Ctrrlp extension
+let g:ctrlp_extensions = ['funky']
+nnoremap <c-e> :CtrlPFunky<cr> 
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
