@@ -1,0 +1,6 @@
+vim中的powerline插件需要的字体
+git clone https://github.com/Lokaltog/powerline-fonts 
+拷贝 字体到 ~/.fonts中
+加载字体
+fc-cache -vf ~/.fonts
+之后就可以在终端中设置powerline的字体了。
