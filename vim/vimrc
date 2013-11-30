@@ -67,6 +67,7 @@ Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
 Bundle 'CSApprox'
 Bundle 'viewdoc'
+Bundle 'gitv'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -423,6 +424,11 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 let g:wfw = 1
+
+" Gitv to show git log, gv:show project log,gV:show someone file log
+nmap <leader>gv :Gitv --all<cr>
+nmap <leader>gV :Gitv! --all<cr>
+vmap <leader>gV :Gitv! --all<cr>
 
 "set the man page display on the top window
 let g:viewdoc_open='topleft new'
