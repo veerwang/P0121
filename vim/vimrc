@@ -61,7 +61,7 @@ Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
 Bundle 'Syntastic'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
 "Bundle 'scrooloose/nerdtree.git'
 Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
@@ -91,7 +91,7 @@ Bundle 'vylight'
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
 Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
-
+Bundle 'https://github.com/bling/vim-airline.git'
 
 "
 " ...
@@ -208,21 +208,21 @@ return curdir
 endfunction
 
 "highlight statusline color setting
-function! StatusFun()
-set ls=2
-set statusline=
-set statusline+=%1*\ type:%Y\ 
-set statusline+=%2*\ format:%{&ff}:%{&fenc!=''?&fenc:&enc}\ 
-set statusline+=%3*\ time:\ 
-set statusline+=%{strftime(\"%Y-%m-%d\ %H:%M\")}\ 
-set statusline+=%4*\ %03l,%03c\ +\ %L(%p%%)\ 
-set statusline+=%5*\ %M%n%r%h%w\ %F\ 
-hi User1 term=bold ctermfg=Black ctermbg=Yellow
-hi User2 term=bold ctermfg=Yellow ctermbg=Black
-hi User3 term=bold ctermfg=Black ctermbg=Yellow
-hi User4 term=bold ctermfg=Yellow ctermbg=black
-hi User5 term=bold ctermfg=Black ctermbg=Yellow
-endfunction
+"function! StatusFun()
+"set ls=2
+"set statusline=
+"set statusline+=%1*\ type:%Y\ 
+"set statusline+=%2*\ format:%{&ff}:%{&fenc!=''?&fenc:&enc}\ 
+"set statusline+=%3*\ time:\ 
+"set statusline+=%{strftime(\"%Y-%m-%d\ %H:%M\")}\ 
+"set statusline+=%4*\ %03l,%03c\ +\ %L(%p%%)\ 
+"set statusline+=%5*\ %M%n%r%h%w\ %F\ 
+"hi User1 term=bold ctermfg=Black ctermbg=Yellow
+"hi User2 term=bold ctermfg=Yellow ctermbg=Black
+"hi User3 term=bold ctermfg=Black ctermbg=Yellow
+"hi User4 term=bold ctermfg=Yellow ctermbg=black
+"hi User5 term=bold ctermfg=Black ctermbg=Yellow
+"endfunction
 
 "call StatusFun()
 
@@ -248,7 +248,7 @@ nmap <leader>g :edit ~/.gvimrc <cr>
 autocmd! bufwritepost .gvimrc source ~/.gvimrc
 
 "Edit my vim script
-nmap <leader>mc :edit ~/workcopy/P0121/python/makescript.vim <cr>
+nmap <leader>mc :edit ~/.vim/plugin/makescript.vim <cr>
 
 "open help documentaion
 nmap <leader>h :tab help<cr>
@@ -263,9 +263,9 @@ nmap  :qall<cr>
 
 "Tab operation
 nmap <leader>tn :tabnew<cr>
-nmap <leader>tm :tabmove<cr>
-nmap <leader>tc :tabclose<cr>
-nmap <leader>te :tabedit
+"nmap <leader>tm :tabmove<cr>
+"nmap <leader>tc :tabclose<cr>
+"nmap <leader>te :tabedit<cr>
 
 " Ctrrlp Configrature
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
@@ -364,6 +364,7 @@ let g:netrw_winsize   = 60
 nmap <silent> <leader>fe :Sexplore!<cr>
 
 set tabline=%!MyTabLine()
+
 function! MyTabLine()
   let s = ''
   for i in range(tabpagenr('$'))
@@ -413,8 +414,13 @@ let g:multi_cursor_quit_key='<Esc>'
 
 let $MYEMAIL="kevin.wang2004@hotmail.com"
 
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_stl_path_style = 'full'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='dark'
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline_detect_whitespace=0
+let g:airline_section_c='%F'
+
 
 " NERDTree configration
 "autocmd VimEnter * NERDTree
