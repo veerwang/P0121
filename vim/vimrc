@@ -416,11 +416,11 @@ let $MYEMAIL="kevin.wang2004@hotmail.com"
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme='dark'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
 let g:airline_section_c='%F'
-
 
 " NERDTree configration
 "autocmd VimEnter * NERDTree
