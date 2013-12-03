@@ -68,6 +68,7 @@ Bundle 'EasyMotion'
 Bundle 'CSApprox'
 Bundle 'viewdoc'
 Bundle 'gitv'
+Bundle 'Pydiction'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -417,6 +418,8 @@ let $MYEMAIL="kevin.wang2004@hotmail.com"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = ' '
 let g:airline_theme='dark'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
@@ -430,6 +433,10 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 let g:wfw = 1
+
+" very important for write python language with vim,caution used the tab to
+" finish the key word 
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 " Gitv to show git log, gv:show project log,gV:show someone file log
 nmap <leader>gv :Gitv --all<cr>
