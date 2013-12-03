@@ -60,6 +60,7 @@ alias gs='cd ~/armworkcopy/git_Smart/Smart'
 alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
 alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
 alias gdft='cd ~/armworkcopy/DFT_Test/'
+alias gp='cd ~/work_old/P0711Python/'
 
 alias um='umount /media/KINGSTON/'
 
