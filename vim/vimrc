@@ -342,6 +342,9 @@ nmap <leader>sh :ConqueTermTab bash<cr>
 nmap <leader>s :r!
 let g:PROMPT="$"
 
+" vim grep
+nmap <leader>gp :vimgrep
+
 " Show undo tree
 nmap <leader>u :GundoShow<CR>
 
