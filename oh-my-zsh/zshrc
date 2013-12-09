@@ -61,6 +61,8 @@ alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
 alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
 alias gdft='cd ~/armworkcopy/DFT_Test/'
 alias gp='cd ~/work_old/P0711Python/'
+alias gl='cd ~/STM_Env_Linux/stm32_discovery_arm_gcc/STM32F4-Discovery_FW_V1.1.0/Project/'
+alias gk='cd ~/Eddysun_ARM/newkernel/gitlinux/'
 
 alias um='umount /media/KINGSTON/'
 
