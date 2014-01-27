@@ -126,7 +126,7 @@ set t_Co=256
 set background=dark
 
 " set the current color scheme
-colorscheme github 
+"colorscheme github
 
 "set the line number 
 set nu
@@ -451,6 +451,8 @@ let g:viewdoc_open='topleft new'
 
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
+colorscheme github
+map mc :colorscheme github<CR>
 
 " Save/load session function
 let g:session_directory = '~/.vim/sessions/'
