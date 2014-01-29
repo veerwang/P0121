@@ -44,9 +44,9 @@ Bundle 'rosenfeld/conque-term'
 Bundle 'echofunc.vim'
 Bundle 'vtreeexplorer'
 Bundle 'vim-scripts/bash-support.vim.git'
-Bundle 'esukram/autocomplpop.vim.git'
+"Bundle 'esukram/autocomplpop.vim.git'
 Bundle 'calendar.vim--Matsumoto'
-Bundle 'OmniCppComplete'
+"Bundle 'OmniCppComplete'
 Bundle 'Align'
 Bundle 'cscope_macros.vim'
 Bundle 'netrw.vim'
@@ -57,7 +57,7 @@ Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
 Bundle 'Tagbar'
 Bundle 'kien/ctrlp.vim'
-Bundle 'neocomplcache'
+"Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
 Bundle 'Syntastic'
@@ -87,12 +87,14 @@ Bundle 'Lucius'
 Bundle 'jellybeans.vim'
 Bundle 'github-theme'
 Bundle 'vylight'
+Bundle 'BusyBee'
 
 "
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
 Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
 Bundle 'https://github.com/bling/vim-airline.git'
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 
 "
 " ...
@@ -126,7 +128,8 @@ set t_Co=256
 set background=dark
 
 " set the current color scheme
-"colorscheme github
+colorscheme github
+colorscheme github
 
 "set the line number 
 set nu
@@ -193,14 +196,25 @@ set fencs=utf-8,gb18030,gbk,gb2312,cp936
 set history=400 
 
 "Omnicomplete configrature
-let OmniCpp_GlobalScopeSearch=1
-let OmniCpp_NamespaceSearch=1
-let OmniCpp_DisplayMode=1
-let OmniCpp_ShowPrototypelnAbbr=1
-let OmniCpp_ShowAccess=1
-let OmniCpp_MayCompleteDot=1
-let OmniCpp_MayCompleteArrow=1
-let OmniCpp_MayCompleteScope=1
+"let OmniCpp_GlobalScopeSearch=1
+"let OmniCpp_NamespaceSearch=1
+"let OmniCpp_DisplayMode=1
+"let OmniCpp_ShowPrototypelnAbbr=1
+"let OmniCpp_ShowAccess=1
+"let OmniCpp_MayCompleteDot=1
+"let OmniCpp_MayCompleteArrow=1
+"let OmniCpp_MayCompleteScope=1
+"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"] " 自动关闭补全窗口
+"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+"set completeopt=menuone,menu,longest
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
+let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
+let g:ycm_collect_identifiers_from_tag_files = 1
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_auto_trigger = 1
 
 "set linestatus variables
 function! CurDir()
@@ -307,7 +321,7 @@ nmap <leader>cn :cn<cr>
 nmap <leader>cp :cp<cr>
 
 " neocomplcache configrature
-let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_at_startup = 1
 
 "adjust window width
 nmap <leader><leader>n :vertical res -5 <cr>
@@ -452,7 +466,7 @@ let g:viewdoc_open='topleft new'
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 colorscheme github
-map mc :colorscheme github<CR>
+map mc :colorscheme BusyBee<CR>
 
 " Save/load session function
 let g:session_directory = '~/.vim/sessions/'
