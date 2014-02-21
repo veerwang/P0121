@@ -1,3 +1,7 @@
 gnome-terminal 是一个命令终端
 启动的命令如下：
 gnome-terminal --working-directory=/home/kevin --full-screen --hide-menubar
+
+ctrl+shift+t   新建标签
+alt+n          切换到第n个标签
+ctrl+shift+w   关闭标签
