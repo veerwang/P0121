@@ -69,6 +69,7 @@ Bundle 'CSApprox'
 Bundle 'viewdoc'
 Bundle 'gitv'
 Bundle 'Pydiction'
+Bundle 'grep.vim'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -297,6 +298,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_extensions = ['funky']
 nnoremap <c-e> :CtrlPFunky<cr> 
 
+nnoremap <silent> <F7> :Rgrep<CR>
+
 map <F4> :!ctags -R .<cr>
 map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
 map <F6> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
@@ -467,7 +470,7 @@ let g:viewdoc_open='topleft new'
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 colorscheme github
-map mc :colorscheme BusyBee<CR>
+map mc :colorscheme jellybeans<CR>
 
 " Save/load session function
 let g:session_directory = '~/.vim/sessions/'
