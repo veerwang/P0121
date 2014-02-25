@@ -70,6 +70,7 @@ Bundle 'viewdoc'
 Bundle 'gitv'
 Bundle 'Pydiction'
 Bundle 'grep.vim'
+Bundle 'ack.vim'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -96,7 +97,7 @@ Bundle 'git://gist.github.com/422503.git'
 Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
 Bundle 'https://github.com/bling/vim-airline.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-
+Bundle 'https://github.com/rking/ag.vim.git'
 "
 " ...
 
@@ -298,7 +299,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_extensions = ['funky']
 nnoremap <c-e> :CtrlPFunky<cr> 
 
+let g:Grep_Default_Filelist = '*.c *.cpp *.h'
+let g:agprg="ag --column --smart-case"
 nnoremap <silent> <F7> :Rgrep<CR>
+nnoremap <silent> <F8> :Ag<CR>
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
