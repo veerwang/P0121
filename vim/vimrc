@@ -25,6 +25,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
+Bundle 'CSApprox'
 
 Bundle 'vim-scripts/c.vim.git'
 "Bundle 'blak3mill3r/c.vim.git'
@@ -65,7 +66,7 @@ Bundle 'Syntastic'
 "Bundle 'scrooloose/nerdtree.git'
 Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
-Bundle 'CSApprox'
+"Bundle 'CSApprox'
 Bundle 'viewdoc'
 Bundle 'gitv'
 Bundle 'Pydiction'
@@ -130,8 +131,7 @@ set t_Co=256
 set background=dark
 
 " set the current color scheme
-colorscheme github
-colorscheme github
+colorscheme jellybeans
 
 "set the line number 
 set nu
@@ -474,8 +474,6 @@ let g:viewdoc_open='topleft new'
 
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
-colorscheme github
-map mc :colorscheme jellybeans<CR>
 
 " Save/load session function
 let g:session_directory = '~/.vim/sessions/'
