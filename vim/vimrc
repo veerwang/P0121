@@ -300,8 +300,9 @@ let g:ctrlp_extensions = ['funky']
 nnoremap <c-e> :CtrlPFunky<cr> 
 
 let g:Grep_Default_Filelist = '*.c *.cpp *.h'
+let g:Grep_Skip_Dirs = '.git .svn'
 let g:agprg="ag --column --smart-case"
-nnoremap <silent> <F7> :Rgrep<CR>
+nnoremap <silent> <F7> :Rfgrep<CR>
 nnoremap <silent> <F8> :Ag<CR>
 
 map <F4> :!ctags -R .<cr>
