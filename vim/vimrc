@@ -131,7 +131,7 @@ set t_Co=256
 set background=dark
 
 " set the current color scheme
-colorscheme jellybeans
+colorscheme desert
 
 "set the line number 
 set nu
@@ -330,10 +330,10 @@ let g:treeExplmodifiable=0
 let g:treeExplIndent=2
 
 " Quickfix window
-nmap <leader>co :cope<cr>
-nmap <leader>clo :ccl<cr>
-nmap <leader>cn :cn<cr>
-nmap <leader>cp :cp<cr>
+nmap o :cope<cr>
+nmap c :ccl<cr>
+nmap n :cn<cr>
+nmap p :cp<cr>
 
 " neocomplcache configrature
 "let g:neocomplcache_enable_at_startup = 1
