@@ -299,10 +299,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_extensions = ['funky']
 nnoremap <c-e> :CtrlPFunky<cr> 
 
+" grep.vim plugin
 let g:Grep_Default_Filelist = '*.c *.cpp *.h'
 let g:Grep_Skip_Dirs = '.git .svn'
-let g:agprg="ag --column --smart-case"
+let g:Grep_Default_Options = '-i --color=never'
+let g:Grep_Skip_Files = 'tags *.bak *~'
 nnoremap <silent> <F7> :Rfgrep<CR>
+
+" ag.vim plugin
+let g:agprg="ag --column --smart-case"
+let g:aghighlight=1
 nnoremap <silent> <F8> :Ag<CR>
 
 map <F4> :!ctags -R .<cr>
