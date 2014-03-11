@@ -128,10 +128,10 @@ nmap <leader>plr :BundleClean <cr>
 set t_Co=256
 
 "set the backcolor type
-set background=dark
+set background=light
 
 " set the current color scheme
-colorscheme desert
+colorscheme solarized
 
 "set the line number 
 set nu
