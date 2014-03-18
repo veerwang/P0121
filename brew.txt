@@ -1,0 +1,9 @@
+一下命令用于添加新的包管理工具
+
+sudo yum groupinstall 'Development Tools' && sudo yum install \
+curl git ruby bzip2-devel curl-devel expat-devel ncurses-devel zlib-devel
+
+git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
