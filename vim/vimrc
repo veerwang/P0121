@@ -91,6 +91,7 @@ Bundle 'jellybeans.vim'
 Bundle 'github-theme'
 Bundle 'vylight'
 Bundle 'BusyBee'
+Plugin 'badwolf'
 
 "
 " non github repos
@@ -131,7 +132,8 @@ set t_Co=256
 set background=light
 
 " set the current color scheme
-colorscheme solarized
+"colorscheme solarized
+colorscheme badwolf
 
 "set the line number 
 set nu
