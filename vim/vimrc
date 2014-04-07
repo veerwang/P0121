@@ -366,7 +366,10 @@ nmap <leader>rb :%!xxd -r<cr>
 
 " Shell bash plugin
 let g:ConqueTerm_CodePage=0
-let g:ConqueTerm_FastMode=0
+let g:ConqueTerm_Color = 2
+let g:ConqueTerm_StartMessages = 1
+let g:ConqueTerm_FastMode=1
+let g:ConqueTerm_TERM = 'vt100'
 nmap <leader>sh :ConqueTermTab bash<cr>
 
 "run shell command and show the result on screen
