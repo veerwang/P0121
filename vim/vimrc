@@ -1,3 +1,8 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+"        Vim Script Create for Test!                 
+"        		Author: Kevin                 
+"        		 V1.00                        
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      The file is seted for the edit programme!                               "
 "											       "
 "                                                                            Version:   1.01   "
@@ -91,7 +96,8 @@ Bundle 'jellybeans.vim'
 Bundle 'github-theme'
 Bundle 'vylight'
 Bundle 'BusyBee'
-Plugin 'badwolf'
+Bundle 'badwolf'
+Bundle 'git://github.com/vim-scripts/Iceberg.git'
 
 "
 " non github repos
@@ -133,7 +139,8 @@ set background=light
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme badwolf
+"colorscheme badwolf
+colorscheme iceberg
 
 "set the line number 
 set nu
@@ -489,5 +496,5 @@ let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 let g:session_directory = '~/.vim/sessions/'
 let g:session_autoload = 'yes'
 let g:session_autosave = 'yes'
-set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,buffers,help,folds,resize
+set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,buffers
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
