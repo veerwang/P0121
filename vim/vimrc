@@ -16,6 +16,9 @@ nmap <leader>w :w!<CR>
 "just show content in single line
 set nowrap
 
+"make the information no full screen
+set nomore
+
 " plugin manage segment
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
@@ -387,6 +390,10 @@ nmap <leader>gp :grep
 
 " Show undo tree
 nmap <leader>u :GundoShow<CR>
+
+" vim args
+nmap <leader>ai :args **/*.cpp **/*.h **/*.c **/*.hpp<CR>
+nmap <leader>ar :argdo %s/
 
 " paste the value
 " map P "0p<CR>
