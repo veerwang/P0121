@@ -66,6 +66,8 @@ Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
 Bundle 'Tagbar'
 Bundle 'kien/ctrlp.vim'
+"Bundle 'https://github.com/Yggdroot/LeaderF.git'
+
 "Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
@@ -80,6 +82,7 @@ Bundle 'gitv'
 Bundle 'Pydiction'
 Bundle 'grep.vim'
 Bundle 'ack.vim'
+Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -305,7 +308,7 @@ let g:ctrlp_max_height=20
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map ='<c-[>'
 
 " Ctrrlp extension
 let g:ctrlp_extensions = ['funky']
