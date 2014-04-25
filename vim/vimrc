@@ -145,8 +145,7 @@ set background=light
 
 " set the current color scheme
 "colorscheme solarized
-"colorscheme badwolf
-colorscheme iceberg
+colorscheme badwolf
 
 "set the line number 
 set nu
@@ -395,8 +394,10 @@ nmap <leader>gp :grep
 nmap <leader>u :GundoShow<CR>
 
 " vim args
-nmap <leader>ai :args **/*.cpp **/*.h **/*.c **/*.hpp<CR>
-nmap <leader>ar :argdo %s/
+"nmap <leader>ai :args **/*.cpp **/*.h **/*.c **/*.hpp<CR>
+
+nmap <leader>ai :argdelete * <CR> :args `grep <cword> * -Rl` <CR>
+nmap <leader>ar :argdo %s/<cword>/s:replacestr/eg
 
 " paste the value
 " map P "0p<CR>
@@ -473,7 +474,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ' '
-let g:airline_theme='dark'
+let g:airline_theme='laederon'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
 let g:airline_section_c='%F'
