@@ -394,10 +394,21 @@ nmap <leader>gp :grep
 nmap <leader>u :GundoShow<CR>
 
 " vim args
-"nmap <leader>ai :args **/*.cpp **/*.h **/*.c **/*.hpp<CR>
+function! Replace_String()
+	let des_str = input("enter string to be replaced: ")
+	let src_str = expand("<cword>")
+	if src_str == ""
+		return
+	endif
 
-nmap <leader>ai :argdelete * <CR> :args `grep <cword> * -Rl` <CR>
-nmap <leader>ar :argdo %s/<cword>/s:replacestr/eg
+	let s:commandstr = "argdo "."%s/".src_str."/".des_str."/"."eg | update" 
+
+	argdelete *
+	args `grep <cword> * -Rl`
+	exec s:commandstr
+endfunction
+
+nmap <leader>rp :call Replace_String()<CR>
 
 " paste the value
 " map P "0p<CR>
@@ -509,3 +520,4 @@ let g:session_autoload = 'yes'
 let g:session_autosave = 'yes'
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,buffers
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
+
