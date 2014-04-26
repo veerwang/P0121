@@ -393,18 +393,29 @@ nmap <leader>gp :grep
 " Show undo tree
 nmap <leader>u :GundoShow<CR>
 
-" vim args
+" vim replace string in whole project 
 function! Replace_String()
-	let des_str = input("enter string to be replaced: ")
-	let src_str = expand("<cword>")
-	if src_str == ""
+	let s:focus_str = expand("<cword>")
+
+	if s:focus_str == ""
+		let s:src_str = input("source string: ")
+	else
+		let s:src_str = input("source string: ",s:focus_str)
+	endif
+
+	if s:src_str == ""
 		return
 	endif
 
-	let s:commandstr = "argdo "."%s/".src_str."/".des_str."/"."eg | update" 
+	let s:des_str = input(s:src_str." ---------> ",s:src_str)
+
+	let s:commandstr = "argdo "."%s/".s:src_str."/".s:des_str."/"."eg | update" 
 
 	argdelete *
-	args `grep <cword> * -Rl`
+	let s:grepcommand = "args "."`grep ".s:src_str." *"." -Rl`"
+	echo s:grepcommand
+	exec s:grepcommand
+
 	exec s:commandstr
 endfunction
 
