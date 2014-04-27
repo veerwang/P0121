@@ -77,7 +77,7 @@ Bundle 'Syntastic'
 Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
 "Bundle 'CSApprox'
-Bundle 'viewdoc'
+"Bundle 'viewdoc'
 Bundle 'gitv'
 Bundle 'Pydiction'
 Bundle 'grep.vim'
@@ -412,10 +412,10 @@ function! Replace_String()
 	let s:commandstr = "argdo "."%s/".s:src_str."/".s:des_str."/"."eg | update" 
 
 	argdelete *
-	let s:grepcommand = "args "."`grep ".s:src_str." *"." -Rl`"
+	let s:grepcommand = 'args '.'`grep '.s:src_str.' *'.' -Rl`'
 	echo s:grepcommand
-	exec s:grepcommand
 
+	exec s:grepcommand
 	exec s:commandstr
 endfunction
 
@@ -531,4 +531,3 @@ let g:session_autoload = 'yes'
 let g:session_autosave = 'yes'
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,buffers
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
-
