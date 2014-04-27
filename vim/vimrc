@@ -24,6 +24,20 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"
+"  Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache
+" first) for foo
+" :BundleClean(!)      - confirm(or auto-approve)
+" removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not
+" allowed..
+"
+
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
@@ -66,7 +80,6 @@ Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
 Bundle 'Tagbar'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'https://github.com/Yggdroot/LeaderF.git'
 
 "Bundle 'neocomplcache'
 "Bundle 'snipMate'
@@ -105,7 +118,6 @@ Bundle 'BusyBee'
 Bundle 'badwolf'
 Bundle 'git://github.com/vim-scripts/Iceberg.git'
 
-"
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
 Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
@@ -122,20 +134,6 @@ nmap <leader>pls :BundleSearch <cr>
 nmap <leader>pli :BundleInstall <cr>
 nmap <leader>plu :BundleInstall! <cr>
 nmap <leader>plr :BundleClean <cr>
-
-"
-"  Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache
-" first) for foo
-" :BundleClean(!)      - confirm(or auto-approve)
-" removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not
-" allowed..
-"
 
 " color scheme manage segment
 set t_Co=256
@@ -387,9 +385,6 @@ nmap <leader>sh :ConqueTermTab zsh<cr>
 nmap <leader>s :r!
 let g:PROMPT="$"
 
-" vim grep
-nmap <leader>gp :grep 
-
 " Show undo tree
 nmap <leader>u :GundoShow<CR>
 
@@ -420,9 +415,6 @@ function! Replace_String()
 endfunction
 
 nmap <leader>rp :call Replace_String()<CR>
-
-" paste the value
-" map P "0p<CR>
 
 " for Align plugin
 let g:BASH_MapLeader  = ','
@@ -503,7 +495,6 @@ let g:airline_section_c='%F'
 
 " NERDTree configration
 "autocmd VimEnter * NERDTree
-"nmap <leader>ne :NERDTreeToggle<cr>
 map <F4> :NERDTreeToggle<cr>
 let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
