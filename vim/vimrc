@@ -389,7 +389,7 @@ let g:PROMPT="$"
 nmap <leader>u :GundoShow<CR>
 
 " vim replace string in whole project 
-function! Replace_String()
+function! Replace_String(mode)
 	let s:focus_str = expand("<cword>")
 
 	if s:focus_str == ""
@@ -404,7 +404,11 @@ function! Replace_String()
 
 	let s:des_str = input(s:src_str." ---------> ",s:src_str)
 
-	let s:commandstr = "argdo "."%s/\\\<".s:src_str."\\\>/".s:des_str."/"."eg | update" 
+	if a:mode == "confuse"
+		let s:commandstr = "argdo "."%s/".s:src_str."/".s:des_str."/"."eg | update" 
+	else
+		let s:commandstr = "argdo "."%s/\\\<".s:src_str."\\\>/".s:des_str."/"."eg | update" 
+	endif
 
 	argdelete *
 	let s:grepcommand = 'args '.'`grep -w '.s:src_str.' *'.' -Rl`'
@@ -413,7 +417,8 @@ function! Replace_String()
 	exec s:commandstr
 endfunction
 
-nmap <leader>rp :call Replace_String()<CR>
+nmap <leader>frp :call Replace_String("confuse")<CR>
+nmap <leader>rp :call Replace_String("exact")<CR>
 
 " for Align plugin
 let g:BASH_MapLeader  = ','
