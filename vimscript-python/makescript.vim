@@ -1,5 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 "        Vim Script Create for Test!                 
+"        the functions sets used for making vim tool
+"        more comfortable
 "        		Author: Kevin                 
 "        		V 1.00                        
 """""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -37,14 +39,14 @@ endfunction
 function! Global_Fun_MakeProject()
 python << EOF
 import os
-os.system("./makestatic.sh")
+os.system("./scripts/makestatic.sh")
 EOF
 endfunction
 
 function! Global_Fun_MakeCleanProject()
 python << EOF
 import os
-os.system("./makeclean.sh")
+os.system("./scripts/makeclean.sh")
 EOF
 endfunction
 
@@ -96,6 +98,9 @@ content = content[:0] + '"""""""""""""""""""""""""""""""""""""""""""""""""""""\n
 f = open(vim.eval("s:filename"),'w')
 f.write(content)
 f.close()
+
+os.system("ls -al")
+
 EOF
 execute ":e!"
 endfunction
@@ -161,8 +166,10 @@ map tar :call Global_Fun_MakeTar()<CR>
 
 map tt :call Global_Fun_AddTitle()<CR>
 map mv :call Global_Fun_CopyScripts()<CR>
-map mp2 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/Ruby")<CR>
-map mp1 :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/git_Smart/Smart/")<CR>
-map mp3 :call Global_Fun_Change2WorkDir("/home/kevin/work_old/P0121/vimscript-python/")<CR>
-map <F2> :call Global_Fun_MakeProject(<CR>
-map <F3> :call Global_Fun_MakeCleanProject()<CR>
+map mpr :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/Ruby")<CR>
+map mps :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/git_Smart/Smart/")<CR>
+map mpp :call Global_Fun_Change2WorkDir("/home/kevin/work_old/P0121/vimscript-python/")<CR>
+map mpk :call Global_Fun_Change2WorkDir("/home/kevin/Eddysun_ARM/newkernel/gitlinux/")<CR>
+
+map mk1 :call Global_Fun_MakeProject()<CR>
+map mk2 :call Global_Fun_MakeCleanProject()<CR>
