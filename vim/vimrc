@@ -117,6 +117,7 @@ Bundle 'vylight'
 Bundle 'BusyBee'
 Bundle 'badwolf'
 Bundle 'git://github.com/vim-scripts/Iceberg.git'
+Plugin 'softblue'
 
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
@@ -143,7 +144,7 @@ set background=light
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme badwolf
+colorscheme light2011 
 
 "set the line number 
 set nu
@@ -299,12 +300,12 @@ nmap <leader>tn :tabnew<cr>
 " Ctrrlp Configrature
 set wildignore+=*/lib_arm9/*,*/lib_x86/*
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=20
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_window_bottom = 1
+let g:ctrlp_max_height = 20
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_mruf_max = 500
+let g:ctrlp_follow_symlinks= 1
 let g:ctrlp_map ='<c-[>'
 
 " Ctrrlp extension
