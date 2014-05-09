@@ -36,17 +36,21 @@ EOF
 execute ":edit" . " README" 
 endfunction
 
+
 function! Global_Fun_MakeProject()
+
 python << EOF
 import os
-os.system("./makestatic.sh")
+os.system("./scripts/makestatic.sh")
 EOF
+
 endfunction
+
 
 function! Global_Fun_MakeCleanProject()
 python << EOF
 import os
-os.system("./makeclean.sh")
+os.system("./scripts/makeclean.sh")
 EOF
 endfunction
 
@@ -98,6 +102,9 @@ content = content[:0] + '"""""""""""""""""""""""""""""""""""""""""""""""""""""\n
 f = open(vim.eval("s:filename"),'w')
 f.write(content)
 f.close()
+
+os.system("ls -al")
+
 EOF
 execute ":e!"
 endfunction
@@ -166,6 +173,7 @@ map mv :call Global_Fun_CopyScripts()<CR>
 map mpr :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/Ruby")<CR>
 map mps :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/git_Smart/Smart/")<CR>
 map mpp :call Global_Fun_Change2WorkDir("/home/kevin/work_old/P0121/vimscript-python/")<CR>
-map mpk :call Global_Fun_Change2WorkDir("/home/kevin/linux_kernel_qt_port/gitlinux/")<CR>
-map <F2> :call Global_Fun_MakeProject(<CR>
-map <F3> :call Global_Fun_MakeCleanProject()<CR>
+map mpk :call Global_Fun_Change2WorkDir("/home/kevin/Eddysun_ARM/newkernel/gitlinux/")<CR>
+
+map mk1 :call Global_Fun_MakeProject()<CR>
+map mk2 :call Global_Fun_MakeCleanProject()<CR>
