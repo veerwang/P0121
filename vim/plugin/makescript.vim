@@ -37,22 +37,37 @@ execute ":edit" . " README"
 endfunction
 
 
-function! Global_Fun_MakeProject()
+
+function! Global_Fun_MakeCMD(makecmd)
+
+let s:tmpfile = ".fuckfile"
+let s:cmd     = a:makecmd. " 2>" .s:tmpfile." 1>/dev/null"
+
+let old_efm = &efm
+set efm=%f:%\\s%#%l:%m
 
 python << EOF
 import os
-os.system("./scripts/makestatic.sh")
+os.system(vim.eval("s:cmd"))
 EOF
+
+if exists(":cgetfile")
+    execute "silent! cgetfile " . s:tmpfile
+else
+    execute "silent! cfile " . s:tmpfile
+endif
+
+if exists('s:tmpfile')
+        call delete(s:tmpfile)
+endif
+
+botright copen
+
+let &efm = old_efm
 
 endfunction
 
 
-function! Global_Fun_MakeCleanProject()
-python << EOF
-import os
-os.system("./scripts/makeclean.sh")
-EOF
-endfunction
 
 let s:ProjectName="/home/kevin/armworkcopy/Ruby/"
 function! Global_Fun_CreateProjectFile()
@@ -175,5 +190,5 @@ map mps :call Global_Fun_Change2WorkDir("/home/kevin/armworkcopy/git_Smart/Smart
 map mpp :call Global_Fun_Change2WorkDir("/home/kevin/work_old/P0121/vimscript-python/")<CR>
 map mpk :call Global_Fun_Change2WorkDir("/home/kevin/Eddysun_ARM/newkernel/gitlinux/")<CR>
 
-map mk1 :call Global_Fun_MakeProject()<CR>
-map mk2 :call Global_Fun_MakeCleanProject()<CR>
+map <silent>mk1 :call Global_Fun_MakeCMD("./scripts/makestatic.sh")<CR>
+map <silent>mk2 :call Global_Fun_MakeCMD("./scripts/makeclean.sh")<CR>
