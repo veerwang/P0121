@@ -223,7 +223,7 @@ set history=400
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugin/.ycm_extra_conf.py'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
 let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
@@ -380,7 +380,10 @@ let g:ConqueTerm_CodePage=0
 let g:ConqueTerm_Color = 2
 let g:ConqueTerm_StartMessages = 0
 let g:ConqueTerm_FastMode=0
-nmap <leader>sh :ConqueTermTab zsh<cr>
+let g:ConqueTerm_ReadUnfocused=1
+let g:ConqueTerm_CloseOnEnd = 1
+let g:ConqueTerm_CWInsert = 1
+nmap <leader>sh :ConqueTermSplit zsh<cr>
 
 "run shell command and show the result on screen
 nmap <leader>s :r!
@@ -493,7 +496,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ' '
-let g:airline_theme='powerlineish'
+" let g:airline_theme='powerlineish'
+let g:airline_theme='light'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
 let g:airline_section_c='%F'
