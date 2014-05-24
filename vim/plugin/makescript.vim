@@ -37,13 +37,23 @@ execute ":edit" . " README"
 endfunction
 
 
+function! Global_Fun_TMP(makecmd)
+
+
+endfunction
+
 
 function! Global_Fun_MakeCMD(makecmd)
+
+"	new
+"	call append('','hello this study')
+"	call append('$','')
+"	call append('$','hello')
 
 let s:tmpfile = ".fuckfile"
 let s:cmd     = a:makecmd. " 2>" .s:tmpfile." 1>/dev/null"
 
-let old_efm = &efm
+let old_efm   = &efm
 set efm=%f:%\\s%#%l:%m
 
 python << EOF
@@ -174,6 +184,19 @@ function! Global_Fun_Resize()
 40vsplit
 endfunction
 
+function! Make_Normal_Function()
+	call conque_term#get_instance(0).writeln('clear')
+	call conque_term#get_instance(0).writeln('./scripts/makestatic.sh')
+endfunction
+
+function! Make_Clean_Function()
+	call conque_term#get_instance(0).writeln('clear')
+	call conque_term#get_instance(0).writeln('./scripts/makeclean.sh')
+endfunction
+
+nmap <leader>mk :call Make_Normal_Function()<CR>
+nmap <leader>mc :call Make_Clean_Function()<CR>
+
 map rsw :call Global_Fun_Resize()<CR>
 map and :call Global_Fun_Network("arm","down")<CR>
 map anu :call Global_Fun_Network("arm","up")<CR>
@@ -192,3 +215,5 @@ map mpk :call Global_Fun_Change2WorkDir("/home/kevin/Eddysun_ARM/newkernel/gitli
 
 map <silent>mk1 :call Global_Fun_MakeCMD("./scripts/makestatic.sh")<CR>
 map <silent>mk2 :call Global_Fun_MakeCMD("./scripts/makeclean.sh")<CR>
+
+map <silent>mk3 :call Global_Fun_TMP("./scripts/makeclean.sh")<CR>
