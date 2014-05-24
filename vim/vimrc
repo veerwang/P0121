@@ -497,6 +497,7 @@ let g:airline_theme='powerlineish'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
 let g:airline_section_c='%F'
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 
 " NERDTree configration
 "autocmd VimEnter * NERDTree

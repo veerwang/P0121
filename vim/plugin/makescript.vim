@@ -4,7 +4,7 @@
 "        more comfortable
 "        		Author: Kevin                 
 "        		V 1.00                        
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+j""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if !exists('g:kevin_script_lib_loaded_flag')
     runtime! plugin/kevin-script-lib.vim
