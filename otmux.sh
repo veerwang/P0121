@@ -35,7 +35,7 @@ if [ $? != 0 ]; then
 	$cmd neww -n vim2 -t $session "zsh"
 	$cmd neww -n debug -t $session "zsh"
 	$cmd neww -n sdcv -t $session "sdcv"
-	$cmd splitw -v -p 70 "python"
+	$cmd splitw -v -p 70 "ipython"
 	$cmd splitw -h -p 50 "htop"
 	$cmd neww -n mutt -t $session "mutt"
 	$cmd neww -n cmus -t $session "cmus"
