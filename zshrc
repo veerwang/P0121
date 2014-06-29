@@ -8,7 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="robbyrussell"
 
 ZSH_THEME="fletcherm"
-
 #ZSH_THEME="fino-time"
 #ZSH_THEME="bira"
 #ZSH_THEME="random"
@@ -21,7 +20,7 @@ ZSH_THEME="fletcherm"
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -52,7 +51,7 @@ plugins=(git yum ruby rvm autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-PATH=$PATH:$HOME/bin:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
+PATH=$PATH:$HOME/bin:/sbin/:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
 
 # Customize to your needs...
 alias gr='cd ~/armworkcopy/Ruby/'
@@ -62,9 +61,6 @@ alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
 alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
 alias gdft='cd ~/armworkcopy/DFT_Test/'
 alias gp='cd ~/work_old/P0711Python/'
-alias gl='cd ~/STM_Env_Linux/stm32_discovery_arm_gcc/STM32F4-Discovery_FW_V1.1.0/Project/'
-alias gk='cd ~/Eddysun_ARM/newkernel/gitlinux/'
-alias g3='cd ~/armworkcopy/Eddysun_Library/src/'
 
 alias um='umount /media/KINGSTON/'
 
@@ -81,8 +77,4 @@ hash -d  armgcc='/opt/host/arm-kevin-linux-gnueabi/bin/'
 echo  \ \ \ \ \ \ \ ▂▃▅▆█ Hello, Coding Man █▆▅▃▂
 echo  \ \ \ \ \ Welcome to your personal terminal!!
 echo  \ \ \ \ \ \ \ \ \ \ Have fun with it!
-
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-
-source ~/tools/z/z.sh
+source ~/env_tools_repository/z/z.sh
