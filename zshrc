@@ -74,6 +74,12 @@ alias config='vim ~/.zshrc'
 
 hash -d  armgcc='/opt/host/arm-kevin-linux-gnueabi/bin/'
 
+# trash-cli tools command used
+alias trm=trash-put
+alias tl=trash-list
+alias ts=trash-restore
+alias tclean=trash-empty
+
 echo  \ \ \ \ \ \ \ ▂▃▅▆█ Hello, Coding Man █▆▅▃▂
 echo  \ \ \ \ \ Welcome to your personal terminal!!
 echo  \ \ \ \ \ \ \ \ \ \ Have fun with it!
