@@ -85,26 +85,17 @@ echo  \ \ \ \ \ Welcome to your personal terminal!!
 echo  \ \ \ \ \ \ \ \ \ \ Have fun with it!
 source ~/env_tools_repository/z/z.sh
 
-CHROOT=`ls -di / | awk '{if ($1 != "2") print 1; else print 0;}'`
-function powerline_precmd() 
-{
-	PREV=$?
-	EXTRA=`logname`@`hostname`
-	export PS1="$(/home/kevin/.powerline-shell.py ${PREV} --width ${COLUMNS} --chroot ${CHROOT} --shell zsh --extra ${EXTRA})"
-}
+        function powerline_precmd() {
+          export PS1="$(~/.powerline-shell.py $? --shell zsh 2> /dev/null)"
+        }
 
-function install_powerline_precmd() 
-{
-	for s in "${precmd_functions[@]}"; do
-		if [ "$s" = "powerline_precmd" ]; then
-			return
-		fi
-	done
-	precmd_functions+=(powerline_precmd)
-}
+        function install_powerline_precmd() {
+          for s in "${precmd_functions[@]}"; do
+            if [ "$s" = "powerline_precmd" ]; then
+              return
+            fi
+          done
+          precmd_functions+=(powerline_precmd)
+        }
 
-if [ "$TERM" != "linux" ] ; then
-	install_powerline_precmd
-else
-	prompt walters
-fi
+        install_powerline_precmd
