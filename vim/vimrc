@@ -125,6 +125,8 @@ Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
 Bundle 'https://github.com/bling/vim-airline.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/rking/ag.vim.git'
+Bundle 'https://github.com/chusiang/vim-sdcv.git'
+
 "
 " ...
 
@@ -144,7 +146,7 @@ set background=light
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme light2011 
+colorscheme github
 
 "set the line number 
 set nu
@@ -223,7 +225,7 @@ set history=400
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugin/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugin/.ycn_extra_conf.py'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
 let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
@@ -497,7 +499,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ' '
 " let g:airline_theme='powerlineish'
-let g:airline_theme='light'
+let g:airline_theme='lucius'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
 let g:airline_section_c='%F'
@@ -522,6 +524,9 @@ vmap <leader>gV :Gitv! --all<cr>
 
 "set the man page display on the top window
 let g:viewdoc_open='topleft new'
+
+"search english translation
+nmap <leader>sw :call SearchWord()<CR>
 
 "CSApprox configured
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
