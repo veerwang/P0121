@@ -80,9 +80,15 @@ alias tl=trash-list
 alias ts=trash-restore
 alias tclean=trash-empty
 
-echo  \ \ \ \ \ \ \ ▂▃▅▆█ Hello, Coding Man █▆▅▃▂
-echo  \ \ \ \ \ Welcome to your personal terminal!!
-echo  \ \ \ \ \ \ \ \ \ \ Have fun with it!
+echo " Welcom to The Programer Home "
+echo
+echo  " ¤╭⌒╮ ╭⌒╮"
+echo  "╱◥████████◣ ╭╭ ⌒╮"
+echo "︱田︱田 田|╰------"
+echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
+echo
+echo
+
 source ~/env_tools_repository/z/z.sh
 
         function powerline_precmd() {
