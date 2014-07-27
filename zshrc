@@ -51,7 +51,8 @@ plugins=(git yum ruby rvm autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-PATH=$PATH:$HOME/bin:/sbin/:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
+export PATH=$PATH:$HOME/bin:/sbin/:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # Customize to your needs...
 alias gr='cd ~/armworkcopy/Ruby/'
@@ -89,7 +90,7 @@ echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
 echo
 echo
 
-source ~/env_tools_repository/z/z.sh
+source ~/tools_game_src_repository/z/z.sh
 
         function powerline_precmd() {
           export PS1="$(~/.powerline-shell.py $? --shell zsh 2> /dev/null)"
