@@ -146,7 +146,7 @@ set background=light
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme github
+colorscheme badwolf 
 
 "set the line number 
 set nu
@@ -309,6 +309,14 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_mruf_max = 500
 let g:ctrlp_follow_symlinks= 1
 let g:ctrlp_map ='<c-[>'
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+	if g:airline_theme == 'badwolf'
+		for colors in values(a:palette.inactive)
+			let colors[3] = 245
+		endfor
+	endif
+endfunction
 
 " Ctrrlp extension
 let g:ctrlp_extensions = ['funky']
@@ -504,6 +512,23 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
 let g:airline_section_c='%F'
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+function! VimConfigPlugin(...)
+	if &filetype == 'vim'
+		let w:airline_section_a = 'vim configuration file'
+		let w:airline_section_b = '%{strftime("%y/%m/%d\ -\ %H:%M")}'
+		let w:airline_section_c = '%F'
+	endif
+endfunction
+call airline#add_statusline_func('VimConfigPlugin')
+
+function! HelpFilePlugin(...)
+	if &filetype == 'help'
+		let w:airline_section_a = 'help file'
+		let w:airline_section_b = '%{strftime("%y/%m/%d\ -\ %H:%M")}'
+		let w:airline_section_c = '%F'
+	endif
+endfunction
+call airline#add_statusline_func('HelpFilePlugin')
 
 " NERDTree configration
 "autocmd VimEnter * NERDTree
