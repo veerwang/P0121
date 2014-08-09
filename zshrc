@@ -57,7 +57,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 # Customize to your needs...
 alias gr='cd ~/armworkcopy/Ruby/'
