@@ -127,6 +127,9 @@ Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/rking/ag.vim.git'
 Bundle 'https://github.com/chusiang/vim-sdcv.git'
 Bundle 'https://github.com/idanarye/vim-merginal.git'
+Bundle 'https://github.com/int3/vim-extradite.git'
+
+
 "
 " ...
 
@@ -405,6 +408,10 @@ nmap <leader>u :GundoShow<CR>
 " merginal plugin
 nmap <leader>br :MerginalToggle<CR>
 
+" extradite to see the single file history
+nmap <leader>lg :Extradite!<CR>
+let g:extradite_width=30
+let g:extradite_resize=30
 
 " vim replace string in whole project 
 function! Replace_String(mode)
