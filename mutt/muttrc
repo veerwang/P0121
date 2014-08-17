@@ -1,6 +1,6 @@
 set mbox_type=Maildir
 set folder=$HOME/.mail/
-set header_cache=~/.mail/.hcache
+#set header_cache=~/.mail/.hcache
 
 set spoolfile=~/.mail/kevin
 
@@ -94,6 +94,8 @@ bind index v next-unread-mailbox
 bind index gg first-entry
 bind index G last-entry
 
-color status	white 	black 
-color message   red   	white
-color error     white   red
+#color status	white 	black 
+#color message   red   	white
+#color error     white   red
+
+source ~/library_tools_game_repository/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
