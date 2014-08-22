@@ -19,4 +19,4 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-diff -a -b -c -r -x .git -x "*.jpg" -x "*.o" -x "*.cmd"  $1 $2
+diff -a -b -c -r -x .git -x "*.jpg" -x "*.o" -x "*.cmd" -x "*.ko"  $1 $2
