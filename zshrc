@@ -51,7 +51,7 @@ plugins=(git yum ruby rvm autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/bin:/usr/local/bin/:/usr/local/sbin:/sbin/:/opt/skyeye/bin/:/usr/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/
+export PATH=$PATH:$HOME/bin:/usr/bin/:/usr/local/bin:/usr/local/sbin:/sbin/:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/
 
 export LD_LIBRARY_PATH=/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/
 
@@ -85,6 +85,8 @@ alias trm=trash-put
 alias tl=trash-list
 alias ts=trash-restore
 alias tclean=trash-empty
+alias rm!="/bin/rm -vi"
+alias rm=trash
 
 echo " Welcom to The Programer Home "
 echo
@@ -95,7 +97,7 @@ echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
 echo
 echo
 
-source ~/tools_game_src_repository/z/z.sh
+source ~/library_tools_game_repository/z/z.sh
 
         function powerline_precmd() {
           export PS1="$(~/.powerline-shell.py $? --shell zsh 2> /dev/null)"
