@@ -128,7 +128,8 @@ Bundle 'https://github.com/rking/ag.vim.git'
 Bundle 'https://github.com/chusiang/vim-sdcv.git'
 Bundle 'https://github.com/idanarye/vim-merginal.git'
 Bundle 'https://github.com/int3/vim-extradite.git'
-
+Bundle 'https://github.com/yuratomo/w3m.vim.git'
+Bundle 'https://github.com/drmikehenry/vim-headerguard'
 
 "
 " ...
@@ -564,6 +565,9 @@ let g:viewdoc_open='topleft new'
 
 "search english translation
 nmap <leader>sw :call SearchWord()<CR>
+
+"add headerguard
+nmap <leader>hd :HeaderguardAdd<CR>
 
 "CSApprox configure
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
