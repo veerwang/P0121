@@ -1,11 +1,11 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: diffcmd.sh
+#          FILE: delsvn.sh
 # 
-#         USAGE: ./diffcmd.sh 
+#         USAGE: ./delsvn.sh 
 # 
-#   DESCRIPTION: 
+#   DESCRIPTION: 删除当前目录下以及子目录下的全部.svn文件
 # 
 #       OPTIONS: ---
 #  REQUIREMENTS: ---
@@ -19,4 +19,4 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-diff -a -b -c -r -x .git -x "*.jpg" -x "*.o" -x "*.cmd" -x "*.ko"  $1 $2
+find . -name .svn -type d | xargs rm -rf
