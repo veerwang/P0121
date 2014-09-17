@@ -95,7 +95,6 @@ Bundle 'gitv'
 Bundle 'Pydiction'
 Bundle 'grep.vim'
 Bundle 'ack.vim'
-Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -129,6 +128,8 @@ Bundle 'https://github.com/chusiang/vim-sdcv.git'
 Bundle 'https://github.com/idanarye/vim-merginal.git'
 Bundle 'https://github.com/int3/vim-extradite.git'
 Bundle 'https://github.com/drmikehenry/vim-headerguard'
+Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
+Bundle 'https://github.com/airblade/vim-gitgutter.git'
 
 "
 " ...
@@ -290,6 +291,11 @@ nmap <leader>h :tab help<cr>
 
 "show the version information
 nmap <leader>v :version<cr>
+
+"refresh git-gutter status
+nmap <silent><leader>ss :GitGutter<cr>
+nmap <silent><leader>sd :GitGutterToggle<cr>
+let g:gitgutter_highlight_lines = 1
 
 "close the table
 "Ctrl-v Ctrl-c input the ^C
