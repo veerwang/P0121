@@ -125,7 +125,7 @@ Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
 Bundle 'https://github.com/bling/vim-airline.git'
 Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/rking/ag.vim.git'
-"Bundle 'https://github.com/chusiang/vim-sdcv.git'
+Bundle 'https://github.com/chusiang/vim-sdcv.git'
 Bundle 'https://github.com/idanarye/vim-merginal.git'
 Bundle 'https://github.com/int3/vim-extradite.git'
 Bundle 'https://github.com/drmikehenry/vim-headerguard'
@@ -147,11 +147,11 @@ nmap <leader>plr :BundleClean <cr>
 set t_Co=256
 
 "set the backcolor type
-set background=light
+set background=dark
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme github
+colorscheme badwolf 
 
 "set the line number 
 set nu
@@ -417,7 +417,7 @@ nmap <leader>br :MerginalToggle<CR>
 
 " extradite to see the single file history
 nmap <leader>lg :Extradite!<CR>
-let g:extradite_width=60
+let g:extradite_width=30
 let g:extradite_resize=30
 
 " vim replace string in whole project 
@@ -525,6 +525,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ' '
 " let g:airline_theme='powerlineish'
+"let g:airline_theme='lucius'
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
