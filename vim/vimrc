@@ -95,7 +95,6 @@ Bundle 'gitv'
 Bundle 'Pydiction'
 Bundle 'grep.vim'
 Bundle 'ack.vim'
-Bundle 'file-line'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -276,7 +275,7 @@ map syn :SyntasticToggleMode<CR>
 map tb :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:tagbar_width=30
-autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 
 "Edit my confirature file
 nmap <leader>c :edit ~/.vimrc <cr>
