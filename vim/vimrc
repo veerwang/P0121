@@ -89,7 +89,6 @@ Bundle 'Syntastic'
 "Bundle 'scrooloose/nerdtree.git'
 Bundle 'The-NERD-tree'
 Bundle 'EasyMotion'
-"Bundle 'CSApprox'
 "Bundle 'viewdoc'
 Bundle 'gitv'
 Bundle 'Pydiction'
@@ -126,10 +125,14 @@ Bundle 'https://github.com/Valloric/YouCompleteMe.git'
 Bundle 'https://github.com/rking/ag.vim.git'
 Bundle 'https://github.com/chusiang/vim-sdcv.git'
 Bundle 'https://github.com/idanarye/vim-merginal.git'
-Bundle 'https://github.com/int3/vim-extradite.git'
+Bundle 'https://github.com/int1/vim-extradite.git'
 Bundle 'https://github.com/drmikehenry/vim-headerguard'
 Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
 Bundle 'https://github.com/airblade/vim-gitgutter.git'
+
+Bundle 'https://github.com/Shougo/unite.vim.git'
+Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
+
 
 "
 " ...
@@ -150,7 +153,7 @@ set background=dark
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme badwolf 
+colorscheme iceberg 
 
 "set the line number 
 set nu
