@@ -134,6 +134,7 @@ Bundle 'https://github.com/airblade/vim-gitgutter.git'
 Bundle 'https://github.com/Shougo/unite.vim.git'
 Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
 
+Bundle 'https://github.com/vim-scripts/vim-signature.git'
 
 "
 " ...
@@ -580,6 +581,9 @@ nmap <leader>hd :HeaderguardAdd<CR>
 
 "CSApprox configure
 let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
+
+"unite plugin config
+nnoremap <leader>sc :Unite colorscheme<cr>
 
 "calurse configure
 let g:calendar_monday = 1
