@@ -132,6 +132,10 @@ Bundle 'https://github.com/drmikehenry/vim-headerguard'
 Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
 Bundle 'https://github.com/airblade/vim-gitgutter.git'
 
+Bundle 'https://github.com/Shougo/unite.vim.git'
+Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
+
+
 "
 " ...
 
