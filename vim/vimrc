@@ -94,6 +94,7 @@ Bundle 'gitv'
 Bundle 'Pydiction'
 Bundle 'grep.vim'
 Bundle 'ack.vim'
+Bundle 'file-line'
 
 "Bundle 'autoload_cscope.vim'
 
