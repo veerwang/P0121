@@ -8,8 +8,6 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="robbyrussell"
 
 ZSH_THEME="fletcherm"
-#ZSH_THEME="fino-time"
-#ZSH_THEME="bira"
 #ZSH_THEME="random"
 
 # Example aliases
@@ -96,6 +94,8 @@ echo "︱田︱田 田|╰------"
 echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
 echo
 echo
+
+source ~/library_tools_game_repository/incr-0.2.zsh
 
 source ~/library_tools_game_repository/z/z.sh
 
