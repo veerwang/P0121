@@ -81,6 +81,9 @@ Bundle 'pythoncomplete'
 Bundle 'Tagbar'
 Bundle 'kien/ctrlp.vim'
 
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-scripts/matchit.zip'
+
 "Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
@@ -571,4 +574,6 @@ let g:session_directory = '~/.vim/sessions/'
 let g:session_autoload = 'yes'
 let g:session_autosave = 'yes'
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,buffers
+" reload the .vimrc after save
+autocmd! bufwritepost .vimrc source %
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
