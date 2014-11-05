@@ -19,6 +19,9 @@ set nowrap
 "make the information no full screen
 set nomore
 
+"when exit vim save content on screen
+set t_ti= t_te=
+
 " plugin manage segment
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
