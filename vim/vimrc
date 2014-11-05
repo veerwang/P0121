@@ -221,51 +221,23 @@ set fencs=utf-8,gb18030,gbk,gb2312,cp936
 "Set the lines of history
 set history=400 
 
-"Omnicomplete configrature
-"let OmniCpp_GlobalScopeSearch=1
-"let OmniCpp_NamespaceSearch=1
-"let OmniCpp_DisplayMode=1
-"let OmniCpp_ShowPrototypelnAbbr=1
-"let OmniCpp_ShowAccess=1
-"let OmniCpp_MayCompleteDot=1
-"let OmniCpp_MayCompleteArrow=1
-"let OmniCpp_MayCompleteScope=1
-"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"] " 自动关闭补全窗口
-"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-"set completeopt=menuone,menu,longest
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugin/.ycn_extra_conf.py'
+"Set the ycm configrature,it will first read from current file
+let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/plugin/.ycn_extra_conf.py'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
 let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
-let g:ycm_collect_identifiers_from_tag_files = 1
-let g:ycm_min_num_of_chars_for_completion=1
-let g:ycm_auto_trigger = 1
+let g:ycm_collect_identifiers_from_tag_files=1
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_auto_trigger=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_confirm_extra_conf=0
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "set linestatus variables
 function! CurDir()
 let curdir = substitute(getcwd(), '/home/kevin/', "~/", "g")
 return curdir
 endfunction
-
-"highlight statusline color setting
-"function! StatusFun()
-"set ls=2
-"set statusline=
-"set statusline+=%1*\ type:%Y\ 
-"set statusline+=%2*\ format:%{&ff}:%{&fenc!=''?&fenc:&enc}\ 
-"set statusline+=%3*\ time:\ 
-"set statusline+=%{strftime(\"%Y-%m-%d\ %H:%M\")}\ 
-"set statusline+=%4*\ %03l,%03c\ +\ %L(%p%%)\ 
-"set statusline+=%5*\ %M%n%r%h%w\ %F\ 
-"hi User1 term=bold ctermfg=Black ctermbg=Yellow
-"hi User2 term=bold ctermfg=Yellow ctermbg=Black
-"hi User3 term=bold ctermfg=Black ctermbg=Yellow
-"hi User4 term=bold ctermfg=Yellow ctermbg=black
-"hi User5 term=bold ctermfg=Black ctermbg=Yellow
-"endfunction
-
-"call StatusFun()
 
 map time :!date<CR>
 
