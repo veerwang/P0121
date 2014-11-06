@@ -563,6 +563,10 @@ let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 "unite plugin config
 nnoremap <leader>sc :Unite colorscheme<cr>
 
+" easymotion set
+map s <Plug>(easymotion-s)
+let g:EasyMotion_force_csapprox = 1
+
 "calurse configure
 let g:calendar_monday = 1
 let g:calendar_focus_today = 1
