@@ -19,4 +19,6 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-rsync -avz --delete --progress resource save
+Destination=/media/Elements/system-rsync-backup-repository/
+
+rsync -az --delete --progress $1 $Destination
