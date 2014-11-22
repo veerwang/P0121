@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:$HOME/bin:/usr/bin/:/usr/local/bin:/usr/local/sbin:/sbin/:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/
 
-export LD_LIBRARY_PATH=/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/
+export LD_LIBRARY_PATH=nn/home/kevin/library_tools_game_repository/llvm/lib/:/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
@@ -65,6 +65,7 @@ alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
 alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
 alias gdft='cd ~/armworkcopy/DFT_Test/'
 alias gp='cd ~/work_old/P0711Python/'
+alias ge='cd ~/library_tools_game_repository/elementary_library/src_git/library-src-repository/'
 
 alias um='umount /media/KINGSTON/'
 
@@ -95,7 +96,7 @@ echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
 echo
 echo
 
-source ~/library_tools_game_repository/incr-0.2.zsh
+#source ~/library_tools_game_repository/incr-0.2.zsh
 
 source ~/library_tools_game_repository/z/z.sh
 
