@@ -79,6 +79,8 @@ alias config='vim ~/.zshrc'
 
 hash -d  armgcc='/opt/host/arm-kevin-linux-gnueabi/bin/'
 
+alias ccheck='~/bin/cppcheck --enable=all --library=std,posix'
+
 # trash-cli tools command used
 alias trm=trash-put
 alias tl=trash-list
