@@ -84,6 +84,9 @@ Bundle 'pythoncomplete'
 Bundle 'Tagbar'
 Bundle 'kien/ctrlp.vim'
 
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'vim-scripts/matchit.zip'
+
 "Bundle 'neocomplcache'
 "Bundle 'snipMate'
 Bundle 'xptemplate'
@@ -91,7 +94,6 @@ Bundle 'Syntastic'
 "Bundle 'Lokaltog/vim-powerline'
 "Bundle 'scrooloose/nerdtree.git'
 Bundle 'The-NERD-tree'
-Bundle 'EasyMotion'
 "Bundle 'viewdoc'
 Bundle 'gitv'
 Bundle 'Pydiction'
@@ -438,9 +440,6 @@ let g:BASH_MapLeader  = ','
 nmap <leader>ren :Renamer <cr>
 nmap <leader>ree :Ren <cr>
 
-"visit the vim websize
-nmap <leader>ftpvim :e ftp://anonymous@ftp.vim.org/pub/vim/patches/7.3/ <cr>
-
 "browse current directory
 let g:netrw_preview   = 1
 let g:netrw_liststyle = 3
@@ -561,7 +560,7 @@ let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 nnoremap <leader>sc :Unite colorscheme<cr>
 
 " easymotion set
-map s <Plug>(easymotion-s)
+map ss <Plug>(easymotion-s)
 let g:EasyMotion_force_csapprox = 1
 
 "calurse configure
