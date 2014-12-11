@@ -49,7 +49,13 @@ plugins=(git yum ruby rvm autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:$HOME/bin:/usr/bin/:/usr/local/bin:/usr/local/sbin:/sbin/:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.25-3.b17.el6_6.i386/
+
+export JRE_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.25-3.b17.el6_6.i386/jre
+
+export M2_HOME=/usr/local/apache-maven-3.0.5
+
+export PATH=$PATH:$HOME/bin:/usr/bin/:/usr/local/bin:/usr/local/sbin:/sbin/:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/:$M2_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
 
 export LD_LIBRARY_PATH=nn/home/kevin/library_tools_game_repository/llvm/lib/:/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/:/home/kevin/armworkcopy/Venture_Game/lib_x86/lib
 
@@ -59,7 +65,6 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # Customize to your needs...
 alias gr='cd ~/armworkcopy/Ruby/'
-alias ge='cd ~/armworkcopy/git_ELSeries/ELSeries'
 alias gs='cd ~/armworkcopy/git_Smart/Smart'
 alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
 alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
