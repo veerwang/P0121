@@ -227,7 +227,7 @@ set fencs=utf-8,gb18030,gbk,gb2312,cp936
 set history=400 
 
 "Set the ycm configrature,it will first read from current file
-let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/plugin/.ycn_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/plugin/.ycm_extra_conf.py'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
 let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
@@ -558,6 +558,22 @@ let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 
 "unite plugin config
 nnoremap <leader>sc :Unite colorscheme<cr>
+
+
+" goldenview plugin short-cut
+let g:goldenview__enable_default_mapping = 0
+" 1. split to tiled windows
+nmap <silent> <S-L>  <Plug>GoldenViewSplit
+
+" 2. quickly switch current window with the main pane
+" and toggle back
+nmap <silent> <S-M>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F>   <Plug>GoldenViewSwitchToggle
+
+" 3. jump to next and previous window
+nmap <silent> <C-N>  <Plug>GoldenViewNext
+nmap <silent> <C-P>  <Plug>GoldenViewPrevious
+
 
 " easymotion set
 map ss <Plug>(easymotion-s)
