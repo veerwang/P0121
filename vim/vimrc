@@ -100,6 +100,7 @@ Bundle 'Pydiction'
 Bundle 'grep.vim'
 Bundle 'ack.vim'
 Bundle 'file-line'
+Bundle 'FavEx'
 
 "Bundle 'autoload_cscope.vim'
 
@@ -121,7 +122,10 @@ Bundle 'vylight'
 Bundle 'BusyBee'
 Bundle 'badwolf'
 Bundle 'git://github.com/vim-scripts/Iceberg.git'
-Plugin 'softblue'
+Bundle 'softblue'
+Bundle 'flazz/vim-colorschemes'
+
+
 
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
