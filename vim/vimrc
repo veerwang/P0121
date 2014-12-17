@@ -563,7 +563,6 @@ let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 "unite plugin config
 nnoremap <leader>sc :Unite colorscheme<cr>
 
-
 " goldenview plugin short-cut
 let g:goldenview__enable_default_mapping = 0
 " 1. split to tiled windows
@@ -578,6 +577,9 @@ nmap <silent> <S-F>   <Plug>GoldenViewSwitchToggle
 nmap <silent> <C-N>  <Plug>GoldenViewNext
 nmap <silent> <C-P>  <Plug>GoldenViewPrevious
 
+" gitgutter configure
+let g:gitgutter_highlight_lines = 0
+nmap <silent> <leader>sd :GitGutterToggle <cr>
 
 " easymotion set
 map ss <Plug>(easymotion-s)
