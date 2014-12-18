@@ -580,6 +580,7 @@ nmap <silent> <C-P>  <Plug>GoldenViewPrevious
 " gitgutter configure
 let g:gitgutter_highlight_lines = 0
 nmap <silent> <leader>sd :GitGutterToggle <cr>
+nmap <silent> <leader>sl :GitGutterLineHighlightsToggle <cr>
 
 " easymotion set
 map ss <Plug>(easymotion-s)
