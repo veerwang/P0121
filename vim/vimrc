@@ -13,6 +13,8 @@ let mapleader=","
 nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
 
+set clipboard+=unnamed
+
 "just show content in single line
 set nowrap
 
@@ -583,3 +585,9 @@ set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,
 " reload the .vimrc after save
 autocmd! bufwritepost .vimrc source %
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
+
+" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
