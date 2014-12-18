@@ -105,27 +105,7 @@ Bundle 'FavEx'
 "Bundle 'autoload_cscope.vim'
 
 "color
-Bundle 'simple-dark'
-Bundle 'tpope/vim-vividchalk.git'
-Bundle 'summerfruit256.vim'
-Bundle 'inkpot'
-Bundle 'Gummybears'
-Bundle 'peaksea'
-Bundle 'softbluev2'
-Bundle 'lemon256'
-Bundle 'Solarized'
-Bundle 'light2011'
-Bundle 'Lucius'
-Bundle 'jellybeans.vim'
-Bundle 'github-theme'
-Bundle 'vylight'
-Bundle 'BusyBee'
-Bundle 'badwolf'
-Bundle 'git://github.com/vim-scripts/Iceberg.git'
-Bundle 'softblue'
 Bundle 'flazz/vim-colorschemes'
-
-
 
 " non github repos
 Bundle 'git://gist.github.com/422503.git'
