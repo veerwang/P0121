@@ -568,6 +568,23 @@ nmap <silent> <leader>sl :GitGutterLineHighlightsToggle <cr>
 map ss <Plug>(easymotion-s)
 let g:EasyMotion_force_csapprox = 1
 
+" vim-headerguard configure
+function! g:HeaderguardName()
+return "INCLUDED_" . toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
+endfunction
+
+function! g:HeaderguardLine1()
+return "#if !defined(" . g:HeaderguardName() . ")"
+endfunction
+
+function! g:HeaderguardLine2()
+return "#define " . g:HeaderguardName() . "  1"
+endfunction
+
+function! g:HeaderguardLine3()
+return "#endif /* !defined(" . g:HeaderguardName() . ") */"
+endfunction
+
 "calurse configure
 let g:calendar_monday = 1
 let g:calendar_focus_today = 1
