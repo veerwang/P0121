@@ -271,10 +271,11 @@ nmap  :close<cr>
 nmap  :qall<cr>
 
 "Tab operation
-nmap <leader>tn :tabnew<cr>
-"nmap <leader>tm :tabmove<cr>
-"nmap <leader>tc :tabclose<cr>
-"nmap <leader>te :tabedit<cr>
+nmap <silent><leader>tn :tabnew<cr>
+nmap <silent><leader><left> :tabmove -1<cr>
+nmap <silent><leader><right> :tabmove +1<cr>
+nmap <silent><leader><down> :$tabmove<cr>
+nmap <silent><leader><up> :0tabmove<cr>
 
 " Ctrrlp Configrature
 set wildignore+=*/lib_arm9/*,*/lib_x86/*
