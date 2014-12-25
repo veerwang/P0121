@@ -239,6 +239,14 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 		       \ 'passive_filetypes': [] }
 map syn :SyntasticToggleMode<CR>
 
+"ctrlsf configure
+nmap     <leader>f <Plug>CtrlSFPrompt
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+vmap     <leader>fF <Plug>CtrlSFVwordExec
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+nnoremap <leader>fo :CtrlSFOpen<CR> 
+
 "tagbar
 "nmap <Leader>tb :TagbarToggle<CR>
 map tb :TagbarToggle<CR>
