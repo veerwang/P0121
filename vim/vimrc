@@ -126,6 +126,7 @@ Bundle 'https://github.com/Shougo/unite.vim.git'
 Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
 
 Bundle 'https://github.com/vim-scripts/vim-signature.git'
+Bundle 'https://github.com/dyng/ctrlsf.vim'
 
 "
 " ...
@@ -307,10 +308,8 @@ let g:Grep_Default_Options = '-i --color=never'
 let g:Grep_Skip_Files = 'tags *.bak *~'
 nnoremap <silent> <F7> :Rfgrep<CR>
 
-" ag.vim plugin
-let g:agprg="ag --column --smart-case"
-let g:aghighlight=1
-nnoremap <silent> <F8> :Ag<CR>
+" ack.vim plugin
+nnoremap <silent> <F8> :Ack <cword><CR>
 
 map <F4> :!ctags -R .<cr>
 map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
