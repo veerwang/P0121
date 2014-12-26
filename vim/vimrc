@@ -240,6 +240,7 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 map syn :SyntasticToggleMode<CR>
 
 "ctrlsf configure
+let g:ctrlsf_ackprg = 'ag'
 nmap     <leader>f <Plug>CtrlSFPrompt
 vmap     <leader>ff <Plug>CtrlSFVwordPath
 vmap     <leader>fF <Plug>CtrlSFVwordExec
