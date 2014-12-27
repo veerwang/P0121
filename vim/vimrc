@@ -79,7 +79,6 @@ Bundle 'Align'
 Bundle 'cscope_macros.vim'
 Bundle 'netrw.vim'
 Bundle 'browser.vim'
-Bundle 'sjl/gundo.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Shell.vim'
 Bundle 'pythoncomplete'
@@ -127,6 +126,7 @@ Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
 
 Bundle 'https://github.com/vim-scripts/vim-signature.git'
 Bundle 'https://github.com/dyng/ctrlsf.vim'
+Bundle 'https://github.com/mbbill/undotree.git'
 
 "
 " ...
@@ -147,7 +147,9 @@ set background=dark
 
 " set the current color scheme
 "colorscheme solarized
-colorscheme iceberg 
+colorscheme bluechia 
+
+let g:solarized_termcolors=256
 
 "set the line number 
 set nu
@@ -386,7 +388,8 @@ nmap <leader>s :r!
 let g:PROMPT="$"
 
 " Show undo tree
-nmap <leader>u :GundoShow<CR>
+nmap <leader>u :UndotreeToggle<CR>
+let g:undotree_WindowLayout=2
 
 " merginal plugin
 nmap <leader>br :MerginalToggle<CR>
@@ -471,8 +474,8 @@ function! MyTabLine()
 endfunction
 
 function! MyTabLabel(n)
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
+	let buflist = tabpagebuflist(a:n)
+	let winnr = tabpagewinnr(a:n)
   return bufname( buflist[winnr - 1])
 endfunction
 
