@@ -13,6 +13,15 @@ let mapleader=","
 nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
 
+" w!! to sudo & write a file
+cmap w!! w !sudo tee >/dev/null %
+
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" set the focus on the current line and column
+"set cursorline
+"set cursorcolumn
+
 set clipboard+=unnamed
 
 "just show content in single line
