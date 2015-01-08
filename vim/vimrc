@@ -138,6 +138,7 @@ Bundle 'https://github.com/dyng/ctrlsf.vim'
 Bundle 'https://github.com/mbbill/undotree.git'
 
 Bundle 'https://github.com/vim-scripts/YankRing.vim.git'
+Bundle 'https://github.com/vim-scripts/Conque-GDB.git'
 
 
 "
