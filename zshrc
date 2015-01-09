@@ -101,6 +101,8 @@ alias tclean=trash-empty
 alias rm!="/bin/rm -vi"
 alias rm=trash
 
+alias t=todo.sh
+
 echo " Welcom to The Programer Home "
 echo
 echo  " ¤╭⌒╮ ╭⌒╮"
