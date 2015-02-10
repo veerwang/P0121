@@ -17,7 +17,8 @@ if [ $? != 0 ]; then
 	$cmd neww -n vim -c "/home/kevin/armworkspace/Venture_Game" -t $session "zsh"
 	$cmd splitw -c "/home/kevin/armworkspace/Venture_Game" -h -p 20 "zsh"
 	$cmd splitw -c "/home/kevin/armworkspace/Venture_Game/bin" -v -p 50 "zsh"
-	$cmd neww -n "work" "zsh"	    # 文件操作
+	$cmd neww -n "calculate" "ipython"	    	# 计算 
+	$cmd neww -n "work" "zsh"	    		# 文件操作
 	$cmd selectw -t $session:2
 	$cmd selectp -t 1
 fi
