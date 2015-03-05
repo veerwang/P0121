@@ -3,6 +3,6 @@ poll pop.qq.com
 proto POP3
 port 110
 user '71875002'
-password '200431004'
+password 'v200431060'
 options
-keep
+no keep
