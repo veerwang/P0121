@@ -1,0 +1,44 @@
+pwd
+cp
+pw
+p
+ls
+fset ogg-or-mp3=ogg|mp3|wav
+save
+set resume=true
+set play_sorted=true
+set replaygain_limit=true
+bind common <g> run
+bind common <key> run g
+bind common <key> colorscheme
+bind common <key> run
+w
+W
+q
+h
+help
+v
+version
+bind -f common space win-toggle
+bind -f common s toggle shuffle
+set repeat=0
+set repeat_current=0
+set repeat_current=flase
+bind common <key> w
+bind common <key> H
+bind common <key> HELP
+bind common <key> h
+bind common <key> invert
+add ~/音乐/music/
+add 音乐/music/
+add .
+add
+add *
+set id3v1_default_charset=ISO-8859-2,UTF-8
+set id3_default_charset=ISO-8859-2,UTF-8
+set icecast_default_charset=ISO-8859-2,UTF-8
+set icecast_default_charset=ISO-8859-1,UTF-8
+set id3_default_charset=ISO-8859-1,UTF-8
+add ~/music/
+set color_info=black
+bind -f common q quit
