@@ -5,4 +5,4 @@ port 110
 user 'wangwei200431004'
 password '200431060'
 options
-keep
+no keep

@@ -5,5 +5,5 @@ port 995
 user 'kevin.wang2004@gmail.com'
 password 'ewpq ehcn fakd jdnf'
 options
-keep
+no keep
 ssl

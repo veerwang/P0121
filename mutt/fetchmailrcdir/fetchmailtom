@@ -2,7 +2,7 @@
 poll pop.tom.com
 proto POP3
 port 110
-user 'kevin.wang2004'
+user 'kevin.wang2004@tom.com'
 password '200431004'
 options
-keep
+no keep
