@@ -139,7 +139,7 @@ Bundle 'https://github.com/mbbill/undotree.git'
 
 Bundle 'https://github.com/vim-scripts/YankRing.vim.git'
 Bundle 'https://github.com/vim-scripts/Conque-GDB.git'
-
+Bundle 'https://github.com/PAntoine/vimgitlog.git'
 
 "
 " ...
@@ -595,6 +595,11 @@ let g:EasyMotion_force_csapprox = 1
 
 " yankring configuration
 nmap <silent> <leader>y :YRShow<cr>
+
+" gitlog
+let g:GITLOG_default_mode=3
+let g:GITLOG_show_only_changes=1
+nmap <silent> <f3> :call GITLOG_ToggleWindows()<cr>
 
 " vim-headerguard configure
 function! g:HeaderguardName()
