@@ -162,6 +162,35 @@ print time.strftime('%H:%M:%S',time.localtime(end))
 EOF
 endfunction
 
+" vim replace string in whole project 
+function! Replace_String(mode)
+	let s:focus_str = expand("<cword>")
+
+	if s:focus_str == ""
+		let s:src_str = input("source string: ")
+	else
+		let s:src_str = input("source string: ",s:focus_str)
+	endif
+
+	if s:src_str == ""
+		return
+	endif
+
+	let s:des_str = input(s:src_str." ---------> ",s:src_str)
+
+	if a:mode == "confuse"
+		let s:commandstr = "argdo "."%s/".s:src_str."/".s:des_str."/"."eg | update" 
+	else
+		let s:commandstr = "argdo "."%s/\\\<".s:src_str."\\\>/".s:des_str."/"."eg | update" 
+	endif
+
+	argdelete *
+	let s:grepcommand = 'args '.'`grep -w '.s:src_str.' *'.' -Rl`'
+
+	exec s:grepcommand
+	exec s:commandstr
+endfunction
+
 function! Global_Fun_Network(interface,status)
 python << EOF
 import os
@@ -217,3 +246,6 @@ map <silent>mk1 :call Global_Fun_MakeCMD("./scripts/makestatic.sh")<CR>
 map <silent>mk2 :call Global_Fun_MakeCMD("./scripts/makeclean.sh")<CR>
 
 map <silent>mk3 :call Global_Fun_TMP("./scripts/makeclean.sh")<CR>
+
+nmap <leader>frp :call Replace_String("confuse")<CR>
+nmap <leader>rp :call Replace_String("exact")<CR>
