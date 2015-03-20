@@ -1,43 +1,111 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
-"        Vim Script Create for Test!                 
-"        		Author: Kevin                 
-"        		 V1.00                        
-"""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"        			Vim Script Create for Test!                 
+"        								Author: Kevin                 
+"        		 						V2.00                        
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      The file is seted for the edit programme!                               "
 "											       "
-"                                                                            Version:   1.01   "
+"                                                                            Version:   2.00   "
 "											       "
 
-"Hot key define by me
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [A] Basic Configure Item 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 1) Hot key define by me
 let mapleader=","
 nmap <leader>study :edit ~/study/study.txt <CR>
 nmap <leader>w :w!<CR>
 
-" w!! to sudo & write a file
-cmap w!! w !sudo tee >/dev/null %
+" 2) set the focus on the current line and column
+set cursorline
+set cursorcolumn
 
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+" 3) 256 colors display
+let g:solarized_termcolors=256
 
-" set the focus on the current line and column
-"set cursorline
-"set cursorcolumn
+" 4) set the line number 
+set nu
 
+" 5) set the syntax on
+syntax on
+
+" 6) set file code-write sets
+set encoding=utf-8
+set fileencoding=utf-8
+set fencs=utf-8,gb18030,gbk,gb2312,cp936
+
+" 7) Set the lines of history
+set history=400 
+
+" 8)
 set clipboard+=unnamed
 
-"just show content in single line
+"9) just show content in single line
 set nowrap
 
-"make the information no full screen
+"10) make the information no full screen
 set nomore
 
-"when exit vim save content on screen
+"11) when exit vim save content on screen
 set t_ti= t_te=
 
-" plugin manage segment
-filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"12) auto style in C program
+set cin
 
+"13) do not backup file when over-written file
+set nobackup
+
+"14)set short message cut 
+set shortmess=atl
+
+"15)set the tags file name
+set tags=tags;
+
+"16) turn the wild menu
+set wildmenu
+
+"17) turn off the error bell
+set noerrorbells
+
+"18)
+set ignorecase
+
+"19)
+set autochdir
+
+"20)set search result high light 
+set hlsearch
+
+"21)set ruler
+set ruler
+
+"22)set ruler
+set so=7
+
+"23)set no compatible mode of VIM
+set nocompatible
+
+"24)Set to auto read when a file is changed from the outside
+set autoread
+
+"25)Have the mouse enabled all the time:
+set mouse=a
+
+"26)
+set nocp
+
+"27) match {} setting
+set showmatch
+set matchtime=5
+
+"28)
+let $MYEMAIL="kevin.wang2004@hotmail.com"
+
+"29) set the man page display on the top window
+let g:viewdoc_open='topleft new'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [B] plugin manage segment
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 "  Brief help
 " :BundleList          - list configured bundles
@@ -51,470 +119,117 @@ call vundle#rc()
 " NOTE: comments after Bundle command are not
 " allowed..
 "
+"0) 
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
+"1)
 Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
+"2) terminal color
 Bundle 'CSApprox'
-
-Bundle 'vim-scripts/c.vim.git'
-"Bundle 'blak3mill3r/c.vim.git'
-
-Bundle 'vim-scripts/SeeTab.git'
-Bundle 'vim-scripts/a.vim.git'
-Bundle 'vim-scripts/gtags.vim.git'
-
-Bundle 'xolox/vim-session.git'
-Bundle 'xolox/vim-misc.git'
-
-Bundle 'vim-scripts/bufexplorer.zip.git'
-Bundle 'aldmeris'
-"Bundle 'rygwdn/vim-conque.git'
-Bundle 'rosenfeld/conque-term'
-
-Bundle 'echofunc.vim'
-Bundle 'vtreeexplorer'
-Bundle 'vim-scripts/bash-support.vim.git'
-"Bundle 'esukram/autocomplpop.vim.git'
-Bundle 'calendar.vim--Matsumoto'
-"Bundle 'OmniCppComplete'
-Bundle 'Align'
-Bundle 'cscope_macros.vim'
-Bundle 'netrw.vim'
-Bundle 'browser.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Shell.vim'
-Bundle 'pythoncomplete'
-Bundle 'Tagbar'
-Bundle 'kien/ctrlp.vim'
-
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'vim-scripts/matchit.zip'
-
-"Bundle 'neocomplcache'
-"Bundle 'snipMate'
-Bundle 'xptemplate'
-Bundle 'Syntastic'
-"Bundle 'Lokaltog/vim-powerline'
-"Bundle 'scrooloose/nerdtree.git'
-Bundle 'The-NERD-tree'
-"Bundle 'viewdoc'
-Bundle 'gitv'
-Bundle 'Pydiction'
-Bundle 'grep.vim'
-Bundle 'ack.vim'
-Bundle 'file-line'
-Bundle 'FavEx'
-
-"Bundle 'autoload_cscope.vim'
-
-"color
+"3)color
 Bundle 'flazz/vim-colorschemes'
-
-" non github repos
-Bundle 'git://gist.github.com/422503.git'
-Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
+"4)
+Bundle 'calendar.vim--Matsumoto'
+"5)
 Bundle 'https://github.com/bling/vim-airline.git'
-Bundle 'https://github.com/Valloric/YouCompleteMe.git'
-Bundle 'https://github.com/rking/ag.vim.git'
-Bundle 'https://github.com/chusiang/vim-sdcv.git'
-Bundle 'https://github.com/idanarye/vim-merginal.git'
-Bundle 'https://github.com/int1/vim-extradite.git'
-Bundle 'https://github.com/drmikehenry/vim-headerguard'
-Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
+"6) git plugin
+Bundle 'tpope/vim-fugitive'
 Bundle 'https://github.com/airblade/vim-gitgutter.git'
-
+Bundle 'https://github.com/PAntoine/vimgitlog.git'
+Bundle 'https://github.com/int1/vim-extradite.git'
+Bundle 'gitv'
+Bundle 'https://github.com/idanarye/vim-merginal.git'
+"7)
+Bundle 'vim-scripts/a.vim.git'
+"8)
+Bundle 'https://github.com/chusiang/vim-sdcv.git'
+"9)
+Bundle 'vim-scripts/SeeTab.git'
+"10)
 Bundle 'https://github.com/Shougo/unite.vim.git'
 Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
-
-Bundle 'https://github.com/vim-scripts/vim-signature.git'
+"11)
+Bundle 'Tagbar'
+"12) ctrlp fast find
+Bundle 'kien/ctrlp.vim'
+Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
 Bundle 'https://github.com/dyng/ctrlsf.vim'
+"13)
+Bundle 'file-line'
+"14) C/C++/bash program needed
 Bundle 'https://github.com/mbbill/undotree.git'
-
+Bundle 'vim-scripts/c.vim.git'
+Bundle 'https://github.com/drmikehenry/vim-headerguard'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'vim-scripts/bash-support.vim.git'
+"15)
+Bundle 'https://github.com/rking/ag.vim.git'
+"16)
+Bundle 'Lokaltog/vim-easymotion'
+"17)
+Bundle 'https://github.com/Valloric/YouCompleteMe.git'
+"18)
+Bundle 'vim-scripts/bufexplorer.zip.git'
+"19)
+Bundle 'vtreeexplorer'
+"20)
+Bundle 'netrw.vim'
+"21) read the favex.txt to find out the solution
+Bundle 'FavEx'
+"22)
 Bundle 'https://github.com/vim-scripts/YankRing.vim.git'
-Bundle 'https://github.com/vim-scripts/Conque-GDB.git'
-Bundle 'https://github.com/PAntoine/vimgitlog.git'
+"23)
+Bundle 'xolox/vim-misc.git'
+Bundle 'xolox/vim-session.git'
+"24)
+Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
+"25)
+Bundle 'rosenfeld/conque-term'
+"26)
+Bundle 'Shell.vim'
+"27)
+Bundle 'https://github.com/vim-scripts/vim-signature.git'
+"28)
+Bundle 'grep.vim'
+"29)
+Bundle 'The-NERD-tree'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [C] bundle package configure
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"2) CSApprox configure
+let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 
-"
-" ...
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [D] after configure
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"1)
 filetype plugin indent on     " required!
+nmap <leader>pll :BundleList 	<CR>
+nmap <leader>pls :BundleSearch  <CR>
+nmap <leader>pli :BundleInstall <CR>
+nmap <leader>plu :BundleInstall!<CR>
+nmap <leader>plr :BundleClean   <CR>
 
-nmap <leader>pll :BundleList <cr>
-nmap <leader>pls :BundleSearch <cr>
-nmap <leader>pli :BundleInstall <cr>
-nmap <leader>plu :BundleInstall! <cr>
-nmap <leader>plr :BundleClean <cr>
-
-" color scheme manage segment
+"2)
 set t_Co=256
-
-"set the backcolor type
 set background=dark
-
-" set the current color scheme
-"colorscheme solarized
 colorscheme bluechia 
 
-let g:solarized_termcolors=256
-
-"set the line number 
-set nu
-
-"set the syntax on
-syntax on
-
-"auto style in C program
-set cin
-
-"do not backup file when over-written file
-set nobackup
-
-"set short message cut 
-set shortmess=atl
-
-"set the tags file name
-set tags=tags;
-
-" turn the wild menu
-set wildmenu
-
-" turn off the error bell
-set noerrorbells
-
-set ignorecase
-
-set autochdir
-
-"set search result high light 
-set hlsearch
-
-"set ruler
-set ruler
-
-set so=7
-
-"set no compatible mode of VIM
-set nocompatible
-
-"Set to auto read when a file is changed from the outside
-set autoread
-
-"Have the mouse enabled all the time:
-set mouse=a
-
-filetype plugin indent on
-   
-set nocp
-
-"match {} setting
-set showmatch
-set matchtime=5
-
-"set cursor line high light
-"set cursorline
-
-"set file code-write sets
-set encoding=utf-8
-set fileencoding=utf-8
-set fencs=utf-8,gb18030,gbk,gb2312,cp936
-
-"Set the lines of history
-set history=400 
-
-"Set the ycm configrature,it will first read from current file
-let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/plugin/.ycm_extra_conf.py'
-let g:ycm_semantic_triggers = {}
-let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
-let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
-let g:ycm_collect_identifiers_from_tag_files=1
-let g:ycm_min_num_of_chars_for_completion=2
-let g:ycm_auto_trigger=1
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_confirm_extra_conf=0
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-"set linestatus variables
-function! CurDir()
-let curdir = substitute(getcwd(), '/home/kevin/', "~/", "g")
-return curdir
-endfunction
-
-map time :!date<CR>
-
-" Enable/Disable SyntasticToggleMode
-let g:syntastic_mode_map = { 'mode': 'passive',
-		       \ 'active_filetypes': [],
-		       \ 'passive_filetypes': [] }
-map syn :SyntasticToggleMode<CR>
-
-"ctrlsf configure
-let g:ctrlsf_ackprg = 'ag'
-nmap     <leader>f <Plug>CtrlSFPrompt
-vmap     <leader>ff <Plug>CtrlSFVwordPath
-vmap     <leader>fF <Plug>CtrlSFVwordExec
-nmap     <leader>fn <Plug>CtrlSFCwordPath
-nmap     <leader>fp <Plug>CtrlSFPwordPath
-nnoremap <leader>fo :CtrlSFOpen<CR> 
-
-"tagbar
-"nmap <Leader>tb :TagbarToggle<CR>
-map tb :TagbarToggle<CR>
-let g:tagbar_ctags_bin='/usr/bin/ctags'
-let g:tagbar_width=30
-"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
-
-"Edit my confirature file
-nmap <leader>c :edit ~/.vimrc <cr>
-autocmd! bufwritepost .vimrc source ~/.vimrc
-nmap <leader>g :edit ~/.gvimrc <cr>
-autocmd! bufwritepost .gvimrc source ~/.gvimrc
-
-"Edit my vim script
-nmap <leader>mc :edit ~/.vim/plugin/makescript.vim <cr>
-
-"open help documentaion
-nmap <leader>h :tab help<cr>
-
-"show the version information
-nmap <leader>v :version<cr>
-
-"refresh git-gutter status
-nmap <silent><leader>ss :GitGutter<cr>
-nmap <silent><leader>sd :GitGutterToggle<cr>
-let g:gitgutter_highlight_lines = 1
-
-"close the table
-"Ctrl-v Ctrl-c input the ^C
-nmap  :close<cr>
-nmap  :qall<cr>
-
-"Tab operation
-nmap <silent><leader>tn :tabnew<cr>
-nmap <silent><leader><left> :tabmove -1<cr>
-nmap <silent><leader><right> :tabmove +1<cr>
-nmap <silent><leader><down> :$tabmove<cr>
-nmap <silent><leader><up> :0tabmove<cr>
-
-" Ctrrlp Configrature
-set wildignore+=*/lib_arm9/*,*/lib_x86/*
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_match_window_bottom = 1
-let g:ctrlp_max_height = 20
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_mruf_max = 500
-let g:ctrlp_follow_symlinks= 1
-let g:ctrlp_map ='<c-[>'
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-	if g:airline_theme == 'badwolf'
-		for colors in values(a:palette.inactive)
-			let colors[3] = 245
-		endfor
-	endif
-endfunction
-
-" Ctrrlp extension
-let g:ctrlp_extensions = ['funky']
-nnoremap <c-e> :CtrlPFunky<cr> 
-
-" grep.vim plugin
-let g:Grep_Default_Filelist = '*.c *.cpp *.h'
-let g:Grep_Skip_Dirs = '.git .svn'
-let g:Grep_Default_Options = '-i --color=never'
-let g:Grep_Skip_Files = 'tags *.bak *~'
-nnoremap <silent> <F7> :Rfgrep<CR>
-
-" ack.vim plugin
-nnoremap <silent> <F8> :Ack <cword><CR>
-
-map <F4> :!ctags -R .<cr>
-map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
-map <F6> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
-
-" Favorite filetype
-set ffs=unix,dos,mac
-nmap <leader>fd :se ff=dos<cr>
-nmap <leader>fu :se ff=unix<cr>
-
-" VSTreeExplore used variables 
-nmap <leader>ve :VSTreeExplore<cr>
-let g:treeExplDirSort=1
-let g:treeExplWinSize=30
-let g:treeExplVertical=1
-let g:treeExplNoList=1
-let g:treeExplmodifiable=0
-let g:treeExplIndent=2
-
-" Quickfix window
-nmap o :cope<cr>
-nmap c :ccl<cr>
-nmap n :cn<cr>
-nmap p :cp<cr>
-
-" neocomplcache configrature
-"let g:neocomplcache_enable_at_startup = 1
-
-"adjust window width
-nmap <leader><leader>n :vertical res -5 <cr>
-nmap <leader><leader>m :vertical res +5 <cr>
-nmap <leader><leader>p :res -5 <cr>
-nmap <leader><leader>l :res +5 <cr>
-
-" fugitive key map
-nmap <leader>gs :Gstatus<cr>
-
-" BufExplorer
-let g:bufExplorerDefaultHelp=0
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerSplitUp = 1
-let g:bufExplorerVertical = 1
-let g:bufExplorerSplitVertSize = 30 
-let g:bufExplorerShowTabBuffer=1
-
-" Let g:bufExplorerSplitBelow=1
-nmap <leader>o :BufExplorer<cr>
-
-" binary file edit 
-nmap <leader>eb :%!xxd<cr>
-nmap <leader>rb :%!xxd -r<cr>
-
-" Shell bash plugin
-let g:ConqueTerm_CodePage=0
-let g:ConqueTerm_Color = 2
-let g:ConqueTerm_StartMessages = 0
-let g:ConqueTerm_FastMode=0
-let g:ConqueTerm_ReadUnfocused=1
-let g:ConqueTerm_CloseOnEnd = 1
-let g:ConqueTerm_CWInsert = 1
-nmap <leader>sh :ConqueTermSplit zsh<cr>
-
-"run shell command and show the result on screen
-nmap <leader>s :r!
-let g:PROMPT="$"
-
-" Show undo tree
-nmap <leader>u :UndotreeToggle<CR>
-let g:undotree_WindowLayout=2
-
-" merginal plugin
-nmap <leader>br :MerginalToggle<CR>
-
-" extradite to see the single file history
-nmap <leader>lg :Extradite!<CR>
-let g:extradite_width=30
-let g:extradite_resize=30
-
-" vim replace string in whole project 
-function! Replace_String(mode)
-	let s:focus_str = expand("<cword>")
-
-	if s:focus_str == ""
-		let s:src_str = input("source string: ")
-	else
-		let s:src_str = input("source string: ",s:focus_str)
-	endif
-
-	if s:src_str == ""
-		return
-	endif
-
-	let s:des_str = input(s:src_str." ---------> ",s:src_str)
-
-	if a:mode == "confuse"
-		let s:commandstr = "argdo "."%s/".s:src_str."/".s:des_str."/"."eg | update" 
-	else
-		let s:commandstr = "argdo "."%s/\\\<".s:src_str."\\\>/".s:des_str."/"."eg | update" 
-	endif
-
-	argdelete *
-	let s:grepcommand = 'args '.'`grep -w '.s:src_str.' *'.' -Rl`'
-
-	exec s:grepcommand
-	exec s:commandstr
-endfunction
-
-nmap <leader>frp :call Replace_String("confuse")<CR>
-nmap <leader>rp :call Replace_String("exact")<CR>
-
-" for Align plugin
-let g:BASH_MapLeader  = ','
-
-"For auto rename plugin
-nmap <leader>ren :Renamer <cr>
-nmap <leader>ree :Ren <cr>
-
-"browse current directory
-let g:netrw_preview   = 1
-let g:netrw_liststyle = 3
-let g:netrw_winsize   = 60
-nmap <silent> <leader>fe :Sexplore!<cr>
-
-set tabline=%!MyTabLine()
-
-function! MyTabLine()
-  let s = ''
-  for i in range(tabpagenr('$'))
-    " select the highlighting
-    if i + 1 == tabpagenr()
-      let s .= '%#TabLineSel#'
-    else
-      let s .= '%#TabLine#'
-    endif
-
-    " set the tab page number (for mouse clicks)
-    let s .= '%' . (i + 1) . 'T'
-
-    " the label is made by MyTabLabel()
-    let s .= (i + 1) . ' %{MyTabLabel(' . (i + 1) . ')} ' . '%M' . ' '
-  endfor
-
-  " after the last tab fill with TabLineFill and reset tab page nr
-  let s .= '%#TabLineFill#%T'
-
-  " right-align the label to close the current tab page
-  if tabpagenr('$') > 1
-    let s .= '%=%#TabLine#%999Xclose'
-  endif
-  return s
-endfunction
-
-function! MyTabLabel(n)
-	let buflist = tabpagebuflist(a:n)
-	let winnr = tabpagewinnr(a:n)
-  return bufname( buflist[winnr - 1])
-endfunction
-
-" Alt-w write the file
-" Ctrl-v Alt-w: to input ^[w charactor
-nmap w :w <cr>
-
-" for ACP plugin
-nmap <leader>acpe :AcpEnable <cr>
-nmap <leader>acpd :AcpDisable <cr>
-
-" Default mapping
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-let $MYEMAIL="kevin.wang2004@hotmail.com"
-
+"4) calurse configure
+let g:calendar_monday = 1
+let g:calendar_focus_today = 1
+let g:calendar_mark = 'left-fit'
+let g:calendar_wruler = '日 一 二 三 四 五 六'
+let g:calendar_navi_label = '往前,今日,往后'
+
+"5) aieline 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ' '
-" let g:airline_theme='powerlineish'
-"let g:airline_theme='lucius'
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_detect_whitespace=0
@@ -538,69 +253,83 @@ function! HelpFilePlugin(...)
 endfunction
 call airline#add_statusline_func('HelpFilePlugin')
 
-" NERDTree configration
-"autocmd VimEnter * NERDTree
-map <F4> :NERDTreeToggle<cr>
-let NERDTreeWinPos="left"
-let NERDTreeShowBookmarks=1
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+	if g:airline_theme == 'badwolf'
+		for colors in values(a:palette.inactive)
+			let colors[3] = 245
+		endfor
+	endif
+endfunction
 
-let g:wfw = 1
-
-" very important for write python language with vim,caution used the tab to
-" finish the key word 
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-
+"6) fugitive key map
+nmap <leader>gs :Gstatus<cr>
+"refresh git-gutter status
+let g:gitgutter_highlight_lines = 1
+nmap <silent><leader>ss :GitGutter<CR>
+nmap <silent><leader>sd :GitGutterToggle<CR>
+nmap <silent> <leader>sl :GitGutterLineHighlightsToggle <CR>
+" gitlog
+let g:GITLOG_default_mode=2
+let g:GITLOG_show_only_changes=0
+nmap <silent> <f3> :call GITLOG_ToggleWindows()<cr>
+" extradite to see the single file history
+nmap <leader>lg :Extradite!<CR>
+let g:extradite_width=80
+let g:extradite_resize=30
 " Gitv to show git log, gv:show project log,gV:show someone file log
-nmap <leader>gv :Gitv --all<cr>
-nmap <leader>gV :Gitv! --all<cr>
-vmap <leader>gV :Gitv! --all<cr>
+nmap <leader>gv :Gitv --all<CR>
+nmap <leader>gV :Gitv! --all<CR>
+vmap <leader>gV :Gitv! --all<CR>
+" merginal plugin
+nmap <leader>br :MerginalToggle<CR>
 
-"set the man page display on the top window
-let g:viewdoc_open='topleft new'
-
-"search english translation
+"8) search english translation
 nmap <leader>sw :call SearchWord()<CR>
 
+"10) unite plugin config
+nnoremap <leader>sc :Unite colorscheme<CR>
+
+"11) tagbar
+map tb :TagbarToggle<CR>
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+let g:tagbar_width=30
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+"
+"12) Ctrrlp Configrature
+set wildignore+=*/lib_arm9/*,*/lib_x86/*
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_window_bottom = 1
+let g:ctrlp_max_height = 20
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_mruf_max = 500
+let g:ctrlp_follow_symlinks= 1
+let g:ctrlp_map ='<c-[>'
+
+"ctrlsf configure
+let g:ctrlsf_ackprg = 'ag'
+nmap     <leader>f <Plug>CtrlSFPrompt
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+vmap     <leader>fF <Plug>CtrlSFVwordExec
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+nnoremap <leader>fo :CtrlSFOpen<CR> 
+
+" Ctrrlp extension
+let g:ctrlp_extensions = ['funky']
+nnoremap <c-e> :CtrlPFunky<cr> 
+
+"14) Show undo tree
+nmap <leader>u :UndotreeToggle<CR>
+let g:undotree_WindowLayout=2
+" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 "add headerguard
 nmap <leader>hd :HeaderguardAdd<CR>
-
-"CSApprox configure
-let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
-
-"unite plugin config
-nnoremap <leader>sc :Unite colorscheme<cr>
-
-" goldenview plugin short-cut
-let g:goldenview__enable_default_mapping = 0
-" 1. split to tiled windows
-nmap <silent> <S-L>  <Plug>GoldenViewSplit
-
-" 2. quickly switch current window with the main pane
-" and toggle back
-nmap <silent> <S-M>   <Plug>GoldenViewSwitchMain
-nmap <silent> <S-F>   <Plug>GoldenViewSwitchToggle
-
-" 3. jump to next and previous window
-nmap <silent> <C-N>  <Plug>GoldenViewNext
-nmap <silent> <C-P>  <Plug>GoldenViewPrevious
-
-" gitgutter configure
-let g:gitgutter_highlight_lines = 0
-nmap <silent> <leader>sd :GitGutterToggle <cr>
-nmap <silent> <leader>sl :GitGutterLineHighlightsToggle <cr>
-
-" easymotion set
-map ss <Plug>(easymotion-s)
-let g:EasyMotion_force_csapprox = 1
-
-" yankring configuration
-nmap <silent> <leader>y :YRShow<cr>
-
-" gitlog
-let g:GITLOG_default_mode=3
-let g:GITLOG_show_only_changes=1
-nmap <silent> <f3> :call GITLOG_ToggleWindows()<cr>
-
 " vim-headerguard configure
 function! g:HeaderguardName()
 return "INCLUDED_" . toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
@@ -617,27 +346,166 @@ endfunction
 function! g:HeaderguardLine3()
 return "#endif /* !defined(" . g:HeaderguardName() . ") */"
 endfunction
+" Default mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+"15) easymotion set
+map ss <Plug>(easymotion-s)
+let g:EasyMotion_force_csapprox = 1
 
-"calurse configure
-let g:calendar_monday = 1
-let g:calendar_focus_today = 1
-let g:calendar_mark = 'left-fit'
-"let g:calendar_mark = 'left'
-"let g:calendar_mruler = '  一月  ,  二月  ,  三月  ,  四月  ,  五月  ,  六月  ,  七月  ,  八月  ,  九月  ,  十月 ,十一月 , 十二月'
-let g:calendar_wruler = '日 一 二 三 四 五 六'
-let g:calendar_navi_label = '往前,今日,往后'
+"17) Set the ycm configrature,it will first read from current file
+let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/plugin/.ycm_extra_conf.py'
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
+let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
+let g:ycm_collect_identifiers_from_tag_files=1
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_auto_trigger=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_confirm_extra_conf=0
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" Save/load session function
+"18) BufExplorer
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerSplitUp = 1
+let g:bufExplorerVertical = 1
+let g:bufExplorerSplitVertSize = 30 
+let g:bufExplorerShowTabBuffer=1
+" Let g:bufExplorerSplitBelow=1
+nmap <leader>o :BufExplorer<cr>
+
+"19) VSTreeExplore used variables 
+nmap <leader>ve :VSTreeExplore<cr>
+let g:treeExplDirSort=1
+let g:treeExplWinSize=30
+let g:treeExplVertical=1
+let g:treeExplNoList=1
+let g:treeExplmodifiable=0
+let g:treeExplIndent=2
+
+"20) browse current directory
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 60
+nmap <silent> <leader>sp :Sexplore!<cr>
+
+"22) yankring configuration
+nmap <silent> <leader>y :YRShow<cr>
+
+"23) Save/load session function
 let g:session_directory = '~/.vim/sessions/'
 let g:session_autoload = 'yes'
 let g:session_autosave = 'yes'
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,buffers
 " reload the .vimrc after save
-autocmd! bufwritepost .vimrc source %
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
 
-" Persistent undo
-set undofile
-set undodir=~/.vim/undodir
-set undolevels=1000 "maximum number of changes that can be undone
-set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+"24)
+" goldenview plugin short-cut
+let g:goldenview__enable_default_mapping = 0
+" 1. split to tiled windows
+nmap <silent> <S-L>  <Plug>GoldenViewSplit
+
+" 2. quickly switch current window with the main pane
+" and toggle back
+nmap <silent> <S-M>   <Plug>GoldenViewSwitchMain
+nmap <silent> <S-F>   <Plug>GoldenViewSwitchToggle
+
+" 3. jump to next and previous window
+nmap <silent> <C-N>  <Plug>GoldenViewNext
+nmap <silent> <C-P>  <Plug>GoldenViewPrevious
+
+"25) Shell bash plugin
+let g:ConqueTerm_CodePage=0
+let g:ConqueTerm_Color = 2
+let g:ConqueTerm_StartMessages = 0
+let g:ConqueTerm_FastMode=0
+let g:ConqueTerm_ReadUnfocused=1
+let g:ConqueTerm_CloseOnEnd = 1
+let g:ConqueTerm_CWInsert = 1
+nmap <leader>sh :ConqueTermSplit zsh<cr>
+
+"26) run shell command and show the result on screen
+nmap <leader>s :r!
+let g:PROMPT="$"
+
+"28) grep.vim plugin
+let g:Grep_Default_Filelist = '*.c *.cpp *.h'
+let g:Grep_Skip_Dirs = '.git .svn'
+let g:Grep_Default_Options = '-i --color=never'
+let g:Grep_Skip_Files = 'tags *.bak *~'
+nnoremap <silent> <F7> :Rfgrep<CR>
+
+"29) NERDTree configration
+map <F4> :NERDTreeToggle<cr>
+let NERDTreeWinPos="left"
+let NERDTreeShowBookmarks=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" [Z] my short key define 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 1) open help documentaion
+nmap <leader>h :tab help<cr>
+
+"2) show the version information
+nmap <leader>v :version<cr>
+
+"3) close the table
+"Ctrl-v Ctrl-c input the ^C
+nmap  :close<cr>
+nmap  :qall<cr>
+
+"4) time setting
+map time :!date<CR>
+
+"5) Alt-w write the file
+" Ctrl-v Alt-w: to input ^[w charactor
+nmap w :w <cr>
+
+"6) For auto rename plugin
+nmap <leader>ren :Renamer <cr>
+nmap <leader>ree :Ren <cr>
+
+"7) Quickfix window
+nmap o :cope<cr>
+nmap c :ccl<cr>
+nmap n :cn<cr>
+nmap p :cp<cr>
+
+"8) Edit my confirature file
+nmap <leader>c :edit ~/.vimrc <cr>
+
+"9) Edit my vim script
+nmap <leader>kt :edit ~/.vim/plugin/makescript.vim <cr>
+
+"10) Favorite filetype
+set ffs=unix,dos,mac
+nmap <leader>fd :se ff=dos<cr>
+nmap <leader>fu :se ff=unix<cr>
+
+"11) binary file edit 
+nmap <leader>eb :%!xxd<cr>
+nmap <leader>rb :%!xxd -r<cr>
+
+"12) Tab operation
+nmap <silent><leader>tn :tabnew<cr>
+nmap <silent><leader><left> :tabmove -1<cr>
+nmap <silent><leader><right> :tabmove +1<cr>
+nmap <silent><leader><down> :$tabmove<cr>
+nmap <silent><leader><up> :0tabmove<cr>
+
+"13) adjust window width
+nmap <leader><leader>n :vertical res -5 <cr>
+nmap <leader><leader>m :vertical res +5 <cr>
+nmap <leader><leader>p :res -5 <cr>
+nmap <leader><leader>l :res +5 <cr>
+
+"14) ag.vim plugin
+nnoremap <silent> <F8> :Ag <cword><CR>
+"map <F4> :!ctags -R .<cr>
+map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
+map <F6> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
+
