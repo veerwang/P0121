@@ -183,6 +183,8 @@ Bundle 'https://github.com/vim-scripts/YankRing.vim.git'
 "23)
 Bundle 'xolox/vim-misc.git'
 Bundle 'xolox/vim-session.git'
+Bundle 'http://github.com/xolox/vim-colorscheme-switcher.git'
+Bundle 'https://github.com/Taverius/vim-colorscheme-manager.git'
 "24)
 Bundle 'https://github.com/zhaocai/GoldenView.Vim.git'
 "25)
@@ -402,7 +404,7 @@ let g:session_autosave = 'yes'
 set sessionoptions=blank,curdir,winpos,folds,tabpages,winsize,help,folds,resize,buffers
 " reload the .vimrc after save
 autocmd vimLeave * mks! $HOME/.vim/sessions/default.vim
-
+let g:colorscheme_switcher_exclude = ['default']
 "24)
 " goldenview plugin short-cut
 let g:goldenview__enable_default_mapping = 0
