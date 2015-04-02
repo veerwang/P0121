@@ -197,6 +197,8 @@ Bundle 'https://github.com/vim-scripts/vim-signature.git'
 Bundle 'grep.vim'
 "29)
 Bundle 'The-NERD-tree'
+"30)
+Bundle 'https://github.com/will133/vim-dirdiff.git'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
