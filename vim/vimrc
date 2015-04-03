@@ -448,8 +448,8 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 "30) dirdiff
-let g:DirDiffExcludes = "*.o,.*.swp,.*.pyc,*.so.*,*.so,*.a,.git,.svn,*.pdf"
-let g:DirDiffIgnore = ".git:,.svn:,DEPS:,OBJS"
+let g:DirDiffExcludes = "*.o,.*.swp,.*.pyc,*.so.*,*.so,*.a,.git,.svn,DEPS,OBJS,.svn,*.pdf"
+let g:DirDiffIgnore = ".git,.svn,DEPS,OBJS"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [Z] my short key define 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
