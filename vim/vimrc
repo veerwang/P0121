@@ -199,6 +199,7 @@ Bundle 'grep.vim'
 Bundle 'The-NERD-tree'
 "30)
 Bundle 'https://github.com/will133/vim-dirdiff.git'
+Bundle "https://github.com/chrisbra/vim-diff-enhanced.git"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
