@@ -199,7 +199,9 @@ Bundle 'grep.vim'
 Bundle 'The-NERD-tree'
 "30)
 Bundle 'https://github.com/will133/vim-dirdiff.git'
-Bundle "https://github.com/chrisbra/vim-diff-enhanced.git"
+Bundle 'https://github.com/chrisbra/vim-diff-enhanced.git'
+"31)
+Bundle 'https://github.com/alx741/vinfo.git'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -451,6 +453,9 @@ let NERDTreeShowBookmarks=1
 "30) dirdiff
 let g:DirDiffExcludes = "*.o,.*.swp,.*.pyc,*.so.*,*.so,*.a,.git,.svn,DEPS,OBJS,.svn,*.pdf"
 let g:DirDiffIgnore = ".git,.svn,DEPS,OBJS"
+
+"31) vinfo
+nnoremap <leader>vi :Vinfo 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [Z] my short key define 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -514,5 +519,5 @@ nmap <leader><leader>l :res +5 <cr>
 nnoremap <silent> <F8> :Ag <cword><CR>
 "map <F4> :!ctags -R .<cr>
 map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
-map <F6> :!ctags -R --c++-kinds=+p --fields=+iaSl --extra=+q .<cr>
+map <F6> :!ctags -R --c++-kinds=+px --fields=+iaSl --extra=+q .<cr>
 
