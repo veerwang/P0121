@@ -21,6 +21,7 @@
 	co     = commit
 	st     = status
 	br     = branch
+	bc     = branch --edit-description
 	df     = difftool
 	lg     = log --graph --stat --oneline --decorate --parents --format=fuller --date=local
 	cb     = log --pretty='%aN'|sort|uniq -c |sort -k1 -n -r|head -n 5
