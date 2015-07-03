@@ -202,6 +202,8 @@ Bundle 'https://github.com/will133/vim-dirdiff.git'
 Bundle 'https://github.com/chrisbra/vim-diff-enhanced.git'
 "31)
 Bundle 'https://github.com/alx741/vinfo.git'
+"32)
+Bundle 'https://github.com/xolox/vim-easytags.git'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -456,6 +458,10 @@ let g:DirDiffIgnore = ".git,.svn,DEPS,OBJS"
 
 "31) vinfo
 nnoremap <leader>vi :Vinfo 
+
+"32) easytags
+let g:easytags_file = '~/.vim/tags'
+let g:easytags_dynamic_files = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [Z] my short key define 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
