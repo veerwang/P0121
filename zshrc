@@ -8,10 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 #ZSH_THEME="robbyrussell"
 
 #ZSH_THEME="fletcherm"
-#ZSH_THEME="random"
-ZSH_THEME="agnoster"
-#ZSH_THEME="af-magic"
-#ZSH_THEME="adben"
+ZSH_THEME="strug"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -58,7 +55,8 @@ source $ZSH/oh-my-zsh.sh
 export JAVA_HOME=/usr/java/jdk1.7.0_71/
 export JRE_HOME=/usr/java/jdk1.7.0_71/jre
 
-export M2_HOME=/usr/local/apache-maven-3.0.5
+#export M2_HOME=/usr/local/apache-maven-3.0.5
+export M2_HOME=/opt/maven
 
 export CLASSPATH=/usr/local/lib/antlrworks-1.5.jar:/usr/local/lib/antlr-3.4-complete.jar:/usr/local/lib/antlr-runtime-3.4.jar:/usr/local/lib/antlr.jar:$CLASSPATH
 
@@ -106,14 +104,16 @@ alias rm=trash
 
 alias td=todo.sh
 
-echo " Welcom to The Programer Home "
-echo
-echo  " ¤╭⌒╮ ╭⌒╮"
-echo  "╱◥████████◣ ╭╭ ⌒╮"
-echo "︱田︱田 田|╰------"
-echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
-echo
-echo
+alias sprox="sslocal -s hk02-18.ssv4.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes-256-cfb"
+#echo " Welcom to The Programer Home "
+#echo
+#echo  " ¤╭⌒╮ ╭⌒╮"
+#echo  "╱◥████████◣ ╭╭ ⌒╮"
+#echo "︱田︱田 田|╰------"
+#echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
+#echo
+#echo
+alsi
 
 #source ~/library_tools_game_repository/incr-0.2.zsh
 
