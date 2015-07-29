@@ -248,6 +248,7 @@ Keywords[zh_TW]=shell;prompt;command;commandline;提示;指令;命令列;
 TryExec=gnome-terminal
 Exec=gnome-terminal --full-screen --hide-menubar --command "tmux -2"
 Exec=terminology -F -2 -e "tmux -2"
+Exec=xfce4-terminal --command="tmux -2" --fullscreen --hide-menubar
 Icon=utilities-terminal
 Type=Application
 X-GNOME-DocPath=gnome-terminal/index.html
