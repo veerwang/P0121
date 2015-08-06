@@ -196,7 +196,7 @@ Bundle 'https://github.com/vim-scripts/vim-signature.git'
 "28)
 Bundle 'grep.vim'
 "29)
-Bundle 'The-NERD-tree'
+Bundle 'https://github.com/scrooloose/nerdtree.git'
 "30)
 Bundle 'https://github.com/will133/vim-dirdiff.git'
 Bundle 'https://github.com/chrisbra/vim-diff-enhanced.git'
@@ -204,6 +204,15 @@ Bundle 'https://github.com/chrisbra/vim-diff-enhanced.git'
 Bundle 'https://github.com/alx741/vinfo.git'
 "32)
 Bundle 'https://github.com/xolox/vim-easytags.git'
+"33)
+Bundle 'https://github.com/wincent/terminus.git'
+"34)
+Bundle 'https://github.com/ntpeters/vim-airline-colornum.git'
+"35)
+Bundle 'https://github.com/tmux-plugins/vim-tmux.git'
+"36)
+Bundle 'https://github.com/ryanoasis/vim-devicons.git'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
