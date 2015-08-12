@@ -43,7 +43,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git yum ruby rvm autojump tmux sudo fasd)
+plugins=(git ruby rvm autojump tmux tmuxinator sudo fasd github cp extract colored-man)
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
@@ -131,5 +131,13 @@ source ~/library_tools_game_repository/z/z.sh
           done
           precmd_functions+=(powerline_precmd)
         }
+
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/autosuggestions.zsh
+
+zle-line-init() {
+	zle autosuggest-start
+}
+zle -N zle-line-init
 
 #install_powerline_precmd
