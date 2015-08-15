@@ -212,6 +212,8 @@ Bundle 'https://github.com/ntpeters/vim-airline-colornum.git'
 Bundle 'https://github.com/tmux-plugins/vim-tmux.git'
 "36)
 Bundle 'https://github.com/ryanoasis/vim-devicons.git'
+"37)
+Bundle 'https://github.com/vim-scripts/vim3diff.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
@@ -326,7 +328,7 @@ let g:ctrlp_map ='<c-[>'
 
 "ctrlsf configure
 let g:ctrlsf_ackprg = 'ag'
-nmap     <leader>f <Plug>CtrlSFPrompt
+nmap     <leader>f  <Plug>CtrlSFPrompt
 vmap     <leader>ff <Plug>CtrlSFVwordPath
 vmap     <leader>fF <Plug>CtrlSFVwordExec
 nmap     <leader>fn <Plug>CtrlSFCwordPath
