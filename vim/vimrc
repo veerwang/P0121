@@ -213,8 +213,6 @@ Bundle 'https://github.com/tmux-plugins/vim-tmux.git'
 "36)
 Bundle 'https://github.com/ryanoasis/vim-devicons.git'
 "37)
-Bundle 'https://github.com/vim-scripts/vim3diff.git'
-"38)
 Bundle 'https://github.com/rkulla/pydiction.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
