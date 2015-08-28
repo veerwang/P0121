@@ -214,6 +214,8 @@ Bundle 'https://github.com/tmux-plugins/vim-tmux.git'
 Bundle 'https://github.com/ryanoasis/vim-devicons.git'
 "37)
 Bundle 'https://github.com/vim-scripts/vim3diff.git'
+"38)
+Bundle 'https://github.com/rkulla/pydiction.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
@@ -473,6 +475,9 @@ nnoremap <leader>vi :Vinfo
 "32) easytags
 let g:easytags_file = '~/.vim/tags'
 let g:easytags_dynamic_files = 1
+
+"38) pythondict 
+let g:pydiction_location = '/home/kevin/.vim/bundle/pydiction/complete-dict'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [Z] my short key define 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
