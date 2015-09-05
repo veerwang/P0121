@@ -138,7 +138,7 @@ Bundle 'https://github.com/bling/vim-airline.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'https://github.com/airblade/vim-gitgutter.git'
 Bundle 'https://github.com/PAntoine/vimgitlog.git'
-Bundle 'http://github.com/int1/vim-extradite.git'
+Bundle 'https://github.com/int3/vim-extradite.git'
 Bundle 'gitv'
 Bundle 'http://github.com/idanarye/vim-merginal.git'
 "7)
@@ -160,7 +160,8 @@ Bundle 'https://github.com/dyng/ctrlsf.vim'
 Bundle 'file-line'
 "14) C/C++/bash program needed
 Bundle 'https://github.com/mbbill/undotree.git'
-Bundle 'vim-scripts/c.vim.git'
+Bundle 'https://github.com/vim-scripts/c.vim.git'
+
 Bundle 'https://github.com/drmikehenry/vim-headerguard'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-scripts/bash-support.vim.git'
