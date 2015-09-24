@@ -217,6 +217,12 @@ Bundle 'https://github.com/ryanoasis/vim-devicons.git'
 Bundle 'https://github.com/rkulla/pydiction.git'
 "38)
 Bundle 'https://github.com/jiangmiao/auto-pairs.git'
+"39)
+"Bundle 'https://github.com/vim-scripts/python_ifold.git'
+"40)
+"Bundle 'http://github.com/vim-scripts/primary.vim'
+"41)
+Bundle 'https://github.com/morhetz/gruvbox.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
@@ -237,8 +243,8 @@ nmap <leader>plr :BundleClean   <CR>
 
 "2)
 set t_Co=256
-set background=dark
-colorscheme bluechia 
+set background=light
+colorscheme gruvbox
 
 "4) calurse configure
 let g:calendar_monday = 1
@@ -253,7 +259,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ' '
-let g:airline_theme='badwolf'
+let g:airline_theme='gruvbox'
+"let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline_section_c='%F'
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
