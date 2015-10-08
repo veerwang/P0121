@@ -206,7 +206,7 @@ Bundle 'https://github.com/alx741/vinfo.git'
 "32)
 Bundle 'https://github.com/xolox/vim-easytags.git'
 "33)
-Bundle 'https://github.com/wincent/terminus.git'
+"Bundle 'https://github.com/wincent/terminus.git'
 "34)
 Bundle 'https://github.com/ntpeters/vim-airline-colornum.git'
 "35)
@@ -323,6 +323,7 @@ nnoremap <leader>sc :Unite colorscheme<CR>
 map tb :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/bin/ctags'
 let g:tagbar_width=30
+highlight TagbarScope guifg=Green ctermfg=Green
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 "
 "12) Ctrrlp Configrature
@@ -551,3 +552,4 @@ nnoremap <silent> <F8> :Ag <cword><CR>
 map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files <cr> :!cscope -Rqbk -i cscope.files <cr>
 map <F6> :!ctags -R --c++-kinds=+px --fields=+iaSl --extra=+q .<cr>
 
+autocmd VimEnter * nested :call tagbar#autoopen(1)
