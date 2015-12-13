@@ -104,7 +104,7 @@ alias rm=trash
 
 alias td=todo.sh
 
-alias sprox="sslocal -s hk02-18.ssv4.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes-256-cfb"
+alias sprox="sslocal -s hk02-18.ssv7.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes-256-cfb"
 #echo " Welcom to The Programer Home "
 #echo
 #echo  " ¤╭⌒╮ ╭⌒╮"
@@ -113,9 +113,12 @@ alias sprox="sslocal -s hk02-18.ssv4.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes
 #echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
 #echo
 #echo
-alsi
+alsi --red
 
+alias dw="tmux -2 new -s basic"
 #source ~/library_tools_game_repository/incr-0.2.zsh
+
+alias mgrep='grep -n -r --exclude-dir=".git" --exclude-dir=".svn" --binary-files=without-match --exclude="*.py"'
 
 source ~/library_tools_game_repository/z/z.sh
 
