@@ -2,6 +2,9 @@ set mbox_type=Maildir
 set folder=$HOME/.mail/
 #set header_cache=~/.mail/.hcache
 
+set query_command="abook --mutt-query '%s'"
+macro pager A |'abook --add-email'\n
+
 set spoolfile=~/.mail/kevin
 
 mailboxes "kevin"
