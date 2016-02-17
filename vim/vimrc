@@ -153,7 +153,7 @@ Bundle 'https://github.com/ujihisa/unite-colorscheme.git'
 "11)
 Bundle 'Tagbar'
 "12) ctrlp fast find
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'git://github.com/tacahiroy/ctrlp-funky.git'
 Bundle 'https://github.com/dyng/ctrlsf.vim'
 "13)
@@ -223,6 +223,8 @@ Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 "Bundle 'http://github.com/vim-scripts/primary.vim'
 "41)
 Bundle 'https://github.com/morhetz/gruvbox.git'
+"42)
+Bundle 'https://github.com/jreybert/vimagit.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
@@ -244,7 +246,7 @@ nmap <leader>plr :BundleClean   <CR>
 "2)
 set t_Co=256
 set background=light
-colorscheme gruvbox
+colorscheme sienna
 
 "4) calurse configure
 let g:calendar_monday = 1
