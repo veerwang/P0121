@@ -4,3 +4,6 @@ git clone https://github.com/Lokaltog/powerline-fonts
 加载字体
 fc-cache -vf ~/.fonts
 之后就可以在终端中设置powerline的字体了。
+
+注意还必须在gnome-terminal的字体中设置正确的字体
+这里选择Meslo LF L DZ for Powerline Plus Nerd File字体
