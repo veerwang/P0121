@@ -115,7 +115,9 @@ alias sprox="sslocal -s hk02-18.ssv7.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes
 #echo
 alsi --red
 
-alias dw="tmux -2 new -s basic"
+#alias dw="tmux -2 new -s basic"
+alias dw="tmuxomatic ~/.tmux/workspace"
+alias web="proxychains4 w3m"
 #source ~/library_tools_game_repository/incr-0.2.zsh
 
 alias mgrep='grep -n -r --exclude-dir=".git" --exclude-dir=".svn" --binary-files=without-match --exclude="*.py"'
