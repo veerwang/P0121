@@ -7,6 +7,18 @@
 session: work
 
 window monitor
+2222222222222222222
+1111111111111111111
+1111111111111111111
+1111111111111111111
+1111111111111111111
+1111111111111111111
+1111111111111111111
+
+2 run sprox
+1 run htop
+
+window ipython
 1111111111111111111
 1111111111111111111
 1111111111111111111
@@ -15,7 +27,7 @@ window monitor
 1111111111111111111
 1111111111111111111
 
-1 run htop
+1 run ipython
 
 window programer
 1111111111111222222
@@ -31,7 +43,7 @@ window programer
 2 dir ~/armworkspace/Venture_Game/bin
 3 dir ~/armworkspace/Venture_Game/
 
-window ipython
+window w3m 
 1111111111111111111
 1111111111111111111
 1111111111111111111
@@ -40,5 +52,5 @@ window ipython
 1111111111111111111
 1111111111111111111
 
-1 run ipython
+1 run web www.cplusplus.com
 #--------------------------------------------------------------------------------------
