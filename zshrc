@@ -66,6 +66,9 @@ export LD_LIBRARY_PATH=nn/home/kevin/library_tools_game_repository/llvm/lib/:/us
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
 
+export GITHUB_USER=veerwang
+export GITHUB_PASSWORD=v200431060
+
 # export TERM=xterm-256color
 
 # Customize to your needs...
