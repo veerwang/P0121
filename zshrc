@@ -91,6 +91,8 @@ alias cdn='sudo ifdown /etc/sysconfig/network-scripts/ifcfg-ARM_调试网络'
 alias onn='sudo ifup /etc/sysconfig/network-scripts/ifcfg-eth0'
 alias cnn='sudo ifdown /etc/sysconfig/network-scripts/ifcfg-eth0'
 
+alias loin='ssh wangw@172.27.16.254'
+
 alias config='vim ~/.zshrc' 
 
 hash -d  armgcc='/opt/host/arm-kevin-linux-gnueabi/bin/'
