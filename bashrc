@@ -24,6 +24,7 @@ export PATH=$PATH:$CDS_INST_DIR/tools.lnx86/jre/bin:$CDS_INST_DIR/tools.lnx86/bi
 export CDS_LIC_FILE=/usr/local/flexlm/licenses/license.dat
 #export CDS_LIC_FILE=27000@localhost.localdomain	                    #the port will differce depands on your settings in licensefile
 
+PATH=$PATH:/home/kevin/bin
 
 function _update_ps1() {
 export PS1="$(~/.powerline-shell.py $? 2> /dev/null)"
