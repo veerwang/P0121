@@ -43,3 +43,37 @@ main ( int argc, char *argv[] )
 	execvp(xmlargv[0],xmlargv);
 	return EXIT_SUCCESS;
 }				/* ----------  end of function main  ---------- */
+
+
+
+
+#include <cstdlib>
+#include <cstdio>
+#include <iostream>
+
+#include <string.h>
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  main
+ *  Description:  
+ * =====================================================================================
+ */
+	int
+main ( int argc, char *argv[] )
+{
+	char rawdata[100] = "2016-05-13-13:30:44";
+	char **point;
+	char *buf;
+	char *tmp;
+	buf = rawdata;
+	while ( (tmp = strtok_r(buf,"-",point)) != NULL )
+	{
+		printf("%s\n",*point);
+		printf("%s\n",tmp);
+		buf = NULL;
+	}
+	
+	printf("%s\n",rawdata);
+	return EXIT_SUCCESS;
+}				/* ----------  end of function main  ---------- */
