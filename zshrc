@@ -109,7 +109,8 @@ alias rm=trash
 
 alias td=todo.sh
 
-alias sprox="sslocal -s hk02-18.ssv7.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes-256-cfb"
+alias account="ledger -f ~/DataLibrary/kevin.wang-account/王威的个人帐目.dat"
+alias money="vim ~/DataLibrary/kevin.wang-account/王威的个人帐目.dat"
 #echo " Welcom to The Programer Home "
 #echo
 #echo  " ¤╭⌒╮ ╭⌒╮"
