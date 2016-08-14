@@ -109,8 +109,8 @@ alias rm=trash
 
 alias td=todo.sh
 
-alias account="ledger -f ~/DataLibrary/kevin.wang-account/王威的个人帐目.dat"
-alias money="vim ~/DataLibrary/kevin.wang-account/王威的个人帐目.dat"
+alias account="ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg"
+alias money="vim ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg"
 #echo " Welcom to The Programer Home "
 #echo
 #echo  " ¤╭⌒╮ ╭⌒╮"
