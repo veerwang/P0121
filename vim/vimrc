@@ -224,7 +224,13 @@ Bundle 'https://github.com/jiangmiao/auto-pairs.git'
 "41)
 Bundle 'https://github.com/morhetz/gruvbox.git'
 "42)
-Bundle 'https://github.com/jreybert/vimagit.git'
+"Bundle 'https://github.com/jreybert/vimagit.git'
+"43)
+"Bundle 'javacomplete'
+"44)
+"Bundle 'https://github.com/davidhalter/jedi-vim.git'
+"45)
+Bundle 'https://github.com/ledger/vim-ledger'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
@@ -555,3 +561,7 @@ map <F5> :!find `pwd` -name "*.h" -o -name "*.cpp" -o -name "*.c" > cscope.files
 map <F6> :!ctags -R --c++-kinds=+px --fields=+iaSl --extra=+q .<cr>
 
 autocmd VimEnter * nested :call tagbar#autoopen(1)
+
+"15)
+au BufNewFile,BufRead *.ldg,*ledger setf ledger | comp ledger
+
