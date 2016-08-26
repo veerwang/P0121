@@ -1,0 +1,30 @@
+目录说明
+该文件用于保存android直接从网站上下载的源代码以及anddroid的SDK文件
+
+my-doc
+存放我的私人文件
+
+---------------------------------------------------------------------------------------
+安装android的命令
+
+1.安装Repo命令
+git clone git://aosp.tuna.tsinghua.edu.cn/android/git-repo.git/ 
+
+2.修改repo文件将
+REPO_URL = 'https://gerrit.googlesource.com/git-repo'
+REPO_URL = 'git://aosp.tuna.tsinghua.edu.cn/android/git-repo'
+
+3.下载mainfest仓库
+repo init -u git://aosp.tuna.tsinghua.edu.cn/android/platform/manifest
+
+4.直接下载android源代码
+repo sync
+
+---------------------------------------------------------------------------------------
+repo工具的用法
+（1） repo init     // 初始化repo仓库
+（2） repo sync     // 下载源码
+（3） repo start    // 创建分支
+（4） repo checkout //切换分支
+（5） repo branches //查看分支
+（6） repo status   //查看文件状态
