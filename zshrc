@@ -111,6 +111,12 @@ alias td=todo.sh
 
 alias account="ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg"
 alias money="vim ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg"
+
+# jack workingspace begin
+alias ovm="virtualbox --startvm"
+alias drom="smbclient //192.168.1.102/home -U smb"	# password: smb
+# jack workingspace end
+
 #echo " Welcom to The Programer Home "
 #echo
 #echo  " ¤╭⌒╮ ╭⌒╮"
