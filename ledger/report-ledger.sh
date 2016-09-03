@@ -20,6 +20,6 @@
 #ledger  -f kevin-ledger.ldg bal 股票 --price-db price.db -V
 set -o nounset                              # Treat unset variables as an error
 ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg -S T --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V bal 资产 负债 > 权益
-ledger -M -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg reg 支出 > 支出明细
+ledger -b "this month" -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg reg 支出 > 本月支出明细
 ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg bal --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V 资产:股票 > 股票
-ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg -M --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V bal 收入 支出 > 收支表 
+ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg -b "this month" --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V reg 收入 支出 > 本月收支表 
