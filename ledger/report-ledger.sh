@@ -21,5 +21,6 @@
 set -o nounset                              # Treat unset variables as an error
 ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg -S T --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V bal 资产 负债 > 权益
 ledger -b "this month" -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg reg 支出 -S 'amount' > 本月支出明细
+ledger -b "today" -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg reg 支出 -S 'amount' > 今日支出明细
 ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg bal --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V 资产:股票 > 股票
 ledger -f ~/DataLibrary/kevin.wang-account/ledger/kevin-ledger.ldg -b "this month" --price-db ~/DataLibrary/kevin.wang-account/ledger/price.db -V -S 'amount' reg 收入 支出 > 本月收支表 
