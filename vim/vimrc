@@ -231,6 +231,10 @@ Bundle 'https://github.com/morhetz/gruvbox.git'
 "Bundle 'https://github.com/davidhalter/jedi-vim.git'
 "45)
 Bundle 'https://github.com/ledger/vim-ledger'
+"46)
+Bundle 'skywind3000/asyncrun.vim'
+"47)
+Bundle 'https://github.com/ToruIwashita/git-switcher.vim.git'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
@@ -485,6 +489,7 @@ let NERDTreeShowBookmarks=1
 "30) dirdiff
 let g:DirDiffExcludes = "*.o,.*.swp,.*.pyc,*.so.*,*.so,*.a,.git,.svn,DEPS,OBJS,.svn,*.pdf"
 let g:DirDiffIgnore = ".git,.svn,DEPS,OBJS"
+let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 
 "31) vinfo
 nnoremap <leader>vi :Vinfo 
