@@ -1,0 +1,6 @@
+vim 翻译文件使用步骤
+
+1.在代码树中添加N_("add information")
+2.make zh_CN  生成 zh_CN.po文件
+3.编辑zh_CN.po文件
+4.make;make install 修改即可生效
