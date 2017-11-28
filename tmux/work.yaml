@@ -4,8 +4,7 @@ windows:
   options:
     automatic-rename: 'off'
   panes:
-  - focus: 'true'
-    shell_command: sprox
+  - shell_command: sprox
   - shell_command: cmus
   window_name: music
 - focus: 'true'
