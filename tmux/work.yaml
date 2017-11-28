@@ -1,14 +1,18 @@
 session_name: workbench
-start_directory: /home/kevin
 windows:
-- window_name: music
-  layout: main-horizontal
+- layout: 56c6,191x48,0,0[191x14,0,0,1,191x33,0,15,2]
   options:
-          main-pane-height: 45
+    automatic-rename: 'off'
   panes:
-        - shell_command: cmus
-        - shell_command: sprox
-- window_name: calcurse
-  focus: True
+  - focus: 'true'
+    shell_command: sprox
+  - shell_command: cmus
+  window_name: music
+- focus: 'true'
+  options:
+    automatic-rename: 'off'
   panes:
-        - shell_command: calcurse
+  - focus: 'true'
+    shell_command: calcurse
+  start_directory: /home/kevin
+  window_name: calcurse
