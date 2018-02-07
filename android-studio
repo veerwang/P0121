@@ -1,0 +1,5 @@
+android studio的学习笔记
+
+1.
+通过android studio的工具进入项目的路径之下
+gradlew -v 进行gradle脚本的下载
