@@ -236,6 +236,11 @@ Bundle 'skywind3000/asyncrun.vim'
 "47)
 Bundle 'https://github.com/ToruIwashita/git-switcher.vim.git'
 
+"50)
+Bundle 'iamcco/mathjax-support-for-mkdp'
+Bundle 'iamcco/markdown-preview.vim'
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
