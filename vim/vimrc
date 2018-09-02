@@ -240,12 +240,15 @@ Bundle 'https://github.com/ToruIwashita/git-switcher.vim.git'
 Bundle 'iamcco/mathjax-support-for-mkdp'
 Bundle 'iamcco/markdown-preview.vim'
 
+"51)  python scripts, becareful need installed jedi before 
+Bundle 'https://github.com/hdima/python-syntax.git'
+Bundle 'davidhalter/jedi-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [C] bundle package configure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "2) CSApprox configure
-let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
+"let g:CSApprox_attr_map = { 'italic' : 'underline', 'sp' : 'fg' }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " [D] after configure
@@ -261,7 +264,10 @@ nmap <leader>plr :BundleClean   <CR>
 "2)
 set t_Co=256
 set background=light
-colorscheme sienna
+"colorscheme oxeded 
+"colorscheme autumn
+"colorscheme badwolf 
+colorscheme desert256v2
 
 "4) calurse configure
 let g:calendar_monday = 1
