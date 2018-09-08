@@ -1,0 +1,50 @@
+本目录存放的是pip工具使用的说明文档
+
+pip是python语言专门用于管理软件包的工具
+
+0. pip命令是python2 使用的工具
+   pip3命令是python3 使用的工具
+
+   pip 的安装，可以使用平台通用的安装方法，也可以使用源码安装
+   cd pip_source
+   python setup.py install
+
+1. pip list
+   显示出本设备上安装了哪些pakcage包
+   -o  --outdated 查看本设备哪些package可以升级
+ 
+2. pip freeze 
+   也是显示本设备上安装了哪些package包，但是区别是本命令显示的是requirement格式
+   该格式的文件可以被install命令使用 
+   例如:
+   pip freeze > require.txt
+   pip install -r require.txt  进行python package包的安装
+   
+3. pip install 安装某个package文件
+   pip install web.py 
+   --upgrade   进行升级
+   pip install --upgrade pip
+   pip install 包名 -i 镜像url
+   
+4. pip uninstall 卸载某个package文件
+   pip uninstall web.py 
+
+5. pip show xxx 查看某个package的相关信息
+
+6. pip search xxx 在网络上查询xxx package的信息
+
+7. pip wheel xxx 打包某个package
+   注意，打包之后的文件格式也是 whl结尾的。
+   可以用pip install xxx.whl进行安装
+
+8. pip --version 查看pip的版本
+
+9. pip download xxx -d yyy 下载某个特殊的package 并将文件下载到yyy目录中
+
+10. pip全局配置文件
+   $HOME/.pip/pip.conf
+   举例
+   [global]
+   trusted-host=pypi.douban.com
+   timeout=6000
+   index-url=http://pypi.douban.com/simple
