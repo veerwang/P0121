@@ -1,0 +1,9 @@
+使用命令行创建用户的过程
+
+1.useradd xxx
+
+2.passwd xxx
+
+3.usermod -s /usr/bin/zsh xxx
+
+4.usermod -d /home/bingo bingo

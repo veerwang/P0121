@@ -21,7 +21,7 @@
 #include <cstdio>
 #include <iostream>
 #include <unistd.h>
-3 | 查找系统升级的死机的问题 #进行压力测试验证 ⌛ -580496 seconds remaining
+
 #define cmd "mv"
 #define para1 "test"
 #define para2 "testnew"
