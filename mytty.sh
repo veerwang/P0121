@@ -26,9 +26,10 @@ echo " [2] connect 172.27.16.80"
 echo " [3] connect 172.27.16.23"
 echo " [4] connect 172.27.20.122"
 echo " [5] connect 172.27.16.98"
+echo " [6] connect 172.27.16.28"
 echo " " 
 
-read -t 3 -p "Input the host name: [1-5] default 1: " hostindex
+read -t 7 -p "Input the host name: [1-6] default 1: " hostindex
 
 if [ -z ${hostindex} ]; then
 	echo " " 
@@ -45,4 +46,6 @@ elif [ $hostindex == "4" ]; then
 	ssh lihanbo@172.27.20.122
 elif [ $hostindex == "5" ]; then
 	mosh wwei@172.27.16.98
+elif [ $hostindex == "6" ]; then
+	mosh wwei@172.27.16.28
 fi
