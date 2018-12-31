@@ -19,10 +19,10 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-read -t 8 -p "请输入远方IP地址：$IP" IP 
-IP=${IP:-"172.27.16.28"}
+default_ip=172.27.16.28
 
-echo "IP=$IP"
+read -t 10 -p "请输入远方IP地址 [$default_ip]: " IP 
+IP=${IP:-"$default_ip"}
 
 if [ $# -ne 2 ]; then
 	echo " Usage:    $0 type director"
