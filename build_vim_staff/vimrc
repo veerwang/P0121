@@ -3,11 +3,11 @@
 "
 "
 "
-" 4) set the line number 
+" 1) set the line number 
 set nu
 set relativenumber
 
-" 5) set the syntax on
+" 2) set the syntax on
 syntax on
 
 " 6) set file code-write sets
@@ -88,16 +88,205 @@ let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf' "
 set path+=/usr/local/include
 
 "32) fzf fuzzy finder
-set rtp+=/usr/bin/fzf
+set rtp+=~/.vim/.fzf/bin/fzf
 
 "33) terminal 
 set termwinsize=8x200
 
+"
+" plugins settings 
+"
+
+"1) fugitive key map
+"map <silent> <f3> :Gstatus<cr>
+"move to venu function
+" merginal plugin
+"2) vim-headerguard 
+"add headerguard
+" vim-headerguard configure
+function! g:HeaderguardName()
+return "INCLUDED_" . toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
+endfunction
+"3)
+set t_Co=256
+set background=light
+"colorscheme badwolf  
+"this set bg method
+autocmd ColorScheme janah highlight Normal ctermbg=235
+colorscheme janah 
+"4) airline 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = ' '
+"let g:airline_theme='papercolor'
+"let g:airline_theme='badwolf'
+let g:airline_theme='base16_vim'
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline_section_c='%F'
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+	if g:airline_theme == 'badwolf'
+		for colors in values(a:palette.inactive)
+			let colors[3] = 245
+		endfor
+	endif
+endfunction
+"5) tagbar
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+let g:tagbar_width=30
+highlight TagbarScope guifg=Green ctermfg=Green
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
+"6) NERDTree configration
+let NERDTreeWinPos="left"
+let NERDTreeShowBookmarks=1
+"7) easymotion set
+map ss <Plug>(easymotion-s)
+let g:EasyMotion_force_csapprox = 1
+"8) Show undo tree
+let g:undotree_WindowLayout=2
+" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+"9) Set the ycm configrature,it will first read from current file
+let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/pack/.ycm_extra_conf.py'
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
+let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
+let g:ycm_collect_identifiers_from_tag_files=1
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_auto_trigger=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_confirm_extra_conf=0
+let g:ycm_filetype_blacklist = {
+        \ 'tagbar' : 1,
+        \ 'qf' : 1,
+        \ 'notes' : 1,
+        \ 'markdown' : 1,
+        \ 'unite' : 1,
+        \ 'text' : 1,
+        \ 'vimwiki' : 1,
+        \ 'pandoc' : 1,
+        \ 'infolog' : 1,
+        \ 'mail' : 1
+        \}
+let g:ycm_filetype_specific_completion_to_disable = {
+        \ 'gitcommit': 1
+        \}
+"10) gutentags_plus 
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" config project root markers.
+let g:gutentags_project_root = ['.root','.svn','.git','.project']
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+"11)jedi for python
+"need  jedi and python-syntax plugins
+let g:jedi#auto_initialization=1
+let g:jedi#completions_command = "<C-N>"
+"13) Leadf fuzzy find tool 
+"14) vimgitlog
+let g:GITLOG_default_mode = 2
+map <silent> <f5> :call GITLOG_FlipWindows()<cr>
+"15) tig-explore base on tig
+"16) vim-vmenu
+map <silent> <space><space> :VenuPrint<cr>
+
+let s:programmenu = venu#create('Programe')
+call venu#addItem(s:programmenu, 'Add C/C++ Head Flag', ':HeaderguardAdd')
+call venu#addItem(s:programmenu, 'File Browse', ':NERDTreeToggle')
+call venu#addItem(s:programmenu, 'File Structure', ':TagbarToggle')
+call venu#addItem(s:programmenu, 'Undo Tree', ':UndotreeToggle')
+call venu#register(s:programmenu)
+
+let s:gitmenu = venu#create('Git')
+call venu#addItem(s:gitmenu, 'Git Status', ':Gstatus')
+call venu#addItem(s:gitmenu, 'Git Log', ':Gitv')
+call venu#addItem(s:gitmenu, 'Git File Log', ':AgitFile')
+call venu#addItem(s:gitmenu, 'Git Brnch Log', ':call GITLOG_ToggleWindows()')
+call venu#addItem(s:gitmenu, 'Git Branch', ':MerginalToggle')
+call venu#addItem(s:gitmenu, 'Tig Browse', ':TigOpenProjectRootDir')
+call venu#addItem(s:gitmenu, 'Tig Blame', ':TigBlame')
+call venu#register(s:gitmenu)
+
+let s:projectmenu = venu#create('Project')
+call venu#addItem(s:projectmenu, 'Home Page', ':Startify')
+call venu#addItem(s:projectmenu, 'Session Save', ':SSave')
+call venu#register(s:projectmenu)
+
+let s:searchmenu = venu#create('Search')
+call venu#addItem(s:searchmenu, 'File Search of Leadf', ':LeaderfFile')
+call venu#addItem(s:searchmenu, 'File Search of Ag', ':Ag')
+call venu#addItem(s:searchmenu, 'English', ':call SearchWord()')
+call venu#register(s:searchmenu)
+
+let s:bashmenu = venu#create('Terminal')
+call venu#addItem(s:bashmenu, 'Terminal', ':terminal')
+call venu#register(s:bashmenu)
+
+let s:noteconfigmenu = venu#create('Note')
+call venu#addItem(s:noteconfigmenu, 'Note', ':Note mynotes')
+call venu#register(s:noteconfigmenu)
+
+let s:vimconfigmenu = venu#create('Config')
+call venu#addItem(s:vimconfigmenu, 'Configure Vim', ':edit ~/.vimrc')
+call venu#addItem(s:vimconfigmenu, 'Set BG Color', ':Colors')
+call venu#addItem(s:vimconfigmenu, 'Version', ':version')
+call venu#addItem(s:vimconfigmenu, 'Vim Help', ':tab help')
+call venu#register(s:vimconfigmenu)
+
+"17) rainbow
+let g:rainbow_active = 1
+"18) startify
+let g:startify_bookmarks = [ '~/.vimrc', '~/.zshrc' ]
+"19) ag.vim search sprint from .git root
+let g:ag_working_path_mode="r"
+"20) vim-nots
+let g:notes_directories = [ '/home/kevin/.vim/notes' ]
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on':  'nerdtreetoggle', 'do': ':PlugInstall' }
 Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' }
 Plug 'vim-scripts/a.vim'
-
+Plug 'tpope/vim-fugitive'
+Plug 'drmikehenry/vim-headerguard'
+Plug 'flazz/vim-colorschemes'
+Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/Tagbar'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'idanarye/vim-merginal'
+Plug 'vim-scripts/c.vim', { 'for':  ['c','cpp','h'] }
+Plug 'mbbill/undotree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/vim-preview' | Plug 'skywind3000/gutentags_plus'
+Plug 'davidhalter/jedi-vim'
+Plug 'hdima/python-syntax'
+Plug 'mhinz/vim-signify'
+Plug 'Yggdroot/LeaderF'
+Plug 'vim-scripts/bash-support.vim'
+Plug 'will133/vim-dirdiff'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'PAntoine/vimgitlog'
+Plug 'Timoses/vim-venu'
+Plug 'gregsexton/gitv'
+Plug 'Shougo/deol.nvim'
+Plug 'cohama/agit.vim'
+Plug 'luochen1990/rainbow'
+Plug 'mhinz/vim-startify'
+Plug 'godlygeek/csapprox'
+Plug 'chusiang/vim-sdcv'
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 
 call plug#end()
