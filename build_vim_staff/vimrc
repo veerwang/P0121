@@ -110,10 +110,6 @@ endfunction
 "3)
 set t_Co=256
 set background=light
-"colorscheme badwolf  
-"this set bg method
-autocmd ColorScheme janah highlight Normal ctermbg=235
-colorscheme janah 
 "4) airline 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -196,52 +192,6 @@ let g:jedi#completions_command = "<C-N>"
 let g:GITLOG_default_mode = 2
 map <silent> <f5> :call GITLOG_FlipWindows()<cr>
 "15) tig-explore base on tig
-"16) vim-vmenu
-map <silent> <space><space> :VenuPrint<cr>
-
-let s:programmenu = venu#create('Programe')
-call venu#addItem(s:programmenu, 'Add C/C++ Head Flag', ':HeaderguardAdd')
-call venu#addItem(s:programmenu, 'File Browse', ':NERDTreeToggle')
-call venu#addItem(s:programmenu, 'File Structure', ':TagbarToggle')
-call venu#addItem(s:programmenu, 'Undo Tree', ':UndotreeToggle')
-call venu#register(s:programmenu)
-
-let s:gitmenu = venu#create('Git')
-call venu#addItem(s:gitmenu, 'Git Status', ':Gstatus')
-call venu#addItem(s:gitmenu, 'Git Log', ':Gitv')
-call venu#addItem(s:gitmenu, 'Git File Log', ':AgitFile')
-call venu#addItem(s:gitmenu, 'Git Brnch Log', ':call GITLOG_ToggleWindows()')
-call venu#addItem(s:gitmenu, 'Git Branch', ':MerginalToggle')
-call venu#addItem(s:gitmenu, 'Tig Browse', ':TigOpenProjectRootDir')
-call venu#addItem(s:gitmenu, 'Tig Blame', ':TigBlame')
-call venu#register(s:gitmenu)
-
-let s:projectmenu = venu#create('Project')
-call venu#addItem(s:projectmenu, 'Home Page', ':Startify')
-call venu#addItem(s:projectmenu, 'Session Save', ':SSave')
-call venu#register(s:projectmenu)
-
-let s:searchmenu = venu#create('Search')
-call venu#addItem(s:searchmenu, 'File Search of Leadf', ':LeaderfFile')
-call venu#addItem(s:searchmenu, 'File Search of Ag', ':Ag')
-call venu#addItem(s:searchmenu, 'English', ':call SearchWord()')
-call venu#register(s:searchmenu)
-
-let s:bashmenu = venu#create('Terminal')
-call venu#addItem(s:bashmenu, 'Terminal', ':terminal')
-call venu#register(s:bashmenu)
-
-let s:noteconfigmenu = venu#create('Note')
-call venu#addItem(s:noteconfigmenu, 'Note', ':Note mynotes')
-call venu#register(s:noteconfigmenu)
-
-let s:vimconfigmenu = venu#create('Config')
-call venu#addItem(s:vimconfigmenu, 'Configure Vim', ':edit ~/.vimrc')
-call venu#addItem(s:vimconfigmenu, 'Set BG Color', ':Colors')
-call venu#addItem(s:vimconfigmenu, 'Version', ':version')
-call venu#addItem(s:vimconfigmenu, 'Vim Help', ':tab help')
-call venu#register(s:vimconfigmenu)
-
 "17) rainbow
 let g:rainbow_active = 1
 "18) startify
@@ -290,3 +240,55 @@ Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 
 call plug#end()
+
+"colorscheme badwolf  
+"this set bg method
+autocmd ColorScheme janah highlight Normal ctermbg=235
+colorscheme janah 
+
+"16) vim-vmenu
+map <silent> <space><space> :VenuPrint<cr>
+
+let s:programmenu = venu#create('Programe')
+call venu#addItem(s:programmenu, 'Add C/C++ Head Flag', ':HeaderguardAdd')
+call venu#addItem(s:programmenu, 'File Browse', ':NERDTreeToggle')
+call venu#addItem(s:programmenu, 'File Structure', ':TagbarToggle')
+call venu#addItem(s:programmenu, 'Undo Tree', ':UndotreeToggle')
+call venu#register(s:programmenu)
+
+let s:gitmenu = venu#create('Git')
+call venu#addItem(s:gitmenu, 'Git Status', ':Gstatus')
+call venu#addItem(s:gitmenu, 'Git Log', ':Gitv')
+call venu#addItem(s:gitmenu, 'Git File Log', ':AgitFile')
+call venu#addItem(s:gitmenu, 'Git Brnch Log', ':call GITLOG_ToggleWindows()')
+call venu#addItem(s:gitmenu, 'Git Branch', ':MerginalToggle')
+call venu#addItem(s:gitmenu, 'Tig Browse', ':TigOpenProjectRootDir')
+call venu#addItem(s:gitmenu, 'Tig Blame', ':TigBlame')
+call venu#register(s:gitmenu)
+
+let s:projectmenu = venu#create('Project')
+call venu#addItem(s:projectmenu, 'Home Page', ':Startify')
+call venu#addItem(s:projectmenu, 'Session Save', ':SSave')
+call venu#register(s:projectmenu)
+
+let s:searchmenu = venu#create('Search')
+call venu#addItem(s:searchmenu, 'File Search of Leadf', ':LeaderfFile')
+call venu#addItem(s:searchmenu, 'File Search of Ag', ':Ag')
+call venu#addItem(s:searchmenu, 'English', ':call SearchWord()')
+call venu#register(s:searchmenu)
+
+let s:bashmenu = venu#create('Terminal')
+call venu#addItem(s:bashmenu, 'Terminal', ':terminal')
+call venu#register(s:bashmenu)
+
+let s:noteconfigmenu = venu#create('Note')
+call venu#addItem(s:noteconfigmenu, 'Note', ':Note mynotes')
+call venu#register(s:noteconfigmenu)
+
+let s:vimconfigmenu = venu#create('Config')
+call venu#addItem(s:vimconfigmenu, 'Configure Vim', ':edit ~/.vimrc')
+call venu#addItem(s:vimconfigmenu, 'Set BG Color', ':Colors')
+call venu#addItem(s:vimconfigmenu, 'Version', ':version')
+call venu#addItem(s:vimconfigmenu, 'Vim Help', ':tab help')
+call venu#register(s:vimconfigmenu)
+
