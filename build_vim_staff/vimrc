@@ -22,7 +22,7 @@ set history=400
 set clipboard+=unnamed
 
 "9) just show content in single line
-set nowrap
+set wrap
 
 "10) make the information no full screen
 set nomore
@@ -35,6 +35,7 @@ set cin
 
 "13) do not backup file when over-written file
 set nobackup
+set nowritebackup
 
 "14)set short message cut 
 set shortmess=atl
@@ -88,7 +89,7 @@ let $GTAGSCONF = '/usr/local/share/gtags/gtags.conf' "
 set path+=/usr/local/include
 
 "32) fzf fuzzy finder
-set rtp+=~/.vim/.fzf/bin/fzf
+set rtp+=/usr/bin/fzf
 
 "33) terminal 
 set termwinsize=8x200
@@ -137,8 +138,9 @@ let g:tagbar_width=30
 highlight TagbarScope guifg=Green ctermfg=Green
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 "6) NERDTree configration
-let NERDTreeWinPos="left"
-let NERDTreeShowBookmarks=1
+let g:NERDTreeWinPos="left"
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeWinSize=25
 "7) easymotion set
 map ss <Plug>(easymotion-s)
 let g:EasyMotion_force_csapprox = 1
@@ -190,7 +192,6 @@ let g:jedi#completions_command = "<C-N>"
 "13) Leadf fuzzy find tool 
 "14) vimgitlog
 let g:GITLOG_default_mode = 2
-map <silent> <f5> :call GITLOG_FlipWindows()<cr>
 "15) tig-explore base on tig
 "17) rainbow
 let g:rainbow_active = 1
@@ -201,9 +202,13 @@ let g:ag_working_path_mode="r"
 "20) vim-nots
 let g:notes_directories = [ '/home/kevin/.vim/notes' ]
 
+"5) Alt-w write the file
+nmap w :w <cr>
+
+" plugins group
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' }
 Plug 'vim-scripts/a.vim'
 Plug 'tpope/vim-fugitive'
@@ -211,9 +216,10 @@ Plug 'drmikehenry/vim-headerguard'
 Plug 'flazz/vim-colorschemes'
 Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Tagbar'
+Plug 'scrooloose/nerdtree'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'idanarye/vim-merginal'
-Plug 'vim-scripts/c.vim', { 'for':  ['c','cpp','h'] }
+Plug 'vim-scripts/c.vim'
 Plug 'mbbill/undotree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ludovicchabant/vim-gutentags'
@@ -236,8 +242,8 @@ Plug 'godlygeek/csapprox'
 Plug 'chusiang/vim-sdcv'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
-Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes' | Plug 'xolox/vim-misc'
+Plug 'MattesGroeger/vim-bookmarks'
 
 call plug#end()
 
@@ -285,10 +291,16 @@ let s:noteconfigmenu = venu#create('Note')
 call venu#addItem(s:noteconfigmenu, 'Note', ':Note mynotes')
 call venu#register(s:noteconfigmenu)
 
+let s:plugmenu = venu#create('Plugins')
+call venu#addItem(s:plugmenu, 'Install', ':PlugInstall')
+call venu#addItem(s:plugmenu, 'Clean', ':PlugClean')
+call venu#addItem(s:plugmenu, 'Update', ':PlugUpdate')
+call venu#addItem(s:plugmenu, 'Update vim-plug', ':PlugUpgrade')
+call venu#register(s:plugmenu)
+
 let s:vimconfigmenu = venu#create('Config')
 call venu#addItem(s:vimconfigmenu, 'Configure Vim', ':edit ~/.vimrc')
 call venu#addItem(s:vimconfigmenu, 'Set BG Color', ':Colors')
 call venu#addItem(s:vimconfigmenu, 'Version', ':version')
 call venu#addItem(s:vimconfigmenu, 'Vim Help', ':tab help')
 call venu#register(s:vimconfigmenu)
-
