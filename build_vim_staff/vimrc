@@ -203,7 +203,7 @@ let g:notes_directories = [ '/home/kevin/.vim/notes' ]
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree', { 'on':  'nerdtreetoggle', 'do': ':PlugInstall' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreetoggle', 'do': ':PlugInstall' }
 Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' }
 Plug 'vim-scripts/a.vim'
 Plug 'tpope/vim-fugitive'
