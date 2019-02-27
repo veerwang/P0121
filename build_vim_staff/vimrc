@@ -3,6 +3,50 @@
 "
 "
 "
+" plugins group
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' }
+Plug 'vim-scripts/a.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'drmikehenry/vim-headerguard'
+Plug 'flazz/vim-colorschemes'
+Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/Tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'idanarye/vim-merginal'
+Plug 'vim-scripts/c.vim'
+Plug 'mbbill/undotree'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/vim-preview' | Plug 'skywind3000/gutentags_plus'
+Plug 'davidhalter/jedi-vim'
+Plug 'hdima/python-syntax'
+Plug 'mhinz/vim-signify'
+Plug 'Yggdroot/LeaderF'
+Plug 'vim-scripts/bash-support.vim'
+Plug 'will133/vim-dirdiff'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'PAntoine/vimgitlog'
+Plug 'Timoses/vim-venu'
+Plug 'gregsexton/gitv'
+Plug 'Shougo/deol.nvim'
+Plug 'cohama/agit.vim'
+Plug 'luochen1990/rainbow'
+Plug 'mhinz/vim-startify'
+Plug 'godlygeek/csapprox'
+Plug 'chusiang/vim-sdcv'
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
+Plug 'xolox/vim-notes' | Plug 'xolox/vim-misc'
+Plug 'MattesGroeger/vim-bookmarks'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang --java-completer', 'for': [ 'c','cpp']        }
+
+call plug#end()
+
+filetype plugin indent on
 " 1) set the line number 
 set nu
 set relativenumber
@@ -152,7 +196,7 @@ set undodir=~/.vim/undodir
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 "9) Set the ycm configrature,it will first read from current file
-let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/pack/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/kevin/.vim/.ycm_extra_conf.py'
 let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&']
 let g:ycm_semantic_triggers.cpp = ['->', '.', ' ', '(', '[', '&']
@@ -204,48 +248,9 @@ let g:notes_directories = [ '/home/kevin/.vim/notes' ]
 
 "5) Alt-w write the file
 nmap w :w <cr>
+nmap  :close<cr>
 
-" plugins group
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' }
-Plug 'vim-scripts/a.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'drmikehenry/vim-headerguard'
-Plug 'flazz/vim-colorschemes'
-Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/Tagbar'
-Plug 'scrooloose/nerdtree'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'idanarye/vim-merginal'
-Plug 'vim-scripts/c.vim'
-Plug 'mbbill/undotree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'skywind3000/vim-preview' | Plug 'skywind3000/gutentags_plus'
-Plug 'davidhalter/jedi-vim'
-Plug 'hdima/python-syntax'
-Plug 'mhinz/vim-signify'
-Plug 'Yggdroot/LeaderF'
-Plug 'vim-scripts/bash-support.vim'
-Plug 'will133/vim-dirdiff'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'PAntoine/vimgitlog'
-Plug 'Timoses/vim-venu'
-Plug 'gregsexton/gitv'
-Plug 'Shougo/deol.nvim'
-Plug 'cohama/agit.vim'
-Plug 'luochen1990/rainbow'
-Plug 'mhinz/vim-startify'
-Plug 'godlygeek/csapprox'
-Plug 'chusiang/vim-sdcv'
-Plug 'jceb/vim-orgmode'
-Plug 'tpope/vim-speeddating'
-Plug 'xolox/vim-notes' | Plug 'xolox/vim-misc'
-Plug 'MattesGroeger/vim-bookmarks'
-
-call plug#end()
+let g:plug_timeout=10000
 
 "colorscheme badwolf  
 "this set bg method
@@ -255,6 +260,15 @@ colorscheme janah
 "16) vim-vmenu
 map <silent> <space><space> :VenuPrint<cr>
 
+let s:bookmenu = venu#create('Book Mark')
+call venu#addItem(s:bookmenu, 'Add', ':BookmarkToggle')
+call venu#addItem(s:bookmenu, 'Text', ':BookmarkAnnotate')
+call venu#addItem(s:bookmenu, 'Next', ':BookmarkNext')
+call venu#addItem(s:bookmenu, 'Prev', ':BookmarkPrev')
+call venu#addItem(s:bookmenu, 'Show', ':BookmarkShowAll')
+call venu#addItem(s:bookmenu, 'Clear', ':BookmarkClear')
+call venu#register(s:bookmenu)
+
 let s:programmenu = venu#create('Programe')
 call venu#addItem(s:programmenu, 'Add C/C++ Head Flag', ':HeaderguardAdd')
 call venu#addItem(s:programmenu, 'File Browse', ':NERDTreeToggle')
@@ -262,7 +276,7 @@ call venu#addItem(s:programmenu, 'File Structure', ':TagbarToggle')
 call venu#addItem(s:programmenu, 'Undo Tree', ':UndotreeToggle')
 call venu#register(s:programmenu)
 
-let s:gitmenu = venu#create('Git')
+let s:gitmenu = venu#create('版本管理')
 call venu#addItem(s:gitmenu, 'Git Status', ':Gstatus')
 call venu#addItem(s:gitmenu, 'Git Log', ':Gitv')
 call venu#addItem(s:gitmenu, 'Git File Log', ':AgitFile')
@@ -291,14 +305,19 @@ let s:noteconfigmenu = venu#create('Note')
 call venu#addItem(s:noteconfigmenu, 'Note', ':Note mynotes')
 call venu#register(s:noteconfigmenu)
 
-let s:plugmenu = venu#create('Plugins')
+let s:plugmenu = venu#create('插件管理')
 call venu#addItem(s:plugmenu, 'Install', ':PlugInstall')
 call venu#addItem(s:plugmenu, 'Clean', ':PlugClean')
 call venu#addItem(s:plugmenu, 'Update', ':PlugUpdate')
 call venu#addItem(s:plugmenu, 'Update vim-plug', ':PlugUpgrade')
 call venu#register(s:plugmenu)
 
-let s:vimconfigmenu = venu#create('Config')
+let s:winmenu = venu#create('窗体')
+call venu#addItem(s:winmenu, '新建标签', ':tabnew')
+call venu#addItem(s:winmenu, '新建窗体', ':vsp')
+call venu#register(s:winmenu)
+
+let s:vimconfigmenu = venu#create('配置')
 call venu#addItem(s:vimconfigmenu, 'Configure Vim', ':edit ~/.vimrc')
 call venu#addItem(s:vimconfigmenu, 'Set BG Color', ':Colors')
 call venu#addItem(s:vimconfigmenu, 'Version', ':version')
