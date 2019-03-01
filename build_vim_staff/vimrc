@@ -7,7 +7,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.vim/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/a.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'drmikehenry/vim-headerguard'
@@ -48,6 +48,7 @@ call plug#end()
 
 filetype plugin indent on
 " 1) set the line number 
+let g:solarized_termcolors=256
 set nu
 set relativenumber
 
@@ -136,7 +137,8 @@ set path+=/usr/local/include
 set rtp+=/usr/bin/fzf
 
 "33) terminal 
-set termwinsize=8x200
+"set termwinsize=8x200
+set termwinsize=
 
 "
 " plugins settings 
@@ -263,7 +265,7 @@ colorscheme janah
 "16) vim-vmenu
 map <silent> <space><space> :VenuPrint<cr>
 
-let s:bookmenu = venu#create('Book Mark')
+let s:bookmenu = venu#create('书签')
 call venu#addItem(s:bookmenu, 'Add', ':BookmarkToggle')
 call venu#addItem(s:bookmenu, 'Text', ':BookmarkAnnotate')
 call venu#addItem(s:bookmenu, 'Next', ':BookmarkNext')
@@ -272,7 +274,7 @@ call venu#addItem(s:bookmenu, 'Show', ':BookmarkShowAll')
 call venu#addItem(s:bookmenu, 'Clear', ':BookmarkClear')
 call venu#register(s:bookmenu)
 
-let s:programmenu = venu#create('Programe')
+let s:programmenu = venu#create('编程')
 call venu#addItem(s:programmenu, 'Add C/C++ Head Flag', ':HeaderguardAdd')
 call venu#addItem(s:programmenu, 'File Browse', ':NERDTreeToggle')
 call venu#addItem(s:programmenu, 'File Structure', ':TagbarToggle')
@@ -289,9 +291,9 @@ call venu#addItem(s:gitmenu, 'Tig Browse', ':TigOpenProjectRootDir')
 call venu#addItem(s:gitmenu, 'Tig Blame', ':TigBlame')
 call venu#register(s:gitmenu)
 
-let s:projectmenu = venu#create('Project')
-call venu#addItem(s:projectmenu, 'Home Page', ':Startify')
-call venu#addItem(s:projectmenu, 'Session Save', ':SSave')
+let s:projectmenu = venu#create('工程')
+call venu#addItem(s:projectmenu, '主页', ':Startify')
+call venu#addItem(s:projectmenu, '保存', ':SSave')
 call venu#register(s:projectmenu)
 
 let s:searchmenu = venu#create('Search')
@@ -300,19 +302,19 @@ call venu#addItem(s:searchmenu, 'File Search of Ag', ':Ag')
 call venu#addItem(s:searchmenu, 'English', ':call SearchWord()')
 call venu#register(s:searchmenu)
 
-let s:bashmenu = venu#create('Terminal')
-call venu#addItem(s:bashmenu, 'Terminal', ':terminal')
+let s:bashmenu = venu#create('终端')
+call venu#addItem(s:bashmenu, '终端', ':terminal')
 call venu#register(s:bashmenu)
 
-let s:noteconfigmenu = venu#create('Note')
-call venu#addItem(s:noteconfigmenu, 'Note', ':Note mynotes')
+let s:noteconfigmenu = venu#create('备忘录')
+call venu#addItem(s:noteconfigmenu, '我的备忘录', ':Note mynotes')
 call venu#register(s:noteconfigmenu)
 
 let s:plugmenu = venu#create('插件管理')
-call venu#addItem(s:plugmenu, 'Install', ':PlugInstall')
-call venu#addItem(s:plugmenu, 'Clean', ':PlugClean')
-call venu#addItem(s:plugmenu, 'Update', ':PlugUpdate')
-call venu#addItem(s:plugmenu, 'Update vim-plug', ':PlugUpgrade')
+call venu#addItem(s:plugmenu, '安装插件', ':PlugInstall')
+call venu#addItem(s:plugmenu, '清除插件', ':PlugClean')
+call venu#addItem(s:plugmenu, '更新插件', ':PlugUpdate')
+call venu#addItem(s:plugmenu, '升级 vim-plug', ':PlugUpgrade')
 call venu#register(s:plugmenu)
 
 let s:winmenu = venu#create('窗体')
@@ -321,8 +323,8 @@ call venu#addItem(s:winmenu, '新建窗体', ':vsp')
 call venu#register(s:winmenu)
 
 let s:vimconfigmenu = venu#create('配置')
-call venu#addItem(s:vimconfigmenu, 'Configure Vim', ':edit ~/.vimrc')
-call venu#addItem(s:vimconfigmenu, 'Set BG Color', ':Colors')
-call venu#addItem(s:vimconfigmenu, 'Version', ':version')
-call venu#addItem(s:vimconfigmenu, 'Vim Help', ':tab help')
+call venu#addItem(s:vimconfigmenu, 'vim 配置', ':edit ~/.vimrc')
+call venu#addItem(s:vimconfigmenu, '设置背景颜色', ':Colors')
+call venu#addItem(s:vimconfigmenu, '版本', ':version')
+call venu#addItem(s:vimconfigmenu, '帮助', ':tab help')
 call venu#register(s:vimconfigmenu)
