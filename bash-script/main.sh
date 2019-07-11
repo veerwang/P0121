@@ -33,23 +33,48 @@ judge_directory() {
 	return 0
 }
 
+init_log() {
+	if [ -f $1 ]
+	then
+		mv $1 $1'-old'
+	fi
+}
+
+check_result() {
+	if [ $? -ne 0 ]
+	then
+		exit
+	fi
+}
+
+#
+# 参数1: 运行的命令
+# 参数2：出错保存的文件路径
+#
+command_run() {
+	$1 2>&1 | tee -a $2 
+	check_result
+}
+
 topdir=`pwd`
 logfile=$topdir/`date '+%Y%m%d-%H%M%S'`'.log'
 
+init_log $logfile
+
 # 写入日志
-echo "log test scripts start" >> $logfile
+#echo "log test scripts start" >> $logfile
 
 # 调用函数
 func_name '123'
 
 judge_directory 'kkk'
 result=$?
-echo $result >> $logfile
+#echo $result >> $logfile
 
-cd $topdir'/123'
-mkdir 222
-# 退出
-exit 0
+newdir=$topdir"/123"
+command_run 'cd $newdir' $logfile
+command_run 'mkdir 222' $logfile
+
 # do anything
 
-echo "log test scripts end" >> $logfile
+#echo "log test scripts end" >> $logfile
