@@ -1,0 +1,30 @@
+From 6f7aeb390a3cdd104099c59cd7b3e0a550f5854b Mon Sep 17 00:00:00 2001
+From: "kevin.wang" <wwei@landicorp.com>
+Date: Thu, 2 Apr 2020 13:43:31 +0800
+Subject: [PATCH 1/2] =?UTF-8?q?=E4=BF=AE=E6=AD=A3=E6=B7=BB=E5=8A=A0?=
+ =?UTF-8?q?=E7=B1=BB=E5=90=8D=E7=A7=B0=E5=A4=B4=E6=96=87=E4=BB=B6=E5=8A=9F?=
+ =?UTF-8?q?=E8=83=BD?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ priv-snippets/cpp.snippets | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/priv-snippets/cpp.snippets b/priv-snippets/cpp.snippets
+index 7fe3d9b..c4d05c1 100644
+--- a/priv-snippets/cpp.snippets
++++ b/priv-snippets/cpp.snippets
+@@ -120,7 +120,7 @@ snippet head "文件头" b
+ /*
+  * =====================================================================================
+  *
+- *       Filename:  `vim_snippets#Filename('$1_t','name')`
++ *       Filename:  `!p snip.rv = fn`
+  *
+  *    Description:  ${2:类介绍} 
+  *
+-- 
+2.7.4
+

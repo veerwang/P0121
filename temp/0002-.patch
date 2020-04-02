@@ -1,0 +1,84 @@
+From 5b5cdb01cdab0d458f66abfa91f4c2ebb0fb473d Mon Sep 17 00:00:00 2001
+From: "kevin.wang" <wwei@landicorp.com>
+Date: Thu, 2 Apr 2020 14:13:21 +0800
+Subject: [PATCH 2/2] =?UTF-8?q?=E6=B7=BB=E5=8A=A0=E6=96=87=E4=BB=B6?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ priv-snippets/cpp.snippets | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+
+diff --git a/priv-snippets/cpp.snippets b/priv-snippets/cpp.snippets
+index c4d05c1..82cb8b6 100644
+--- a/priv-snippets/cpp.snippets
++++ b/priv-snippets/cpp.snippets
+@@ -32,15 +32,15 @@ int main(int argc, const char *argv[])
+ endsnippet
+ 
+ snippet class "类的展开" b
+-class ${1:Class} {
++class ${1:`!p snip.rv = snip.basename or "name"`} {
+ public:
+-	$1();
+-	$1(const $1&);
+-	virtual ~$1();
++	${1/(\w+).*/$1/} ();
++	${1/(\w+).*/$1/} (const ${1/(\w+).*/$1/}&);
++	virtual ~${1/(\w+).*/$1/}();
+ 
+-	$2
++	$1
+ protected:
+-	$3
++	$2
+ private:
+ 	$3
+ };
+@@ -56,34 +56,34 @@ snippet cfun "函数注解" b
+ endsnippet
+ 
+ snippet classi "类的实现" b
++#include "${1:`!p snip.rv = snip.basename or "name"`}.h"
++
+ /* 
+  * ===  FUNCTION  ======================================================================
+- *         Name:  $1
++ *         Name:  ${1:`!p snip.rv = snip.basename or "name"`}
+  *  Description:  默认构造函数 
+  * =====================================================================================
+  */
+-${1:Class}::$1 () {
++${1:`!p snip.rv = snip.basename or "name"`}::${1:`!p snip.rv = snip.basename or "name"`} () {
+ }
+ 
+ /* 
+  * ===  FUNCTION  ======================================================================
+- *         Name:  ~$1
++ *         Name:  ~${1:`!p snip.rv = snip.basename or "name"`}
+  *  Description:  默认析构函数 
+  * =====================================================================================
+  */
+-$1::~$1 () {
++${1:`!p snip.rv = snip.basename or "name"`}::~${1:`!p snip.rv = snip.basename or "name"`} () {
+ }
+ 
+ /* 
+  * ===  FUNCTION  ======================================================================
+- *         Name:  $1  
++ *         Name:  ${1:`!p snip.rv = snip.basename or "name"`}  
+  *  Description:  拷贝构造函数 
+  * =====================================================================================
+  */
+-$1::$1(const $1& theclass) {
++${1:`!p snip.rv = snip.basename or "name"`}::${1:`!p snip.rv = snip.basename or "name"`}(const ${1:`!p snip.rv = snip.basename or "name"`}& theclass) {
+ }
+-
+-
+ endsnippet
+ 
+ # 显示当前目录下的文件列表
+-- 
+2.7.4
+
