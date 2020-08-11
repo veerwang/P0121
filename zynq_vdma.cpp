@@ -11,6 +11,12 @@
  *          web: lauri.vosandi.com
  */
 
+/*
+ * 参考文件
+ * https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Video-Series-26-Examples-of-advanced-uses-of-the-AXI-VDMA-IP/ba-p/947566
+ *
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
