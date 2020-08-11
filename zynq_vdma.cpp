@@ -15,6 +15,8 @@
  * 参考文件
  * https://forums.xilinx.com/t5/Design-and-Debug-Techniques-Blog/Video-Series-26-Examples-of-advanced-uses-of-the-AXI-VDMA-IP/ba-p/947566
  *
+ * https://lauri.xn--vsandi-pxa.com/hdl/zynq/xilinx-video-capture.html
+ *
  */
 
 #include <stdio.h>
