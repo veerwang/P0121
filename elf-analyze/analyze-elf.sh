@@ -56,27 +56,27 @@ logdirname='log'
 # 日志输出文件
 logfile=$topdir/$logdirname/`date '+%Y%m%d-%H%M%S'`'.log'
 
-ANALYZEFILE=original-exec
-WORKSPACE=workspace
-ANALYZERESULT=data
-PREFIX=upx-
-
-if [ $# != 1 ] ; then 
-	echo "USAGE: $0 action" 
-	echo " e.g.: $0 analyze" 
+if [ $# != 2 ] ; then 
+	echo "USAGE: $0 pro action" 
+	echo " e.g.: $0 which analyze" 
 	echo "action: analyze"
 	echo "        clean"
 	exit 1; 
 fi 
 
-if [ $1 == clean ] ; then
+ANALYZEFILE=$1
+WORKSPACE=workspace
+ANALYZERESULT=data
+PREFIX=upx-
+
+if [ $2 == clean ] ; then
 	core_command "rm -rf $WORKSPACE/$ANALYZERESULT"
 	write_log "rm -rf $WORKSPACE/$ANALYZERESULT"
 	core_command "rm -rf $WORKSPACE/$PREFIX$ANALYZEFILE"
 	write_log "rm -rf $WORKSPACE/$PREFIX$ANALYZEFILE"
 fi
 
-if [ $1 == analyze ] ; then
+if [ $2 == analyze ] ; then
 	create_directory $logdirname
 	create_directory $WORKSPACE/$ANALYZERESULT
 	write_log "Starting Analyze $WORKSPACE/$ANALYZEFILE program"
