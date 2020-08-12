@@ -58,14 +58,40 @@ logfile=$topdir/$logdirname/`date '+%Y%m%d-%H%M%S'`'.log'
 
 ANALYZEFILE=original-exec
 WORKSPACE=workspace
+ANALYZERESULT=data
 PREFIX=upx-
-create_directory $logdirname
-write_log "Starting Analyze $WORKSPACE/$ANALYZEFILE program"
-core_command "./tools/upx.out -o $WORKSPACE/$PREFIX$ANALYZEFILE $WORKSPACE/$ANALYZEFILE"
-write_log "upx $WORKSPACE/$ANALYZEFILE to $WORKSPACE/$PREFIX$ANALYZEFILE"
-readelf -h $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/elfhead
-write_log "get elfhead into $WORKSPACE/elfhead"
-readelf -l $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/prohead
-write_log "get program head into $WORKSPACE/prohead"
-readelf -S $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/sechead
-write_log "get program head into $WORKSPACE/sechead"
+
+if [ $# != 1 ] ; then 
+	echo "USAGE: $0 action" 
+	echo " e.g.: $0 analyze" 
+	echo "action: analyze"
+	echo "        clean"
+	exit 1; 
+fi 
+
+if [ $1 == clean ] ; then
+	core_command "rm -rf $WORKSPACE/$ANALYZERESULT"
+	write_log "rm -rf $WORKSPACE/$ANALYZERESULT"
+	core_command "rm -rf $WORKSPACE/$PREFIX$ANALYZEFILE"
+	write_log "rm -rf $WORKSPACE/$PREFIX$ANALYZEFILE"
+fi
+
+if [ $1 == analyze ] ; then
+	create_directory $logdirname
+	create_directory $WORKSPACE/$ANALYZERESULT
+	write_log "Starting Analyze $WORKSPACE/$ANALYZEFILE program"
+	core_command "./tools/upx.out -o $WORKSPACE/$PREFIX$ANALYZEFILE $WORKSPACE/$ANALYZEFILE"
+	write_log "upx $WORKSPACE/$ANALYZEFILE to $WORKSPACE/$PREFIX$ANALYZEFILE"
+	readelf -h $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/elfhead
+	write_log "get elfhead into $WORKSPACE/$ANALYZERESULT/elfhead"
+	readelf -l $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/prohead
+	write_log "get program head into $WORKSPACE/$ANALYZERESULT/prohead"
+	readelf -S $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/sechead
+	write_log "get section head into $WORKSPACE/$ANALYZERESULT/sechead"
+	readelf -s $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/symstab
+	write_log "get symbols symtab into $WORKSPACE/$ANALYZERESULT/symtab"
+	readelf -d $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/dynamictab
+	write_log "get symbols symtab into $WORKSPACE/$ANALYZERESULT/dynamictab"
+fi
+
+#./tools/upx.out -d workspace/upx-original-exec -o new-exec
