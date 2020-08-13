@@ -50,6 +50,23 @@ core_command() {
 	check_result
 }
 
+#
+# 核心分析函数
+#
+#
+analyze_process() {
+	readelf -h $1 > $2/elfhead
+	write_log "get elfhead into $2/elfhead"
+	readelf -l $1 > $2/prohead
+	write_log "get program head into $2/prohead"
+	readelf -S $1 > $2/sechead
+	write_log "get section head into $2/sechead"
+	readelf -s $1 > $2/symstab
+	write_log "get symbols symtab into $2/symtab"
+	readelf -d $1 > $2/dynamictab
+	write_log "get symbols symtab into $2/dynamictab"
+}
+
 # 顶层工作路径
 topdir=`pwd`
 logdirname='log'
@@ -66,32 +83,28 @@ fi
 
 ANALYZEFILE=$1
 WORKSPACE=workspace
-ANALYZERESULT=data
-PREFIX=upx-
+PREFIX=upx
+ANALYZERESULT=$PREFIX-data
 
 if [ $2 == clean ] ; then
 	core_command "rm -rf $WORKSPACE/$ANALYZERESULT"
 	write_log "rm -rf $WORKSPACE/$ANALYZERESULT"
 	core_command "rm -rf $WORKSPACE/$PREFIX$ANALYZEFILE"
 	write_log "rm -rf $WORKSPACE/$PREFIX$ANALYZEFILE"
+	core_command "rm -rf $WORKSPACE/data"
+	write_log "rm -rf $WORKSPACE/data"
 fi
 
 if [ $2 == analyze ] ; then
 	create_directory $logdirname
 	create_directory $WORKSPACE/$ANALYZERESULT
+	create_directory $WORKSPACE/data
 	write_log "Starting Analyze $WORKSPACE/$ANALYZEFILE program"
 	core_command "./tools/upx.out -o $WORKSPACE/$PREFIX$ANALYZEFILE $WORKSPACE/$ANALYZEFILE"
 	write_log "upx $WORKSPACE/$ANALYZEFILE to $WORKSPACE/$PREFIX$ANALYZEFILE"
-	readelf -h $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/elfhead
-	write_log "get elfhead into $WORKSPACE/$ANALYZERESULT/elfhead"
-	readelf -l $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/prohead
-	write_log "get program head into $WORKSPACE/$ANALYZERESULT/prohead"
-	readelf -S $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/sechead
-	write_log "get section head into $WORKSPACE/$ANALYZERESULT/sechead"
-	readelf -s $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/symstab
-	write_log "get symbols symtab into $WORKSPACE/$ANALYZERESULT/symtab"
-	readelf -d $WORKSPACE/$PREFIX$ANALYZEFILE > $WORKSPACE/$ANALYZERESULT/dynamictab
-	write_log "get symbols symtab into $WORKSPACE/$ANALYZERESULT/dynamictab"
+
+	analyze_process $WORKSPACE/$PREFIX$ANALYZEFILE $WORKSPACE/$ANALYZERESULT
+	analyze_process $WORKSPACE/$ANALYZEFILE $WORKSPACE/data
 fi
 
 #./tools/upx.out -d workspace/upx-original-exec -o new-exec
