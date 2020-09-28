@@ -1,0 +1,33 @@
+Full name:  Program Color Theme
+Short name: Rita
+Author:     kevin.wang2004@hotmail.com 
+
+Version:    ['V1.0.1'] 
+
+Variant:    gui 256
+Background: dark
+
+; Color palette
+Color:      	Azure   		#f0ffff ~
+Color:      	Black   		#000000 ~
+Color:      	Lavender    		#E6E6FA ~
+Color:      	LightSlateGray    	#778899 ~
+Color:      	Green			#00ff00 ~
+Color:      	Yellow			#ffff00 ~
+Color:      	Gold			#ffd700 ~
+Color:      	White			#ffffff ~
+
+; Highlight group definitions
+Normal      	Black LightSlateGray 
+TabLine	    	Lavender White
+TabLineSel  	Green Lavender 
+Search		Black Yellow bold
+Statement	Gold LightSlateGray
+Constant	Gold LightSlateGray
+Comment		White LightSlateGray
+SpecialKey	Gold LightSlateGray
+Pmenu		Black Green
+Identifier	Black LightSlateGray
+
+Term colors: Black Black Black Black Black Black Black Black
+Term colors: Lavender Lavender Lavender Lavender Lavender Lavender Lavender Lavender

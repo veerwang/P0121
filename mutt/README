@@ -63,3 +63,6 @@ set daemon 60                                     注意系统启动的时候要
 5.注意gmail的密码，现在要采用两步法生成的密码了
 
 6.注意fetchmailrcdir目录是在.mail/fetchmailrc位置
+
+7.安装各个脚本
+sudo apt-get install mutt fetchmail msmtp procmail -y
