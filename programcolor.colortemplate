@@ -1,5 +1,5 @@
 Full name:  Program Color Theme
-Short name: Rita
+Short name: rita
 Author:     kevin.wang2004@hotmail.com 
 
 Version:    ['V1.0.1'] 
@@ -16,18 +16,22 @@ Color:      	Green			#00ff00 ~
 Color:      	Yellow			#ffff00 ~
 Color:      	Gold			#ffd700 ~
 Color:      	White			#ffffff ~
+Color:      	LaurelGreen		#A2AD91 ~
+Color:      	PaleTurquoise		#668B8B ~
+Color:		OliveDrab		#C0FF3E ~
 
 ; Highlight group definitions
-Normal      	Black LightSlateGray 
-TabLine	    	Lavender White
-TabLineSel  	Green Lavender 
-Search		Black Yellow bold
-Statement	Gold LightSlateGray
-Constant	Gold LightSlateGray
-Comment		White LightSlateGray
-SpecialKey	Gold LightSlateGray
-Pmenu		Black Green
-Identifier	Black LightSlateGray
+; <Group name> <foreground color> <background color> <style attributes>
+Normal      		Black PaleTurquoise
+TabLine	    		Lavender White
+TabLineSel  		Green Lavender 
+Search			Black Yellow bold
+Statement		Gold LaurelGreen
+Constant		Gold LaurelGreen
+Comment			Lavender PaleTurquoise
+SpecialKey		Gold LaurelGreen
+Pmenu			Black OliveDrab
+Normal 	      		->Identifier
 
 Term colors: Black Black Black Black Black Black Black Black
-Term colors: Lavender Lavender Lavender Lavender Lavender Lavender Lavender Lavender
+Term colors: LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen
