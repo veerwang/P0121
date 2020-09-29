@@ -32,8 +32,8 @@ Statement		Gold PaleTurquoise
 Constant		DarkRed PaleTurquoise
 Comment			GrayWhite PaleTurquoise
 SpecialKey		Gold PaleTurquoise
-Pmenu			Black OliveDrab
-Normal 	      		->Identifier
+Pmenu			Black PaleTurquoise
+Identifier		Black PaleTurquoise
 
 Term colors: Black Black Black Black Black Black Black Black
 Term colors: LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen
