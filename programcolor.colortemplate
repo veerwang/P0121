@@ -19,6 +19,8 @@ Color:      	White			#ffffff ~
 Color:      	LaurelGreen		#A2AD91 ~
 Color:      	PaleTurquoise		#668B8B ~
 Color:		OliveDrab		#C0FF3E ~
+Color:		GrayWhite		#CCCCCC ~
+Color:		DarkRed			#990000 ~
 
 ; Highlight group definitions
 ; <Group name> <foreground color> <background color> <style attributes>
@@ -26,10 +28,10 @@ Normal      		Black PaleTurquoise
 TabLine	    		Lavender White
 TabLineSel  		Green Lavender 
 Search			Black Yellow bold
-Statement		Gold LaurelGreen
-Constant		Gold LaurelGreen
-Comment			Lavender PaleTurquoise
-SpecialKey		Gold LaurelGreen
+Statement		Gold PaleTurquoise
+Constant		DarkRed PaleTurquoise
+Comment			GrayWhite PaleTurquoise
+SpecialKey		Gold PaleTurquoise
 Pmenu			Black OliveDrab
 Normal 	      		->Identifier
 
