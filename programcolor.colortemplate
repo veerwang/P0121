@@ -20,8 +20,9 @@ Color:      	White			#ffffff ~
 Color:      	LaurelGreen		#A2AD91 ~
 Color:      	PaleTurquoise		#668B8B ~
 Color:		OliveDrab		#C0FF3E ~
-Color:		GrayWhite		#CCCCCC ~
+Color:		GrayWhite		#AACCCC ~
 Color:		DarkRed			#990000 ~
+Color:		DarkBlue		#003399 ~
 
 ; Highlight group definitions
 ; <Group name> <foreground color> <background color> <style attributes>
@@ -35,8 +36,8 @@ Comment			GrayWhite PaleTurquoise
 SpecialKey		Gold PaleTurquoise
 Pmenu			Black PaleTurquoise
 Identifier		Black PaleTurquoise
-;airline_tab_right	Black PaleTurquoise
-;airline_c4_inactive	Black PaleTurquoise
+PreProc			DarkBlue PaleTurquoise
+Proc			DarkBlue PaleTurquoise
 
 Term colors: Black Black Black Black Black Black Black Black
 Term colors: LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen LaurelGreen
