@@ -34,6 +34,7 @@ echo
 echo " 选择需要的功能:"
 echo " [1] 登陆70服务器"
 echo " [2] 登陆80服务器"
+echo " [3] 登陆28服务器"
 echo " [0] 退出"
 echo
 read -p "您的选择是[1]: " a 
@@ -52,10 +53,16 @@ fi
 if [ $choice == "2" ]; then
 	login-80.sh
 fi
+if [ $choice == "3" ]; then
+	login-28.sh
+fi
 }
-
+starttime=$(date +%Y-%m-%d\ %H:%M:%S)
 while [ $callback == "again" ]; do
 main_loop
 done
-echo
-echo "辛苦了"
+endtime=$(date +%Y-%m-%d\ %H:%M:%S)
+#distime=$((endtime - starttime) +%Y-%m-%d\ %H:%M:%S)
+echo "登陆时间："$starttime
+echo "退出时间："$endtime
+echo "每天好心情"
