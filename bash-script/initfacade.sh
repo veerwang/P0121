@@ -32,12 +32,12 @@ main_loop() {
 clear
 echo -e "${BLUE} ==== 多功能程序界面 ==== ${RES}"
 echo
-echo " ¤╭⌒╮ ╭⌒╮"
-echo "╱◥████████◣ ╭╭⌒╮╮"
-echo "︱田︱田 田|╰------"
-echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
+echo -e "${BLUE} ¤╭⌒╮ ╭⌒╮ ${RES}"
+echo -e "${BLUE}╱◥████████◣ ╭╭⌒╮╮${RES}"
+echo -e "${BLUE}︱田︱田 田|╰------${RES}"
+echo -e "${BLUE}╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬${RES}"
 echo
-echo "                      V1.0.0"
+echo -e "${BLUE}                      V1.0.0${RES}"
 echo
 cal
 echo
@@ -47,8 +47,8 @@ echo " [2] 登陆80服务器"
 echo " [3] 登陆28服务器"
 echo " [0] 退出"
 echo
-# 默认输入30秒
-read -t 30 -p "您的选择是[0]: " a 
+# 默认输入300秒
+read -t 300 -p "您的选择是[0]: " a 
 
 # 默认数值
 choice=${a:-"0"}
@@ -77,3 +77,5 @@ endtime=$(date +%Y-%m-%d\ %H:%M:%S)
 echo "登陆时间："$starttime
 echo "退出时间："$endtime
 echo -e "${BLUE} 每天好心情 ${RES}"
+echo -en "\r1234"
+echo -e "\r5678"
