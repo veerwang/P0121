@@ -18,10 +18,19 @@
 #===============================================================================
 
 set -o nounset                              # Treat unset variables as an error
+
+RED='\E[1;31m'      # 红
+GREEN='\E[1;32m'    # 绿
+YELOW='\E[1;33m'    # 黄
+BLUE='\E[1;34m'     # 蓝
+PINK='\E[1;35m'     # 粉红
+SHAN='\E[33;5m'     #黄色闪烁警示
+RES='\E[0m'         # 清除颜色
+
 callback="again"
 main_loop() {
 clear
-echo " ==== 多功能程序界面 ==== "
+echo -e "${BLUE} ==== 多功能程序界面 ==== ${RES}"
 echo
 echo " ¤╭⌒╮ ╭⌒╮"
 echo "╱◥████████◣ ╭╭⌒╮╮"
@@ -67,4 +76,4 @@ endtime=$(date +%Y-%m-%d\ %H:%M:%S)
 #distime=$((endtime - starttime) +%Y-%m-%d\ %H:%M:%S)
 echo "登陆时间："$starttime
 echo "退出时间："$endtime
-echo "每天好心情"
+echo -e "${BLUE} 每天好心情 ${RES}"
