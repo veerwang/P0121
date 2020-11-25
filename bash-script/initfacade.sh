@@ -38,25 +38,26 @@ echo " [2] 登陆80服务器"
 echo " [3] 登陆28服务器"
 echo " [0] 退出"
 echo
-read -p "您的选择是[1]: " a 
+# 默认输入30秒
+read -t 30 -p "您的选择是[0]: " a 
 
 # 默认数值
-choice=${a:-"1"}
+choice=${a:-"0"}
 
-if [ $choice == "0" ]; then
-	callback="exit"
-fi
-
-if [ $choice == "1" ]; then
+# 进行功能选择
+case $choice in
+	0)	
+	callback="exit";;
+	1)	
 	login-70.sh
-fi
-
-if [ $choice == "2" ]; then
+	;;
+	2)	
 	login-80.sh
-fi
-if [ $choice == "3" ]; then
+	;;
+	3)	
 	login-28.sh
-fi
+	;;
+esac
 }
 starttime=$(date +%Y-%m-%d\ %H:%M:%S)
 while [ $callback == "again" ]; do
