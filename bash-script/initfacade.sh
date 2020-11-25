@@ -30,6 +30,7 @@ echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
 echo
 echo "                      V1.0.0"
 echo
+cal
 echo
 echo " 选择需要的功能:"
 echo " [1] 登陆70服务器"
