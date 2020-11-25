@@ -27,8 +27,7 @@ PINK='\E[1;35m'     # 粉红
 SHAN='\E[33;5m'     #黄色闪烁警示
 RES='\E[0m'         # 清除颜色
 
-callback="again"
-main_loop() {
+title() {
 clear
 echo -e "${BLUE} ==== 多功能程序界面 ==== ${RES}"
 echo
@@ -39,43 +38,71 @@ echo -e "${BLUE}╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬�
 echo
 echo -e "${BLUE}                      V1.0.0${RES}"
 echo
-cal
+echo "登陆时间："$starttime
+#cal
 echo
-echo " 选择需要的功能:"
+echo " 选择需要的功能: "
 echo " [1] 登陆70服务器"
 echo " [2] 登陆80服务器"
 echo " [3] 登陆28服务器"
 echo " [0] 退出"
 echo
-# 默认输入300秒
-read -t 300 -p "您的选择是[0]: " a 
-
-# 默认数值
-choice=${a:-"0"}
-
-# 进行功能选择
-case $choice in
-	0)	
-	callback="exit";;
-	1)	
-	login-70.sh
-	;;
-	2)	
-	login-80.sh
-	;;
-	3)	
-	login-28.sh
-	;;
-esac
 }
+
+callback="again"
+main_loop() {
+# 显示抬头信息
+title
+
+# 默认倒计时10秒
+MAXTIMES=10
+times=$MAXTIMES
+while [ $times -ne 0 ]; do
+	times=$(($times-1))
+	# 覆盖当前行
+	echo -en "\r您的选择是[0]: 倒计时 $times 秒: "
+	read -t 1 a
+
+	if [ -n $a ]; then
+		# 默认数值
+		#choice=${a:-"0"}
+		choice=${a}
+
+		# 进行功能选择
+		case $choice in
+			0)	
+				callback="exit"
+				times=0
+				;;
+			1)	
+				login-70.sh
+				times=MAXTIMES
+				title
+				;;
+			2)	
+				login-80.sh
+				times=MAXTIMES
+				title
+				;;
+			3)	
+				login-28.sh
+				times=MAXTIMES
+				title
+				;;
+			*)
+				if [ $times -eq 0 ]; then
+					callback="exit"
+				fi
+				;;
+		esac
+	fi
+done
+}
+
 starttime=$(date +%Y-%m-%d\ %H:%M:%S)
 while [ $callback == "again" ]; do
-main_loop
+	main_loop
 done
 endtime=$(date +%Y-%m-%d\ %H:%M:%S)
-#distime=$((endtime - starttime) +%Y-%m-%d\ %H:%M:%S)
-echo "登陆时间："$starttime
+echo
 echo "退出时间："$endtime
-echo -e "${BLUE} 每天好心情 ${RES}"
-echo -en "\r1234"
-echo -e "\r5678"
