@@ -24,6 +24,8 @@ GREEN='\E[1;32m'    # 绿
 YELOW='\E[1;33m'    # 黄
 BLUE='\E[1;34m'     # 蓝
 PINK='\E[1;35m'     # 粉红
+LIGHTBLUE='\E[1;36m'     # 青 
+WHITE='\E[1;37m'     # 白 
 SHAN='\E[33;5m'     #黄色闪烁警示
 RES='\E[0m'         # 清除颜色
 
