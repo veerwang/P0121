@@ -45,8 +45,25 @@ echo " 选择需要的功能: "
 echo " [1] 登陆70服务器"
 echo " [2] 登陆80服务器"
 echo " [3] 登陆28服务器"
+echo " [t] 创建tmux服务器"
 echo " [0] 退出"
 echo
+}
+
+#
+# 该函数使用的前提是tmux进行安装
+#
+start_tmux_session() {
+	read -p "输入session名称：" sessionname
+	# 判断tmux是否存在
+	tmux has-session -t $sessionname 2>/dev/null
+	if [ $? -eq 0 ]; then
+		# 存在session
+		tmux -2 attach -t $sessionname
+	else
+		# 不存在session
+		tmux -2 new-session -s $sessionname
+	fi
 }
 
 callback="again"
@@ -86,6 +103,11 @@ while [ $times -ne 0 ]; do
 				;;
 			3)	
 				login-28.sh
+				times=MAXTIMES
+				title
+				;;
+			t)
+				start_tmux_session
 				times=MAXTIMES
 				title
 				;;
