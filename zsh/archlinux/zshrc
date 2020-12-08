@@ -107,10 +107,6 @@ source $ZSH/oh-my-zsh.sh
 export JAVA_HOME=/usr/lib/jvm/default/
 export JRE_HOME=/usr/lib/jvm/default-runtime/jre
 
-#export JAVA_HOME=/usr/java/jdk1.7.0_71/
-#export JRE_HOME=/usr/java/jdk1.7.0_71/jre
-
-#export M2_HOME=/usr/local/apache-maven-3.0.5
 export M2_HOME=/opt/maven
 
 export CLASSPATH=/usr/share/java/:/usr/local/lib/antlrworks-1.5.jar:/usr/local/lib/antlr-3.5.2-complete-no-st3.jar:/usr/share/java/antlr.jar:$CLASSPATH
@@ -120,6 +116,9 @@ export PATH=$PATH:/home/kevin/clang/bin:$HOME/bin:/opt/host/gcc-4.9.3/bin/:/usr/
 # vivado setting
 export PATH=$PATH:/home/kevin/xilinx/Vivado/2019.2/bin
 
+# basic-script setting
+export PATH=$PATH:/home/kevin/bash-script
+
 export LD_LIBRARY_PATH=/home/kevin/clang/lib:/home/kevin/library_tools_game_repository/llvm/lib/:/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/:/home/kevin/armworkcopy/Venture_Game/lib_x86/lib
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
@@ -128,15 +127,6 @@ export GITHUB_USER=veerwang
 export GITHUB_PASSWORD=v200431060
 
 #export TERM=xterm-256color
-
-# Customize to your needs...
-alias gr='cd ~/armworkcopy/Ruby/'
-alias gs='cd ~/armworkcopy/git_Smart/Smart'
-alias gc='cd ~/armworkcopy/git_CurrentProject/CurrentProject'
-alias g6='cd ~/armworkcopy/git_ECT6000/ECT6000/'
-alias gdft='cd ~/armworkcopy/DFT_Test/'
-alias gp='cd ~/work_old/P0711Python/'
-alias gv='cd ~/Venture_Project/Venture_Game'
 
 alias ge='cd ~/library_tools_game_repository/elementary_library/src_git/library-src-repository/'
 alias tool='~/library_tools_game_repository'

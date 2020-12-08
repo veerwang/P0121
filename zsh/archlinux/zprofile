@@ -1,7 +1,7 @@
-echo
-echo  " ¤╭⌒╮ ╭⌒╮"
-echo  "╱◥████████◣ ╭╭ ⌒╮"
-echo "︱田︱田 田|╰------"
-echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
+echo 
+echo -e " ¤╭⌒╮ ╭⌒╮\t\t\t\t"  "Manufacturer:\t "`cat /sys/class/dmi/id/chassis_vendor`
+echo -e "╱◥████████◣ ╭╭ ⌒╮\t\t\t" "Product Name:\t "`cat /sys/class/dmi/id/product_name`
+echo -e "︱田︱田 田|╰------\t\t\t" "Processor Name: "`awk -F':' '/^model name/ {print $2}' /proc/cpuinfo | uniq | sed -e 's/^[ \t]*//'` 
+echo -e "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬\t\t\t" "Kernel:\t "`uname -r`
 echo
 fortune -e tang300 song100
