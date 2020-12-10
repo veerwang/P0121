@@ -49,19 +49,6 @@ plugins=(git ruby rvm tmux tmuxinator sudo fasd github cp extract themes ubuntu 
 
 source $ZSH/oh-my-zsh.sh
 
-export JAVA_HOME=/usr/lib/jvm/default-java/
-export JRE_HOME=/usr/lib/jvm/default-java/jre
-export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
-export CLASSPATH=.:$CLASSPATH
-
-export CLASSPATH=/usr/share/java/:/usr/local/lib/antlrworks-1.5.jar:/usr/local/lib/antlr-3.5.2-complete-no-st3.jar:/usr/share/java/antlr.jar:$CLASSPATH
-
-export PATH=$HOME/bin/gradle-6.0.1/bin:$PATH:/home/kevin/android-studio/android-studio/bin:$HOME/bin:/home/kevin/android-sdk-linux/build-tools/28.0.3/:/usr/bin/:/usr/local/lib:/usr/local/bin:/usr/local/sbin:/sbin/:/usr/sbin:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/:$M2_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HOME/android-sdk-linux/tools:/mnt/android-ndk-r20/build:/home/kevin/auto-test-framework/android-wts/testsuite:/home/kevin/auto-test-framework/android-wts/tools
-
-export LD_LIBRARY_PATH=nn/home/kevin/library_tools_game_repository/llvm/lib/:/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/:/home/kevin/armworkcopy/Venture_Game/lib_x86/lib
-
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
-
 # export TERM=xterm-256color
 
 # Customize to your needs...
@@ -87,5 +74,3 @@ alias l80='ssh wwei@172.27.16.80'
 source ~/z/z.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export GOPATH="$HOME/goworkspace"

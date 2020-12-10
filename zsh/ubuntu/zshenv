@@ -1,0 +1,14 @@
+export JAVA_HOME=/usr/lib/jvm/default-java/
+export JRE_HOME=/usr/lib/jvm/default-java/jre
+export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export CLASSPATH=.:$CLASSPATH
+
+export CLASSPATH=/usr/share/java/:/usr/local/lib/antlrworks-1.5.jar:/usr/local/lib/antlr-3.5.2-complete-no-st3.jar:/usr/share/java/antlr.jar:$CLASSPATH
+
+export PATH=$HOME/bin/gradle-6.0.1/bin:$PATH:/home/kevin/android-studio/android-studio/bin:$HOME/bin:/home/kevin/android-sdk-linux/build-tools/28.0.3/:/usr/bin/:/usr/local/lib:/usr/local/bin:/usr/local/sbin:/sbin/:/usr/sbin:$M2_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin:$HOME/android-sdk-linux/tools:/mnt/android-ndk-r20/build:/home/kevin/auto-test-framework/android-wts/testsuite:/home/kevin/auto-test-framework/android-wts/tools
+
+export LD_LIBRARY_PATH=/usr/local/lib:/lib:/usr/lib
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+
+export GOPATH="$HOME/goworkspace"
