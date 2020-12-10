@@ -113,19 +113,6 @@ export CLASSPATH=/usr/share/java/:/usr/local/lib/antlrworks-1.5.jar:/usr/local/l
 
 export PATH=$PATH:/home/kevin/clang/bin:$HOME/bin:/opt/host/gcc-4.9.3/bin/:/usr/bin/:/usr/local/lib:/usr/local/bin:/usr/local/sbin:/sbin/:/usr/sbin:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/:$M2_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
 
-# vivado setting
-export PATH=$PATH:/home/kevin/xilinx/Vivado/2019.2/bin
-
-# basic-script setting
-export PATH=$PATH:/home/kevin/bash-script
-
-export LD_LIBRARY_PATH=/home/kevin/clang/lib:/home/kevin/library_tools_game_repository/llvm/lib/:/usr/local/lib:/lib:/usr/lib:/opt/spb16/tools.lnx86/lib:/opt/spb16/tools.lnx86/mainwin520/mw/lib-linux_optimized/:/home/kevin/armworkcopy/Venture_Game/lib_x86/lib
-
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
-
-export GITHUB_USER=veerwang
-export GITHUB_PASSWORD=v200431060
-
 #export TERM=xterm-256color
 
 alias ge='cd ~/library_tools_game_repository/elementary_library/src_git/library-src-repository/'
