@@ -43,4 +43,17 @@ init_script_fun() {
 	fi
 }
 
+#
+# 获取终端的宽度 
+#
+shellwidth=0
+shellheight=0
+get_terminal_width() {
+	shellwidth=`stty size|awk '{print $2}'`
+	shellheight=`stty size|awk '{print $1}'`
+}
+
 init_script_fun
+get_terminal_width
+echo $shellwidth
+echo $shellheight
