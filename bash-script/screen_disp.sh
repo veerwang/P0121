@@ -30,9 +30,10 @@ clean_screen() {
 # $3: string
 # $4: color
 print() {
-	echo -ne "$4'\E[$2;$1H'$3'\E[0m'"
+	echo -ne "$4\E[$2;$1H$3\E[0m"
 }
 
 clean_screen
 
-print 10 2 测试字符串 '\E[1;31m'
+print 10 2 "测试字符串\n" '\E[1;31m'
+print 12 3 "测试字符串\n" '\E[1;31m'
