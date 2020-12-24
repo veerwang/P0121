@@ -20,7 +20,7 @@
 set -o nounset                              # Treat unset variables as an error
 
 clean_screen() {
-	echo -e "\033[2J"
+	echo -e "\E[2J"
 }
 
 #
@@ -30,7 +30,7 @@ clean_screen() {
 # $3: string
 # $4: color
 print() {
-	echo -ne "$4'\033[$2;$1H'$3'\E[0m'"
+	echo -ne "$4'\E[$2;$1H'$3'\E[0m'"
 }
 
 clean_screen
