@@ -106,33 +106,35 @@ _true_text() {
 #
 # 绘制外框函数
 #
-# $1
-# $2
-# $3 fg color array rgb
-# $4 bg color array rgb 
+# $1 x
+# $2 y
+# $3 width
+# $4 height
+# $5 fg color array rgb
+# $6 bg color array rgb 
 draw_frame() {
-	local fg_array=$3
-	local bg_array=$4
+	local fg_array=$5
+	local bg_array=$6
 
 	local fg=(`echo ${fg_array[*]}`)
 	local bg=(`echo ${bg_array[*]}`)
 
-	let l_h_pos=$2-2
-	for ((i=1;i<=$1;i++)) do
-		_true_text ${i} 1 ${double_hor_line} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
+	let l_h_pos=$4-2
+	for ((i=$1;i<=$3;i++)) do
+		_true_text ${i} $2 ${double_hor_line} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 		_true_text ${i} ${l_h_pos} ${double_hor_line} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 	done
 
-	let l_w_pos=$1
-	for ((i=1;i<=l_h_pos;i++)) do
-		_true_text 1 ${i} ${double_vert_line} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
+	let l_w_pos=$3
+	for ((i=$2;i<=l_h_pos;i++)) do
+		_true_text $1 ${i} ${double_vert_line} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 		_true_text ${l_w_pos} ${i} ${double_vert_line} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 	done
 
-	_true_text 1 1 ${double_left_corner_up} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
-	_true_text $l_w_pos 1 ${double_right_corner_up} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
+	_true_text $1 $2 ${double_left_corner_up} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
+	_true_text $l_w_pos $2 ${double_right_corner_up} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 
-	_true_text 1 $l_h_pos ${double_left_corner_down} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
+	_true_text $1 $l_h_pos ${double_left_corner_down} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 	_true_text $l_w_pos $l_h_pos ${double_right_corner_down} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 }
 
@@ -142,4 +144,4 @@ start_init
 fg_color_array=(255 0 0)
 bg_color_array=(0 0 0)
 
-draw_frame shellwidth shellheight "${fg_color_array[*]}" "${bg_color_array[*]}"
+draw_frame 10 2 100 10 "${fg_color_array[*]}" "${bg_color_array[*]}"
