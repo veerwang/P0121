@@ -20,9 +20,35 @@
 set -o nounset                              # Treat unset variables as an error
 
 #
+# 全局变量
+#
+declare -x version="1.0.0"
+
+declare -x system=
+declare -i shellwidth=
+declare -i shellheight=
+
+double_hor_line="═"
+double_vert_line="║"
+double_left_corner_up="╔"
+double_right_corner_up="╗"
+double_left_corner_down="╚"
+double_right_corner_down="╝"
+double_title_left="╟"
+double_title_right="╢"
+
+#
 # 初始化脚本,进行一些常规的设置
 #
-init_script_fun() {
+start_init() {
+	_get_system_type
+	_get_terminal_width_height
+}
+
+#
+# 获取系统类型
+#
+_get_system_type() {
 	declare -x LC_MESSAGES="C" LC_NUMERIC="C" LC_ALL=""
 	declare version="1.0.0"
 
@@ -46,9 +72,7 @@ init_script_fun() {
 #
 # 获取终端的宽度 
 #
-shellwidth=0
-shellheight=0
-get_terminal_width() {
+_get_terminal_width_height() {
 	shellwidth=`stty size|awk '{print $2}'`
 	shellheight=`stty size|awk '{print $1}'`
 }
@@ -73,12 +97,42 @@ clean_screen() {
 # $7 bg-red
 # $8 bg-green
 # $9 bg-blue
-true_text() {
+#
+# 下标记从1开始
+_true_text() {
 	printf "\x1b[38;2;$4;$5;$6m\x1b[48;2;$7;$8;$9m\E[$2;$1H$3\n\x1b[0m"
 }
 
-init_script_fun
-get_terminal_width
-echo $shellwidth
-echo $shellheight
-true_text 7 4 "真彩字符串显示" 255 0 0 255 255 0
+#
+# 绘制外框函数
+#
+# $1 fg-red
+# $2 fg-green
+# $3 fg-blue
+#
+# $4 bg-red
+# $5 bg-green
+# $6 bg-blue
+draw_frame() {
+	let l_h_pos=shellheight-2
+	for ((i=1;i<=shellwidth;i++)) do
+		_true_text ${i} 1 ${double_hor_line} $1 $2 $3 $4 $5 $6 
+		_true_text ${i} ${l_h_pos} ${double_hor_line} $1 $2 $3 $4 $5 $6
+	done
+
+	let l_w_pos=shellwidth
+	for ((i=1;i<=l_h_pos;i++)) do
+		_true_text 1 ${i} ${double_vert_line} $1 $2 $3 $4 $5 $6
+		_true_text ${l_w_pos} ${i} ${double_vert_line} $1 $2 $3 $4 $5 $6
+	done
+
+	_true_text 1 1 ${double_left_corner_up} $1 $2 $3 $4 $5 $6
+	_true_text $shellwidth 1 ${double_right_corner_up} $1 $2 $3 $4 $5 $6
+
+	_true_text 1 $l_h_pos ${double_left_corner_down} $1 $2 $3 $4 $5 $6
+	_true_text $shellwidth $l_h_pos ${double_right_corner_down} $1 $2 $3 $4 $5 $6
+}
+
+clean_screen
+start_init
+draw_frame 255 0 0 0 0 0
