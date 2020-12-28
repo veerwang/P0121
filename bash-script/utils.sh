@@ -143,7 +143,7 @@ draw_frame() {
 # $2 y
 #
 set_position() {
-	echo -ne "\E[$1;$2H"
+	echo -ne "\E[$2;$1H"
 }
 
 clean_screen
