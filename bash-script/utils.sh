@@ -146,6 +146,20 @@ set_position() {
 	echo -ne "\E[$2;$1H"
 }
 
+#
+# 取消光标
+#
+disable_curses() {
+	echo -e "\E[?25l"
+}
+
+#
+# 显示光标 
+#
+enable_curses() {
+	echo -e "\E[?25h"
+}
+
 clean_screen
 start_init
 
