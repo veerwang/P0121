@@ -138,6 +138,14 @@ draw_frame() {
 	_true_text $l_w_pos $l_h_pos ${double_right_corner_down} ${fg[0]} ${fg[1]} ${fg[2]} ${bg[0]} ${bg[1]} ${bg[2]}
 }
 
+# 设置光标位置的函数
+# $1 x
+# $2 y
+#
+set_position() {
+	echo -ne "\E[$1;$2H"
+}
+
 clean_screen
 start_init
 
