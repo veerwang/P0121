@@ -6,3 +6,5 @@ http://blog.csdn.net/liuhhaiffeng/article/details/52443663
 C++GUI开源库
 http://nanapro.org/zh-cn/
 
+命令行linux各种工具
+https://asmcn.icopy.site/awesome/awesome-cli-apps/
