@@ -1,9 +1,1 @@
-echo " Welcom to The Programer Home "
-echo
-echo  " ¤╭⌒╮ ╭⌒╮"
-echo  "╱◥████████◣ ╭╭ ⌒╮"
-echo "︱田︱田 田|╰------"
-echo "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬"
-echo
-echo
-uptime
+linux_logo -a -f -L ubuntu
