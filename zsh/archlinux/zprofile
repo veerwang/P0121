@@ -5,5 +5,5 @@
 #echo -e "╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬╬\t\t\t" "Kernel:\t "`uname -r`
 #echo
 #fortune -e tang300 song100
-/usr/bin/linux_logo -L 1 -b -y -u
+/usr/bin/linux_logo -a -L 1 -b -y -u
 fortune
