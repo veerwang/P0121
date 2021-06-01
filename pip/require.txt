@@ -43,7 +43,7 @@ system-service==0.1.6
 tmuxomatic==2.18
 trash-cli==0.12.7
 unity-lens-photos==1.0
-urllib3==1.7.1
+urllib3==1.26.5
 wheel==0.24.0
 wsgiref==0.1.2
 xdiagnose==3.6.3build2
