@@ -63,8 +63,6 @@ alias tclean=trash-empty
 alias rm!="/bin/rm -vi"
 alias rm=trash
 
-alias sprox="sslocal -s hk02-18.ssv7.net -p 26392 -l 1080 -k M5bjRlGMQO66 -m aes-256-cfb"
-
 alias mgrep='grep -n -r --exclude-dir=".git" --exclude-dir=".svn" --binary-files=without-match --exclude="*.py"'
 
 alias loin='ssh root@192.168.1.110'
