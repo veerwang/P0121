@@ -104,17 +104,7 @@ plugins=(git ruby rvm autojump tmux tmuxinator sudo fasd github cp extract tig h
 
 source $ZSH/oh-my-zsh.sh
 
-export JAVA_HOME=/usr/lib/jvm/default/
-export JRE_HOME=/usr/lib/jvm/default-runtime/jre
-
-export M2_HOME=/opt/maven
-
-export CLASSPATH=/usr/share/java/:/usr/local/lib/antlrworks-1.5.jar:/usr/local/lib/antlr-3.5.2-complete-no-st3.jar:/usr/share/java/antlr.jar:$CLASSPATH
-
-export PATH=$PATH:/home/kevin/clang/bin:$HOME/bin:/opt/host/gcc-4.9.3/bin/:/usr/bin/:/usr/local/lib:/usr/local/bin:/usr/local/sbin:/sbin/:/usr/sbin:/opt/skyeye/bin/:/opt/host/arm-wangwei-linux-gnueabi/bin:/opt/host/arm-kevin-linux-gnueabi/bin:/home/kevin/freetype/include/freetype2/:/opt/host/arm-1176-linux-gnueabi/bin:/opt/host/gcc-arm-none-eabi-4_7-2013q3/bin/:/opt/host/gcc-linaro/bin/:$M2_HOME/bin:$JAVA_HOME/bin:$JRE_HOME/bin
-
-#export TERM=xterm-256color
-
+alias ls=lsd
 alias ge='cd ~/library_tools_game_repository/elementary_library/src_git/library-src-repository/'
 alias tool='~/library_tools_game_repository'
 
