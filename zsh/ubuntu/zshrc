@@ -53,6 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+alias ls=lsd
 alias config='vim ~/.zshrc' 
 
 # trash-cli tools command used
