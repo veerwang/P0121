@@ -156,7 +156,9 @@ alias web="proxychains4 w3m"
 
 alias mgrep='grep -n -r --exclude-dir=".git" --exclude-dir=".svn" --binary-files=without-match --exclude="*.py"'
 
-source ~/library_tools_game_repository/z/z.sh
+# source ~/library_tools_game_repository/z/z.sh
+# https://github.com/skywind3000/z.lua.git
+eval "$(lua /home/kevin/github.com/z.lua/z.lua --init zsh once enhanced)"
 
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

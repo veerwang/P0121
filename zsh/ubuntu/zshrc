@@ -70,6 +70,8 @@ alias loin='ssh root@192.168.1.110'
 alias l70='ssh wwei@172.27.16.70'
 alias l80='ssh wwei@172.27.16.80'
 
-source ~/z/z.sh
+#source ~/z/z.sh
+# https://github.com/skywind3000/z.lua.git
+eval "$(lua /home/kevin/github.com/z.lua/z.lua --init zsh once enhanced)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
