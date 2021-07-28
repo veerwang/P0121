@@ -1,0 +1,19 @@
+Host 172.27.16.70
+IdentityFile ~/.ssh/authKey
+PreferredAuthentications publickey
+
+Host 172.27.16.80
+IdentityFile ~/.ssh/authKey
+PreferredAuthentications publickey
+
+Host 172.27.16.28
+IdentityFile ~/.ssh/authKey
+PreferredAuthentications publickey
+
+Host 172.27.16.55
+IdentityFile ~/.ssh/authKey
+PreferredAuthentications publickey
+
+Host 172.27.16.90
+IdentityFile ~/.ssh/authKey
+PreferredAuthentications publickey
