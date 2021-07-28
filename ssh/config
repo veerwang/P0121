@@ -18,6 +18,7 @@ Host 172.27.16.90
 IdentityFile ~/.ssh/authKey
 PreferredAuthentications publickey
 
-Host www.github.com
-IdentityFile ~/.ssh/github_rsa.pub
+Host gitee.com
+User veerwang
+IdentityFile ~/.ssh/gitee_rsa.pub
 PreferredAuthentications publickey
