@@ -19,6 +19,20 @@ IdentityFile ~/.ssh/authKey
 PreferredAuthentications publickey
 
 Host gitee.com
-User veerwang
-IdentityFile ~/.ssh/gitee_rsa.pub
-PreferredAuthentications publickey
+	User veerwang
+	IdentityFile ~/.ssh/gitee_rsa.pub
+	PreferredAuthentications publickey
+
+	#Host github.com
+	#HostName github.com
+	#User OneWayRepo
+	#IdentityFile ~/.ssh/gitee_rsa.pub
+	#PreferredAuthentications publickey
+	#IdentitiesOnly yes
+
+Host github_security.rsa.pub
+	HostName github.com
+	User veerwang
+	IdentityFile ~/.ssh/github_security.rsa.pub
+	PreferredAuthentications publickey
+	IdentitiesOnly yes
