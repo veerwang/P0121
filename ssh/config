@@ -1,34 +1,34 @@
 Host 172.27.16.70
-IdentityFile ~/.ssh/authKey
-PreferredAuthentications publickey
+	IdentityFile ~/.ssh/authKey
+	PreferredAuthentications publickey
 
 Host 172.27.16.80
-IdentityFile ~/.ssh/authKey
-PreferredAuthentications publickey
+	IdentityFile ~/.ssh/authKey
+	PreferredAuthentications publickey
 
 Host 172.27.16.28
-IdentityFile ~/.ssh/authKey
-PreferredAuthentications publickey
+	IdentityFile ~/.ssh/authKey
+	PreferredAuthentications publickey
 
 Host 172.27.16.55
-IdentityFile ~/.ssh/authKey
-PreferredAuthentications publickey
+	IdentityFile ~/.ssh/authKey
+	PreferredAuthentications publickey
 
 Host 172.27.16.90
-IdentityFile ~/.ssh/authKey
-PreferredAuthentications publickey
+	IdentityFile ~/.ssh/authKey
+	PreferredAuthentications publickey
 
 Host gitee.com
 	User veerwang
 	IdentityFile ~/.ssh/gitee_rsa.pub
 	PreferredAuthentications publickey
 
-	#Host github.com
-	#HostName github.com
-	#User OneWayRepo
-	#IdentityFile ~/.ssh/gitee_rsa.pub
-	#PreferredAuthentications publickey
-	#IdentitiesOnly yes
+Host github.com
+	HostName github.com
+	User OneWayRepo
+	IdentityFile ~/.ssh/gitee_rsa.pub
+	PreferredAuthentications publickey
+	IdentitiesOnly yes
 
 Host github_security.rsa.pub
 	HostName github.com
