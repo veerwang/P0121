@@ -30,6 +30,7 @@ Host github.com
 	PreferredAuthentications publickey
 	IdentitiesOnly yes
 
+# Host字段 要和仓库中的.git/config文件中的git@Host:veerwang/P0121.git 一致
 Host github_security.rsa.pub
 	HostName github.com
 	User veerwang
