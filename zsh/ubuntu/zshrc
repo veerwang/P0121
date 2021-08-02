@@ -64,11 +64,14 @@ alias tclean=trash-empty
 alias rm!="/bin/rm -vi"
 alias rm=trash
 
+alias todo=todo.sh
+
 alias mgrep='grep -n -r --exclude-dir=".git" --exclude-dir=".svn" --binary-files=without-match --exclude="*.py"'
 
 alias loin='ssh root@192.168.1.110'
 alias l70='ssh wwei@172.27.16.70'
 alias l80='ssh wwei@172.27.16.80'
+alias jk='tmux -2 new-session -s basic'
 
 #source ~/z/z.sh
 # https://github.com/skywind3000/z.lua.git
