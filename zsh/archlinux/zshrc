@@ -131,6 +131,7 @@ alias rm!="/bin/rm -vi"
 alias rm=trash
 
 alias td=todo.sh
+alias jk='tmux -2 new-session -s basic'
 
 #alias sprox="sslocal -s hk02-3.ssv7.net -p 14276 -l 1080 -k qfLgtMsMVAy5 -m aes-256-cfb"
 alias sprox="sslocal -s hk1-sta3.06e59.space -p 14276 -l 1080 -k qfLgtMsMVAy5 -m chacha20-ietf-poly1305"
